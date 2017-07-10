@@ -5,9 +5,17 @@ export default class BookNow extends Component {
 	render() {
 		return(
 			<div id="bookNow">
-				<Link to={{ pathname: '/booking'}}>
-					Book Now!
-				</Link> 
+				<div className="left quickBook">
+				
+				</div>
+				<div className="center quickBook">
+					<Link to={{ pathname: '/booking'}}>
+						<span>Book Now!</span>
+					</Link> 
+				</div>
+				<div className="right quickBook">
+				
+				</div>
 			</div>
 		);
 	}
