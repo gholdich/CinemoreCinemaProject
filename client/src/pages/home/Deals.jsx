@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export class deals extends React.Component {
+export class deals extends Component {
 	render() {
-		
+		return(
+			<div >
+				
+			</div>
+		)
 	}
-{
+}

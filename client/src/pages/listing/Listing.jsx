@@ -1,9 +1,8 @@
-import React from 'react';
-//import filmBlock from './FilmBlock';
+import React, { Component } from 'react';
+import filmBlock from './FilmBlock';
 
 
-export default class Listing extends React.Component{
-	
+export class Listing extends React.
 	render(){
 		return(
 		<div className="mainDiv" id="listingsDiv" >
