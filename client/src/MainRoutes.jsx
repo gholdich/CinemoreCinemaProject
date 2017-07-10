@@ -25,8 +25,11 @@ export default class MainRoutes extends Component {
 		  </main>
 		  <article>
 			<Switch>
-				<Route exact path='/' component={BookNow}/>
-				<Route path="/films" component={BookNow}/>
+			  <Route exact path='/' component={BookNow}/>
+			  <Route path="/films" component={BookNow}/>
+			  <Route path="/locations" component={BookNow}/>
+			  <Route path="/faq" component={BookNow}/>
+			  <Route path="/contact" component={BookNow}/>
 			</Switch>
 		  </article>
 		</div>

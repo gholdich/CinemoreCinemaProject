@@ -6,7 +6,7 @@ export default class BookNow extends Component {
 		return(
 			<div id="bookNow">
 				<Link to={{ pathname: '/booking'}}>
-					<div>Book Now!</div>
+					Book Now!
 				</Link> 
 			</div>
 		);

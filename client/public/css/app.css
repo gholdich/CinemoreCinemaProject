@@ -10,7 +10,6 @@ ul.navbar-nav li.link {
     display: inline-block;
     text-align: center;
     margin: 0 1px;
-    width: 50px;
 }
 
 ul.navbar-nav li.link a {
@@ -27,14 +26,19 @@ ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover {
 
 
 #bookNow {
-	position: fixed;
+    position: fixed;
     bottom: 0;
-    background: #efefef;
+    background: #ececec;
     width: 100%;
     text-align: center;
-    padding: 20px 0;
+    height: 58px;
 }
 #bookNow a {
-	
+	background: #dadada;
+    text-decoration: none;
+    color: #000;
+    padding: 20px 20px;
+    position: absolute;
+    bottom: 0;
 }
 
