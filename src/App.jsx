@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '..components/Header';
-import Footer from '..components/Footer';
-import BookNow from '..components/BookNow';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import BookNow from './components/BookNow';
 
 
 export default class App from React.Component{
@@ -9,9 +9,9 @@ export default class App from React.Component{
 		return(
 			<div>
 				<Header/>
-				<main>
+				<index>
 					{this.properties.children}
-				</main>
+				</index>
 				<BookNow/>
 				<Footer>
 			</div>
