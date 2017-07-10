@@ -9,6 +9,7 @@ import BookNow from './components/BookNow';
 export default class MainRoutes extends Component {
 	render() {
 		return (
+		<div id="content">
 		  <main>
 			<Switch>
 			  <Route exact path='/' component={Home}/>
@@ -16,6 +17,13 @@ export default class MainRoutes extends Component {
 			  <Route path="/films" component={Listing}/>
 			</Switch>
 		  </main>
+		  <article>
+			<Switch>
+				<Route exact path='/' component={BookNow}/>
+				<Route path="/films" component={BookNow}/>
+			</Switch>
+		  </article>
+		</div>
 		);
 	}
 }

@@ -1,3 +1,6 @@
+body {
+	margin:0px
+}
 
 .logo-container img#logo {
 	height: 85px;
@@ -21,3 +24,17 @@ ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover {
     color: #949494;
     border: 1px solid #949494;
 }
+
+
+#bookNow {
+	position: fixed;
+    bottom: 0;
+    background: #efefef;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+#bookNow a {
+	
+}
+

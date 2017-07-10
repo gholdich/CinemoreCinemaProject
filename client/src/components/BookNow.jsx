@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class BookNow extends Component {
 	render() {
 		return(
-			<div>
+			<div id="bookNow">
 				<Link to={{ pathname: '/booking'}}>
 					<div>Book Now!</div>
 				</Link> 
