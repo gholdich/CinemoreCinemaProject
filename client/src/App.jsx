@@ -4,16 +4,14 @@ import Footer from './components/Footer';
 import BookNow from './components/BookNow';
 
 
-export default class App from React.Component{
+export default class App extends React.Component {
 	render(){
 		return(
 			<div>
-				<Header/>
-				<index>
-					{this.properties.children}
-				</index>
-				<BookNow/>
-				<Footer>
+				<Header />
+					{this.props.children}
+				<BookNow />
+				<Footer />
 			</div>
 		
 		);
