@@ -16,10 +16,14 @@ export default class home extends Component {
 			<div id="comingSoon" >
 				//load comingSoon component
 			</div>
-			<div id="newsAndDeals" >
-				//load news component
-				//load deals component
-			</div>
+			<span id="newsAndDeals" >
+				<div id="leftDiv" >
+					//load news component
+				</div>
+				<div id="right div" >
+					//load deals component
+				</div>
+			</span>
 		</div>
 		);
 	}
