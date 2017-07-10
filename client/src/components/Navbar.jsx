@@ -13,6 +13,15 @@ export default class Navbar extends Component{
 					<li className="link">
 						<Link to={{ pathname: "/Films" }}>Films</Link>
 					</li>
+					<li className="link">
+						<Link to={{ pathname: "/Locations" }}>Locations</Link>
+					</li>
+					<li className="link">
+						<Link to={{ pathname: "/Faq" }}>FAQ</Link>
+					</li>
+					<li className="link">
+						<Link to={{ pathname: "/Contact" }}>Contact Us</Link>
+					</li>
 				</ul>
 			</div>
 		);
