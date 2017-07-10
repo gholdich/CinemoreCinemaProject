@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from "./pages/home/Home";
+import Listing from './pages/listing/Listing';
+import Booking from './pages/booking/Booking';
+import BookNow from './components/BookNow';
 
 export default class MainRoutes extends Component {
 	render() {
@@ -9,6 +12,8 @@ export default class MainRoutes extends Component {
 		  <main>
 			<Switch>
 			  <Route exact path='/' component={Home}/>
+			  <Route path="/booking" component={Booking}/>
+			  <Route path="/films" component={Listing}/>
 			</Switch>
 		  </main>
 		);

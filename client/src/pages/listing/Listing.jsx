@@ -1,10 +1,11 @@
 import React from 'react';
-import filmBlock from './FilmBlock';
+//import filmBlock from './FilmBlock';
 
 
-export class listing extends React.Component{
+export default class Listing extends React.Component{
 	
 	render(){
+		return(
 		<div className="mainDiv" id="listingsDiv" >
 			<div id="gridOfEquals" >
 				//load multiple instances of film block component with different information
@@ -12,6 +13,7 @@ export class listing extends React.Component{
 			</div>
 			
 		</div>
+		);
 		
 	}
 }

@@ -11,7 +11,6 @@ export default class App extends Component {
 			<div>
 				<Header />
 				<MainRoutes />
-				<BookNow />
 				<Footer />
 			</div>
 		
