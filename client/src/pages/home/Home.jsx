@@ -1,11 +1,11 @@
-//exapmle Home.jsx
-import React, { Component } from 'react';
-import carousel from './Carousel';
-import comingSoon from './ComingSoon';
-import news from './News';
-import deals from './Deals';
 
-export class home extends Component {
+import React, { Component } from 'react';
+import Carousel from './Carousel';
+import ComingSoon from './ComingSoon';
+import News from './News';
+import Deals from './Deals';
+
+export default class Home extends Component {
 	
 	render(){
 		return(

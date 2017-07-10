@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class carousel extends Component {
+export default class Carousel extends Component {
 	render() {
 		return(
 		<div >

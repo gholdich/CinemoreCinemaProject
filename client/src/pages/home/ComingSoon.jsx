@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class comingSoon extends Component{
+export default class ComingSoon extends Component{
 	render() {
 		return(
 		<div >
