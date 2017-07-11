@@ -9,9 +9,13 @@ export default class App extends Component {
 		super();
 		
 		this.state = {
-			filmInfo: "",
+			Location: "",
+			FilmName: "",
+			ShowingDateTime: "",
 			
 		}
+	}
+	
 	render(){
 		return(
 			<div>

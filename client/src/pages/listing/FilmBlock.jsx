@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 
-export class FilmBlock extends Component {
+export default class FilmBlock extends Component {
 	render() {
 		return(
 			<div className="mainDiv" >
