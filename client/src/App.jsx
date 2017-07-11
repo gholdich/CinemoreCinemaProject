@@ -5,6 +5,13 @@ import MainRoutes from './MainRoutes';
 
 
 export default class App extends Component {
+	constructor() {
+		super();
+		
+		this.state = {
+			filmInfo: "",
+			
+		}
 	render(){
 		return(
 			<div>
