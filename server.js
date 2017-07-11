@@ -56,6 +56,21 @@ app.get("/api/cinemas", (req, res) => {
   }
 });
 
+app.get("/api/showings", (req, res) => {
+  
+  const r = (() => {
+	  return getShowings.showings;
+  })();
+  
+  
+  if (typeof r !== 'undefined') {
+    res.json(r);
+  } else {
+    res.json([]);
+  }
+
+});
+
 app.listen(app.get("port"), () => {
   console.log(`Find the server at: http://localhost:${app.get("port")}/`);
 });

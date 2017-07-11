@@ -1,6 +1,6 @@
 
 html {
-	font-family: monospace;
+	font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -93,7 +93,7 @@ ul.navbar-nav li.link a span {
     font-weight: 600;
     height: 100%;
     width: 150px;
-    padding: 15.4px 0;
+    padding: 17.4px 0;
     margin-left: 67px;
     z-index: 100;
     bottom: 0;
@@ -140,7 +140,12 @@ ul.navbar-nav li.link a span {
     margin: auto;
 }
 #bookNow .right.quickBook {
-	
+	display: inline-block;
+    position: absolute;
+    width: 50%;
+    background: #ffffff;
+    height: 100%;
+    z-index: -10;
 }
 
 #navbar-container {
@@ -154,8 +159,88 @@ ul.navbar-nav li.link a span {
 }
 
 #content {
-    background: #5cb3f7;
+    background: #326186;
     box-shadow: inset 0px 0px 4px -1px #000;
     padding: 10px;
 }
+#gridOfEquals {
+    width: 1000px;
+    margin: auto;
+    display: block;
+}
 
+#gridOfEquals .film {
+    display: flex;
+    padding: 5px 9px;
+    margin: 10px;
+    color: #fff;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.11);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(255, 255, 255, 0.10) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(255, 255, 255, 0.10) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(255, 255, 255, 0.10) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+}
+
+#gridOfEquals .film .title {
+    font-size: 30px;
+    line-height: 36px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.50);
+    margin-bottom: 6px;
+}
+
+#gridOfEquals .film .genres {
+
+}
+
+#gridOfEquals .film .genres .genre {
+	font-family: monospace;
+    font-size: 11px;
+    background: #188ae2;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    margin: 3px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#gridOfEquals .film .film-poster {
+    display: inherit;
+    padding: 10px 0;
+}
+
+#gridOfEquals .film .film-poster img {
+    width: 184px;
+    height: 273px;
+}
+
+#gridOfEquals .film .film-info {
+    width: 100%;
+    margin: 10px 10px 10px 20px;
+}
+
+#gridOfEquals .film .film-info .description {
+    margin: 20px 3px;
+}
+
+
+#gridOfEquals .film-description {
+    text-align: justify;
+    display: block;
+    width: 594px;
+    height: 273px;
+    padding: 10px;
+    margin: auto;
+    overflow-y: scroll;
+}
+
+#gridOfEquals .film-description::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+#gridOfEquals .film-description::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+#gridOfEquals .film-description::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  outline: 1px solid slategrey;
+}
