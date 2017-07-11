@@ -170,5 +170,6 @@ ul.navbar-nav li.link a span {
 
 .function-pin {
 	height : 35px;
+	cursor : pointer;
 }
 
