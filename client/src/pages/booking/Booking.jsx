@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-export default class Booking extends React.Component{
-	constructor(){
+export default class Booking extends Component {
+	constructor() {
 		super();
-		this.state={
-			location:'',
-			film:'',
-			date:''
+		this.state = {
+			location: '',
+			film: '',
+			date: ''
 		};
 	}
 	setLocation(e){
@@ -26,16 +26,16 @@ export default class Booking extends React.Component{
 		
 	}
 	
-	render(){
+	render() {
 		return(
 			<div>
 				<form>
 					<ul>
 						<li>
-							<input  placeholder="Location" onChange={this.setLocation.bind(this)}/>
+							<input placeholder="Location" onChange={this.setLocation.bind(this)}/>
 						</li>
 						<li>
-							<input  placeholder="Film" onChange={this.setFilm.bind(this)}/>
+							<input placeholder="Film" onChange={this.setFilm.bind(this)}/>
 						</li>
 						<li>
 							<input placeholder="Date and time" onChange={this.setDate.bind(this)}/>
@@ -55,8 +55,8 @@ export default class Booking extends React.Component{
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_s-xclick" />
 					<input type="hidden" name="hosted_button_id" value="Y4FKYA8HS5RL2" />
-					<input type="image" src="/images/pay.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-					<img alt="" border="0" src="https://www.sandbox.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+					<input type="image" src="/images/pay.png" name="submit" alt="PayPal – The safer, easier way to pay online!" />
+					<img src="https://www.sandbox.paypal.com/en_GB/i/scr/pixel.gif" alt="" width="1" height="1" />
 				</form>
 
 			</div>

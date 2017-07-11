@@ -1,13 +1,12 @@
-
 import React, { Component } from 'react';
+
 import Carousel from './Carousel';
 import ComingSoon from './ComingSoon';
 import News from './News';
 import Deals from './Deals';
 
 export default class Home extends Component {
-	
-	render(){
+	render() {
 		return(
 		<div className="mainDiv" id="homeDiv" >
 			<div id="carousel" >

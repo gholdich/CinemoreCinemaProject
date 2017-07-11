@@ -15,14 +15,8 @@
     "babel-preset-react": "6.24.1",
     "react": "15.6.1",
     "react-dom": "15.6.1",
-    "react-hover": "^1.1.0",
-    "react-portal-tooltip": "^1.1.5",
     "react-router": "4.1.1",
-    "react-router-dom": "4.1.1",
-    "react-select": "^1.0.0-rc.5",
-    "react-selectize": "^2.1.0",
-    "react-simple-dropdown": "^3.0.0",
-    "react-tooltip": "^3.3.0"
+    "react-router-dom": "4.1.1"
   },
   "scripts": {
     "start": "set PORT=8080 && react-scripts start",

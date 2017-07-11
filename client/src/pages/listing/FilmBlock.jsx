@@ -1,7 +1,6 @@
 import React , { Component } from 'react';
 
 export default class FilmBlock extends Component {
-	
 	showGenres() {
 		return this.props.genres.map((genre, idx) => {
 			return (

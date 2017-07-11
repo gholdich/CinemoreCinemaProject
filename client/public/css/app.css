@@ -258,3 +258,57 @@ ul.navbar-nav li.link a span {
 	height : 35px;
 	cursor : pointer;
 }
+
+#loading-icon {
+	width: 200px;
+    margin: 100px auto;
+}
+
+#loading-icon img {
+    background: #fff;
+}
+
+
+.ToolTip #aa {
+	position: absolute;
+	padding: 5px;
+	background: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px;
+	border-radius: 3px;
+	transition: all 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 50;
+	margin: 10px -64px 0;
+}
+
+#location-container:active .ToolTip #aa, #location-container:hover .ToolTip #aa, #location-container:focus .ToolTip #aa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ToolTip #bb {
+	position: absolute;
+	content: '';
+	transition: all 0.3s ease-in-out;
+	z-index: 60;
+	left: 50%;
+	margin-left: -10px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	top: -10px;
+	border-bottom: 10px solid rgb(255, 255, 255);
+}
+
+.ToolTip #cc {
+	position: absolute;
+	content: '';
+	transition: all 0.3s ease-in-out;
+	z-index: 55;
+	left: 50%;
+	margin-left: -11px;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	top: -11px;
+	border-bottom: 11px solid rgba(0, 0, 0, 0.4);
+}

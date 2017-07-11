@@ -7,13 +7,15 @@ export default class Listing extends Component {
 	constructor() {
 		super();
 		this.state = {
+			loading: true,
 			showings: []
 		}
 	}
 	
-	componentWillMount() {
+	componentDidMount() {
 		Client.fetchShowings(films => {
 			this.setState({
+				loading: false,
 				showings: films
 			});
 		});
@@ -27,15 +29,20 @@ export default class Listing extends Component {
 		});
 	}
 	
+	displayLoading() {
+		return(
+			<div id="loading-icon"><img src="/images/loading.gif" alt="Loading..." /></div>
+		);
+	}
+	
 	
 	render(){
+		const { loading } = this.state;
 		return(
 		<div className="page" id="filmShowings" >
 			<div id="gridOfEquals" >
-			{this.displayFilms()}
-
+				{ loading ? this.displayLoading() : this.displayFilms() }
 			</div>
-			
 		</div>
 		);
 		

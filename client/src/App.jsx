@@ -7,16 +7,14 @@ import MainRoutes from './MainRoutes';
 export default class App extends Component {
 	constructor() {
 		super();
-		
 		this.state = {
 			Location: "",
 			FilmName: "",
 			ShowingDateTime: "",
-			
 		}
 	}
 	
-	render(){
+	render() {
 		return(
 			<div>
 				<Header />
