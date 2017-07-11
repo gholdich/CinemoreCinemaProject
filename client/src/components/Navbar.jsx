@@ -21,7 +21,7 @@ export default class Navbar extends Component{
 					</li>
 					<li className="link">
 						<Link to={{ pathname: "/Contact" }}><span>Contact Us</span></Link>
-					</li>
+					</li>					
 				</ul>
 			</div>
 		);

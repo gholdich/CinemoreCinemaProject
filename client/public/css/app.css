@@ -150,6 +150,7 @@ ul.navbar-nav li.link a span {
 
 #navbar-container {
     margin: auto 0 auto auto;
+	display: inherit;
 }
 
 #header-container {
@@ -243,4 +244,17 @@ ul.navbar-nav li.link a span {
 #gridOfEquals .film-description::-webkit-scrollbar-thumb {
   background-color: #fff;
   outline: 1px solid slategrey;
+}
+
+#location-container {
+	margin-left : 30px;
+}
+
+#account-container {
+	margin : 0 5px;
+}
+
+.function-pin {
+	height : 35px;
+	cursor : pointer;
 }
