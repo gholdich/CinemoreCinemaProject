@@ -11,7 +11,7 @@ export default class Home extends Component {
 		return(
 		<div className="mainDiv" id="homeDiv" >
 			<div id="carousel" >
-				//load carousel component
+				<Carousel/>//load carousel component
 			</div>
 			<div id="comingSoon" >
 				//load comingSoon component

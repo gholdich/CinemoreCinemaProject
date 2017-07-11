@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import filmBlock from './FilmBlock';
+import FilmBlock from './FilmBlock';
 
 
 export default class Listing extends React.Component{
@@ -7,7 +7,7 @@ export default class Listing extends React.Component{
 		return(
 		<div className="mainDiv" id="listingsDiv" >
 			<div id="gridOfEquals" >
-				//load multiple instances of film block component with different information
+				<FilmBlock/>//load multiple instances of film block component with different information
 
 			</div>
 			

@@ -1,0 +1,37 @@
+{ 
+	"showings":[
+	  {
+		"filmId": 1,
+		"title": "Toy Story (1995)",
+		"genres": "Adventure|Animation|Children|Comedy|Fantasy",
+		"cinemas":[
+				{
+					"cinemaId": "",
+					"location": ""
+				}
+			]
+	  },
+	  {
+		"filmId": 2,
+		"title": "Jumanji (1995)",
+		"genres": "Adventure|Children|Fantasy",
+		"cinemas":[
+				{
+					"cinemaId": "",
+					"location": ""
+				}
+			]
+	  },
+	  {
+		"filmId": 3,
+		"title": "Grumpier Old Men (1995)",
+		"genres": "Comedy|Romance",
+		"cinemas":[
+				{
+					"cinemaId": "",
+					"location": ""
+				}
+			]
+	  }
+	]
+}

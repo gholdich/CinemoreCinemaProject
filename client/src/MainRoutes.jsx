@@ -8,6 +8,7 @@ import Contact from './pages/contact/Contact';
 import Faq from './pages/faq/Faq';
 import Booking from './pages/booking/Booking';
 import BookNow from './components/BookNow';
+import Confirmation from './pages/confirmation/Confirmation';
 
 export default class MainRoutes extends Component {
 	render() {
@@ -21,6 +22,7 @@ export default class MainRoutes extends Component {
 			  <Route path="/locations" component={Locations}/>
 			  <Route path="/faq" component={Faq}/>
 			  <Route path="/contact" component={Contact}/>
+			  <Route path="/confirmation" component={Confirmation}/>
 			</Switch>
 		  </main>
 		  <article>

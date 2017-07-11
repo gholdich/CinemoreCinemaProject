@@ -4,7 +4,7 @@ export default class Carousel extends Component {
 	render() {
 		return(
 		<div >
-			Pretty posters
+			Pretty posters please
 		</div>
 		);
 	}

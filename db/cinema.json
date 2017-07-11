@@ -1,0 +1,24 @@
+{ 
+	"cinema":[
+	  {
+		"cinemaId": 1,
+		"location": "",
+		"openingTimes":[
+				{
+					"monday": "",
+					"tuesday": "",
+					"wednesday": "",
+					"thursday": "",
+					"friday": "",
+					"saturday": "",
+					"sunday": "",
+				}
+			],
+		"screens":[
+				{
+					"screen": ""
+				}
+			]
+	  }
+	]
+}
