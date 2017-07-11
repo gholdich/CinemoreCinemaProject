@@ -145,6 +145,7 @@ ul.navbar-nav li.link a span {
 
 #navbar-container {
     margin: auto 0 auto auto;
+	display: inherit;
 }
 
 #header-container {
@@ -157,5 +158,17 @@ ul.navbar-nav li.link a span {
     background: #5cb3f7;
     box-shadow: inset 0px 0px 4px -1px #000;
     padding: 10px;
+}
+
+#location-container {
+	margin-left : 30px;
+}
+
+#account-container {
+	margin : 0 5px;
+}
+
+.function-pin {
+	height : 35px;
 }
 

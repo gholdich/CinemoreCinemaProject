@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import LocationPin from './LocationPin';
+import AccountPin from './AccountPin';
 
 export default class Nav extends Component {
 	
@@ -7,6 +9,8 @@ export default class Nav extends Component {
 		return(
 			<div id="navbar-container">
 				<Navbar />
+				<LocationPin />
+				<AccountPin />
 			</div>
 		);
 	}

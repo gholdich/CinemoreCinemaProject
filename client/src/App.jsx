@@ -13,7 +13,6 @@ export default class App extends Component {
 				<MainRoutes />
 				<Footer />
 			</div>
-		
 		);
 	}
 }
