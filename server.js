@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
-
+const getShowings = require('./db/showings');
+const getCinemas = require('./db/cinemas');
 
 const app = express();
 
@@ -21,11 +22,33 @@ app.get("/api/films", (req, res) => {
     return;
   }
   
-  const r = param => {
-	  
+  const r = ((param) => {
+	  return getShowings.showings.filter(film => film.title.toLowerCase().includes(param));
+  })(param);
+  
+  
+  if (typeof r !== 'undefined') {
+    res.json(r);
+  } else {
+    res.json([]);
   }
+});
 
+app.get("/api/cinemas", (req, res) => {
+  const param = req.query.q;
 
+  if (!param) {
+    res.json({
+      error: "Missing required parameter `q`"
+    });
+    return;
+  }
+  
+  const r = ((param) => {
+	  return getCinemas.cinema.filter(cinema => cinema.title.toLowerCase().includes(param));
+  })(param);
+  
+  
   if (typeof r !== 'undefined') {
     res.json(r);
   } else {
