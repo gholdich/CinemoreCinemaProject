@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Client from '../api/Client';
+import ReactDOM from 'react-dom';
 
 		
 export default class LocationPin extends Component {
@@ -17,6 +18,21 @@ export default class LocationPin extends Component {
 		Client.fetchLocations(locations => {
 			this.setState({options: locations});
 		});
+		document.addEventListener('click', this.handleClickOutside.bind(this), true);
+	}
+	
+	componentWillUnmount() {
+		document.removeEventListener('click', this.handleClickOutside.bind(this), true);
+	}
+
+	handleClickOutside(event) {
+		const domNode = ReactDOM.findDOMNode(this);
+
+		if ((!domNode || !domNode.contains(event.target))) {
+			this.setState({
+				isActive : false
+			});
+		}
 	}
 	
 	getOptions() {
@@ -45,7 +61,13 @@ export default class LocationPin extends Component {
 		const { isActive, selectedLocation } = this.state;
 		return(
 			<div id='location-container'>
-				<img id="location-pin" className='function-pin' src='/images/LocPin.png' alt='location selector pin' onClick={this.toggleTooltip.bind(this)} />
+				<img 	id="location-pin" 
+						className='function-pin' 
+						src='/images/LocPin.png' 
+						alt='location selector pin' 
+						onClick={this.toggleTooltip.bind(this)} 
+						/*onClickOutside={this.toggleTooltip.bind(this)}*/ 
+				/>
 				<div className="ToolTip">
 					<div id="aa" style={isActive ? { 'visibility': 'visible', 'opacity': 1 } : { 'visibility': 'hidden', 'opacity': 0 } }>
 						<h3>Selected Location:</h3>
