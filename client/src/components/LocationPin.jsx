@@ -70,13 +70,14 @@ export default class LocationPin extends Component {
 				/>
 				<div className="ToolTip">
 					<div id="aa" style={isActive ? { 'visibility': 'visible', 'opacity': 1 } : { 'visibility': 'hidden', 'opacity': 0 } }>
-						<h3>Selected Location:</h3>
-						<p>{selectedLocation}</p>
-						<h3>Select Location:</h3>
+						<div>Select Location</div>
 						<select onChange={this.updateSelection.bind(this)}>
 							<option value="Select Location">Select Location</option>
 							{this.getOptions()}
 						</select>
+						<div>Location</div>
+						<div className = "selection">{selectedLocation}</div>
+						
 					<span id="bb"></span>
 					<span id="cc"></span>
 					</div>

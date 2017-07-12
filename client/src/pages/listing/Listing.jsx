@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FilmBlock from './FilmBlock';
 import Client from '../../api/Client';
-
+import LocationSelect from './LocationSelect';
 
 export default class Listing extends Component {
 	constructor() {
@@ -40,7 +40,11 @@ export default class Listing extends Component {
 		const { loading } = this.state;
 		return(
 		<div className="page" id="filmShowings" >
+		<div>
+			
+		</div>
 			<div id="gridOfEquals" >
+			<LocationSelect className = "location-tool"></LocationSelect>
 				{ loading ? this.displayLoading() : this.displayFilms() }
 			</div>
 		</div>
