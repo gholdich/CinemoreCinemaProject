@@ -9,13 +9,7 @@
 		"description": "Peter Parker juggles the highs and lows of adolescence with his newfound powers, and learns life is tough when you’re a teenage superhero with the weight of the world on your shoulders. After his first brush of danger doing battle alongside Iron Man, Peter Parker returns home to Aunt May, where his normal life presents a very different set of problems. School is a drag, money is tight and he is forbidden to use his superpowers to win the heart of the cute girl he can’t stop staring at. But, Peter doesn’t have too much time to ponder the trappings of adolescence. As he dons his spandex costume and transforms into his alter-ego of Spider-Man, he finds himself in demand in the crime-riddled city he calls home. When a new threat lands in NYC in the shape of a winged antagonist named Vulture, Peter must set aside his own personal angst and fight for the lives of those he loves, while keeping his new identify a secret. Spider-Man: Homecoming marks a welcome return to one of Marvels best-loved superheroes. Starring Tom Holland (Avengers: Infinity War) as the mighty webslinger, aka Peter Parker, the movie also features Robert Downey Jr. (Captain America: Civil War) as Iron Man, who acts as mentor to the fledgling hero. The strong support continues with Michael Keaton (Birdman) as Vulture, and Marisa Tomei (The Big Short) as Aunt May. Immerse yourself in the on-screen action and book Spider-Man: Homecoming in eye-popping 3D, IMAX or IMAX 3D at selected QA Cinemas!",
 		"releaseDate": "7th Jul 2017",
 		"director": "Jon Watts",
-		"cast": "Robert Downey Jr., Marisa Tomei, Tom Holland",
-		"cinemas":[
-				{
-					"cinemaId": "1",
-					"location": "Manny"
-				}
-			]
+		"cast": "Robert Downey Jr., Marisa Tomei, Tom Holland"
 	  },
 	  {
 		"filmId": 2,
@@ -26,13 +20,7 @@
 		"description": "It’s man versus ape in the final bloodbath that will determine the fate of the entire world. There’s two choices: cooperate or destroy. And it’s clear which decision has been made. This time, it’s war. The humans believe there is no place for the apes within modern society – their way of life is primitive and different, and they can’t be trusted to integrate peacefully. So, they only have one aim: exterminate them. The apes, led by Caesar (Andy Serkis), are forced into a bitter bloodbath, virtually helpless against the advanced weaponry that the humans possess. Caesar watches as his friends and family are slaughtered, and a new resolve takes over. Somewhere deep within him, the animal is awoken. A fresh hatred grips Caesar and he sets out to destroy the man (Woody Harrelson) who has led the war which will destroy his species. During his quest, Caesar wrestles to stop the rage he feels from taking over his own glimmer of humanity, as he risks truly becoming the monster that the humans see him as. When man and ape finally face each other, the future of both species hangs in the balance. Matt Reeves (Cloverfield) directs the third instalment of the franchise, set in a sci-fi universe that has gripped audiences since the first film was released in 1968. The modern adaptation features the incredible Andy Serkis, who played Gollum in the Lord of the Rings franchise, alongside Woody Harrelson (The Hunger Games franchise) as the cold-blooded colonel. Immerse yourself in the on-screen action when you book tickets for War For The Planet Of The Apes in superb 3D at Vue Cinemas! ",
 		"releaseDate": "11th Jul 2017",
 		"director": "Matt Reeves",
-		"cast": "Woody Harrelson, Judy Greer, Andy Serkis",
-		"cinemas":[
-				{
-					"cinemaId": "1",
-					"location": "Manny"
-				}
-			]
+		"cast": "Woody Harrelson, Judy Greer, Andy Serkis"
 	  },
 	  {
 		"filmId": 3,
@@ -43,13 +31,7 @@
 		"description": "Raised on a sheltered island paradise, when an American pilot crashes on their shores and tells of a massive conflict raging in the outside world, Diana leaves her home, convinced she can stop the threat. Before she was Wonder Woman, she was Diana, princess of the Amazons, trained to be an unconquerable warrior. Raised on a sheltered island paradise, when an American pilot crashes on their shores and tells of a massive conflict raging in the outside world, Diana leaves her home, convinced she can stop the threat. Fighting alongside man in a war to end all wars, Diana will discover her full powers...and her true destiny. Step right into the world of Wonder Woman and catch the hotly-anticipated movie in 3D, IMAX or IMAX 3D at selected Vue Cinemas! ",
 		"releaseDate": "2nd Jun 2017",
 		"director": "Patty Jenkins",
-		"cast": "Gal Gadot",
-		"cinemas":[
-				{
-					"cinemaId": "1",
-					"location": "Manny"
-				}
-			]
+		"cast": "Gal Gadot"
 	  }
 	]
 }
