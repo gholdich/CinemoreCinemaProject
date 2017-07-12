@@ -48,7 +48,6 @@ app.get("/api/cinemas", (req, res) => {
 	  return getCinemas.cinema.filter(cinema => cinema.title.toLowerCase().includes(param));
   })(param);
   
-  
   if (typeof r !== 'undefined') {
     res.json(r);
   } else {
@@ -62,7 +61,6 @@ app.get("/api/showings", (req, res) => {
 	  return getShowings.showings;
   })();
   
-  
   if (typeof r !== 'undefined') {
     res.json(r);
   } else {
@@ -74,11 +72,10 @@ app.get("/api/showings", (req, res) => {
 app.get("/api/locations", (req, res) => {
   
   const r = (() => {
-	  return getCinemas.cinema.map(cinema => cinema.location);
+	  return getCinemas.cinema.map(cinema => {
+		return { 'id': cinema.cinemaId, 'name': cinema.location };
+	});
   })();
-  
-  console.log(r);
-  
   
   if (typeof r !== 'undefined') {
     res.json(r);
@@ -86,6 +83,28 @@ app.get("/api/locations", (req, res) => {
     res.json([]);
   }
 
+});
+
+app.get("/api/showtimes", (req, res) => {
+  const param = req.query.q;
+
+  if (!param) {
+    res.json({
+      error: "Missing required parameter `q`"
+    });
+    return;
+  }
+  
+  const r = ((param) => {
+	  return getCinemas.cinema.filter(cinema => cinema.cinemaId == param).map(cinema => cinema.showings)[0];
+  })(param);
+  
+  
+  if (typeof r !== 'undefined') {
+    res.json(r);
+  } else {
+    res.json([]);
+  }
 });
 
 app.listen(app.get("port"), () => {

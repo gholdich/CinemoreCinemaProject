@@ -2,9 +2,7 @@
 	"cinema":[
 	  {
 		"cinemaId": 1,
-
 		"location": "Manchester",
-
 		"openingTimes":{
 					"monday": "",
 					"tuesday": "",
@@ -16,30 +14,30 @@
 				},
 		"showings":[
 				{
-					"showingId": "1",
+					"showingId": 1,
 					"screenId": "",
-					"filmId": "1",
+					"filmId": 1,
 					"date": "",
 					"time": "10:00"
 				},
 				{
-					"showingId": "2",
+					"showingId": 2,
 					"screenId": "",
-					"filmId": "2",
+					"filmId": 2,
 					"date": "",
 					"time": "11:00"
 				},
 				{
-					"showingId": "3",
+					"showingId": 3,
 					"screenId": "",
-					"filmId": "2",
+					"filmId": 2,
 					"date": "",
 					"time": "12:00"
 				},
 				{
-					"showingId": "4",
+					"showingId": 4,
 					"screenId": "",
-					"filmId": "3",
+					"filmId": 3,
 					"date": "",
 					"time": "12:00"
 				}
@@ -61,30 +59,30 @@
 				},
 		"showings":[
 				{
-					"showingId": "1",
+					"showingId": 1,
 					"screenId": "",
-					"filmId": "3",
+					"filmId": 3,
 					"date": "",
 					"time": "10:01"
 				},
 				{
-					"showingId": "2",
+					"showingId": 2,
 					"screenId": "",
-					"filmId": "2",
+					"filmId": 2,
 					"date": "",
 					"time": "11:01"
 				},
 				{
-					"showingId": "3",
+					"showingId": 3,
 					"screenId": "",
-					"filmId": "2",
+					"filmId": 2,
 					"date": "",
 					"time": "12:01"
 				},
 				{
-					"showingId": "4",
+					"showingId": 4,
 					"screenId": "",
-					"filmId": "3",
+					"filmId": 3,
 					"date": "",
 					"time": "12:01"
 				}

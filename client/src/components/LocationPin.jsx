@@ -7,9 +7,15 @@ import ReactDOM from 'react-dom';
 export default class LocationPin extends Component {
 	constructor() {
 		super();
+
+		var selectedLocation = 'Select Location';
+		if(localStorage.selectedLocation) {
+			selectedLocation = JSON.parse(localStorage.selectedLocation);
+		}
+
 		this.state = {
 			isActive: false,
-			selectedLocation: 'Select Location',
+			selectedLocation: selectedLocation,
 			options: []
 		}
 	}
@@ -38,7 +44,7 @@ export default class LocationPin extends Component {
 	getOptions() {
 		return this.state.options.map((option, index) => {
 			return(
-					<option key={index} value={option}>{option}</option>
+					<option key={index} value={option.id}>{option.name}</option>
 			);
 		});
 	}
@@ -48,12 +54,16 @@ export default class LocationPin extends Component {
     }
 	
 	logChange(e) {
-		console.log("Selected: " + JSON.stringify(e.target.value));
+		console.log("Selected: " + JSON.stringify(e.target[e.target.value].text));
 	}
 	
 	updateSelection(e) {
-		if(e.target.value !== 'Select Location'){
-			this.setState({selectedLocation : e.target.value});
+		if(e.target.value !== 'Select Location') {
+		const value = e.target.value,
+			  text = e.target[value].text;
+			this.setState({selectedLocation : text});
+			localStorage.selectedLocation = JSON.stringify(text);
+			localStorage.selectedCinemaId = JSON.stringify(value);
 		}
 	}
 	

@@ -8,6 +8,15 @@ function search(query, cb) {
     .then(cb);
 }
 
+function fetchShowTimes(query, cb) {
+  return fetch(`/api/showtimes?q=${query}`, {
+    accept: "application/json"
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+
 function fetchShowings(cb) {
   return fetch(`/api/showings`, {
     accept: "application/json"
@@ -41,5 +50,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search, fetchShowings, fetchLocations };
+const Client = { search, fetchShowings, fetchLocations, fetchShowTimes };
 export default Client;
