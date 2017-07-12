@@ -2,7 +2,7 @@
 	"cinema":[
 	  {
 		"cinemaId": 1,
-		"location": "",
+		"location": "test",
 		"openingTimes":{
 					"monday": "",
 					"tuesday": "",

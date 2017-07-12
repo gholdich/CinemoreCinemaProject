@@ -17,6 +17,15 @@ function fetchShowings(cb) {
     .then(cb);
 }
 
+function fetchLocations(cb) {
+  return fetch(`/api/locations`, {
+    accept: "application/json"
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
@@ -32,5 +41,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search, fetchShowings };
+const Client = { search, fetchShowings, fetchLocations };
 export default Client;
