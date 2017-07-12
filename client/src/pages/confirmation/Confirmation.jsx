@@ -5,7 +5,7 @@ export default class Confirmation extends Component {
 		return(
 			<div>
 				<h2>Payment Confirmed</h2>
-				<p>Enjoy your film. Idiot!</p>
+				<p>Enjoy your film.</p>
 			</div>
 		);
 	}

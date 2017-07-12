@@ -2,7 +2,9 @@
 	"cinema":[
 	  {
 		"cinemaId": 1,
-		"location": "test",
+
+		"location": "Manchester",
+
 		"openingTimes":{
 					"monday": "",
 					"tuesday": "",
@@ -12,18 +14,82 @@
 					"saturday": "",
 					"sunday": ""
 				},
-		"screens":[
+		"showings":[
 				{
-					"screenId": ""
-				}
-			],
-		"showTimes":[
-				{
+					"showingId": "1",
 					"screenId": "",
-					"filmId": "",
+					"filmId": "1",
 					"date": "",
-					"time": ""
+					"time": "10:00"
+				},
+				{
+					"showingId": "2",
+					"screenId": "",
+					"filmId": "2",
+					"date": "",
+					"time": "11:00"
+				},
+				{
+					"showingId": "3",
+					"screenId": "",
+					"filmId": "2",
+					"date": "",
+					"time": "12:00"
+				},
+				{
+					"showingId": "4",
+					"screenId": "",
+					"filmId": "3",
+					"date": "",
+					"time": "12:00"
 				}
+				
+				
+			]
+	  },
+	  {
+		"cinemaId": 2,
+		"location": "London",
+		"openingTimes":{
+					"monday": "",
+					"tuesday": "",
+					"wednesday": "",
+					"thursday": "",
+					"friday": "",
+					"saturday": "",
+					"sunday": ""
+				},
+		"showings":[
+				{
+					"showingId": "1",
+					"screenId": "",
+					"filmId": "3",
+					"date": "",
+					"time": "10:01"
+				},
+				{
+					"showingId": "2",
+					"screenId": "",
+					"filmId": "2",
+					"date": "",
+					"time": "11:01"
+				},
+				{
+					"showingId": "3",
+					"screenId": "",
+					"filmId": "2",
+					"date": "",
+					"time": "12:01"
+				},
+				{
+					"showingId": "4",
+					"screenId": "",
+					"filmId": "3",
+					"date": "",
+					"time": "12:01"
+				}
+				
+				
 			]
 	  }
 	]
