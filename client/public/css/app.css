@@ -219,9 +219,23 @@ ul.navbar-nav li.link a span {
 }
 
 #gridOfEquals .film .film-info .description {
-    margin: 20px 3px;
+    margin: 12px 3px;
 }
 
+#gridOfEquals .film .film-info .release,
+#gridOfEquals .film .film-info .director,
+#gridOfEquals .film .film-info .actors {
+    margin: 3px 3px;
+    font-size: 14px;
+}
+
+#gridOfEquals .film .film-info .info-title {
+    font-weight: 600;
+}
+
+#gridOfEquals .film .film-info  .info-text {
+    color: #dedede;
+}
 
 #gridOfEquals .film-description {
     text-align: justify;
