@@ -8,7 +8,7 @@ export default class App extends Component {
 	constructor() {
 		super();
 		this.state = {
-			Location: "",
+			Location: 'selectLocation',
 			FilmName: "",
 			ShowingDateTime: "",
 		}

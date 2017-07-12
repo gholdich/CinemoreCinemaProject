@@ -293,7 +293,7 @@ ul.navbar-nav li.link a span {
 	opacity: 0;
 	visibility: hidden;
 	z-index: 50;
-	margin: 10px -64px 0;
+	margin: 10px -69px 0;
 }
 
 #location-container:active .ToolTip #aa, #location-container:hover .ToolTip #aa, #location-container:focus .ToolTip #aa {
