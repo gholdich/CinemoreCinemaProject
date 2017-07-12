@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FilmBlock from './FilmBlock';
 import ShowTimes from './ShowTimes';
 import Client from '../../api/Client';
-
+import LocationSelect from './LocationSelect';
 
 export default class Listing extends Component {
 	constructor() {
@@ -59,7 +59,7 @@ export default class Listing extends Component {
 	}
 	
 	
-	render(){
+	render(){ // removed <LocationSelect />
 		const { loading, showtimes } = this.state;
 		return(
 			<div className="page" id="filmShowings" >

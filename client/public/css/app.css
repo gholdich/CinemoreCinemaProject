@@ -186,9 +186,20 @@ ul.navbar-nav li.link a span {
     font-size: 30px;
     line-height: 36px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.50);
-    margin-bottom: 6px;
+    margin-bottom: 6px;	
 }
 
+.location-tool  {	
+	font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 6px;
+	color: #fff;	
+}
+
+.selection {	 
+	font-style: italic;	 
+ }
+ 
 #gridOfEquals .film .genres {
 
 }
@@ -293,7 +304,11 @@ ul.navbar-nav li.link a span {
 	opacity: 0;
 	visibility: hidden;
 	z-index: 50;
-	margin: 10px -69px 0;
+	margin: 10px -44px 0;
+	font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 6px;
+	color: #000;
 }
 
 #location-container:active .ToolTip #aa, #location-container:hover .ToolTip #aa, #location-container:focus .ToolTip #aa {
