@@ -1,9 +1,10 @@
-$testCol: #188ae2;
-$whCol: #ffffff;
+$MainColour: #188ae2;
+$backColour: #ffffff;
 $negSkewX: skewX(-10deg);
 $posSkewX: skewX(10deg);
 $posSkewXMore: skewX(-20deg);
 $negSkewXMore: skewX(20deg);
+
 
 html {
 	font-family: sans-serif;
@@ -56,8 +57,8 @@ ul.navbar-nav li.link {
 
 ul.navbar-nav li.link a {
     padding: 10px 20px;
-    color: $whCol;
-    background-color: $testCol;
+    color: $backColour;
+    background-color: $MainColour;
     text-decoration: none;
     display: block;
     -webkit-transition: all 0.3s;
@@ -67,7 +68,7 @@ ul.navbar-nav li.link a {
 }
 
 ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover {
-	color: $whCol;
+	color: $backColour;
     background-color: #113650;
 }
 
@@ -94,7 +95,7 @@ ul.navbar-nav li.link a span {
     position: relative;
     display: block;
     text-decoration: none;
-    color: $whCol;
+    color: $backColour;
     font-size: 22px;
     font-weight: 600;
     height: 100%;
@@ -104,11 +105,11 @@ ul.navbar-nav li.link a span {
     z-index: 100;
     bottom: 0;
     left: 0;
-    -webkit-transform: $negSkewXMore;
-    -moz-transform: $negSkewXMore;
-    -ms-transform: $negSkewXMore;
-    -o-transform: $negSkewXMore;
-    transform: $negSkewXMore;
+    -webkit-transform: $posSkewXmore;
+    -moz-transform: $posSkewXmore;
+    -ms-transform: $posSkewXmore;
+    -o-transform: $posSkewXmore;
+    transform: $posSkewXmore;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -117,11 +118,11 @@ ul.navbar-nav li.link a span {
 
 #bookNow .center.quickBook a span {
 	display: block;
-	-webkit-transform: $posSkewXMore;
-    -moz-transform: $posSkewXMore;
-    -ms-transform: $posSkewXMore;
-    -o-transform: $posSkewXMore;
-    transform: $posSkewXMore;
+	-webkit-transform: $negSkewXmore;
+    -moz-transform: $negSkewXmore;
+    -ms-transform: $negSkewXmore;
+    -o-transform: $negSkewXmore;
+    transform: $negSkewXmore;
 }
 
 #bookNow a:active, #bookNow a:hover {
@@ -140,7 +141,7 @@ ul.navbar-nav li.link a span {
 #bookNow .center.quickBook {
     display: inline-block;
     width: 800px;
-    background: $whCol url(/images/quickbook-fade.png);
+    background: $backColour url(/images/quickbook-fade.png);
     background-repeat: no-repeat;
     height: 100%;
     margin: auto;
@@ -149,7 +150,7 @@ ul.navbar-nav li.link a span {
 	display: inline-block;
     position: absolute;
     width: 50%;
-    background: $whCol;
+    background: $backColour;
     height: 100%;
     z-index: -10;
 }
@@ -180,7 +181,7 @@ ul.navbar-nav li.link a span {
     display: flex;
     padding: 5px 9px;
     margin: 10px;
-    color: $whCol;
+    color: $backColour;
     border-bottom: 2px solid rgba(0, 0, 0, 0.11);
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(255, 255, 255, 0.10) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(255, 255, 255, 0.10) 100%);
@@ -192,9 +193,20 @@ ul.navbar-nav li.link a span {
     font-size: 30px;
     line-height: 36px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.50);
-    margin-bottom: 6px;
+    margin-bottom: 6px;	
 }
 
+.location-tool  {	
+	font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 6px;
+	color: $backColour;	
+}
+
+.selection {	 
+	font-style: italic;	 
+ }
+ 
 #gridOfEquals .film .genres {
 
 }
@@ -202,7 +214,7 @@ ul.navbar-nav li.link a span {
 #gridOfEquals .film .genres .genre {
 	font-family: monospace;
     font-size: 11px;
-    background: $testCol;
+    background: $MainColour;
     border: 1px solid rgba(0, 0, 0, 0.31);
     margin: 3px;
     padding: 2px;
@@ -225,9 +237,23 @@ ul.navbar-nav li.link a span {
 }
 
 #gridOfEquals .film .film-info .description {
-    margin: 20px 3px;
+    margin: 12px 3px;
 }
 
+#gridOfEquals .film .film-info .release,
+#gridOfEquals .film .film-info .director,
+#gridOfEquals .film .film-info .actors {
+    margin: 3px 3px;
+    font-size: 14px;
+}
+
+#gridOfEquals .film .film-info .info-title {
+    font-weight: 600;
+}
+
+#gridOfEquals .film .film-info  .info-text {
+    color: #dedede;
+}
 
 #gridOfEquals .film-description {
     text-align: justify;
@@ -248,7 +274,7 @@ ul.navbar-nav li.link a span {
 }
  
 #gridOfEquals .film-description::-webkit-scrollbar-thumb {
-  background-color: $whCol;
+  background-color: $backColour;
   outline: 1px solid slategrey;
 }
 
@@ -271,7 +297,7 @@ ul.navbar-nav li.link a span {
 }
 
 #loading-icon img {
-    background: $whCol;
+    background: $backColour;
 }
 
 
@@ -285,7 +311,11 @@ ul.navbar-nav li.link a span {
 	opacity: 0;
 	visibility: hidden;
 	z-index: 50;
-	margin: 10px -64px 0;
+	margin: 10px -44px 0;
+	font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 6px;
+	color: #000;
 }
 
 #location-container:active .ToolTip #aa, #location-container:hover .ToolTip #aa, #location-container:focus .ToolTip #aa {
@@ -318,3 +348,40 @@ ul.navbar-nav li.link a span {
 	top: -11px;
 	border-bottom: 11px solid rgba(0, 0, 0, 0.4);
 }
+
+.film-info .showtime {
+    display: inline-block;
+}
+
+.film-info .showtime .showtimeBlock {
+    display: inline-block;
+    text-align: -webkit-center;
+    text-align: center;
+    border: 1px solid rgba(195, 195, 195, 0.5);
+    background: #3c3c3c;
+    width: 100px;
+    height: 50px;
+    margin: 10px 3px;
+    padding: 3px;
+}
+
+.film-info .showtime .showtimeBlock #showtime-time {
+    float: left;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.film-info .showtime .showtimeBlock #showtime-s-type {
+    float: right;
+    font-size: 14px;
+}
+
+.film-info .showtime .showtimeBlock #showtime-screen {
+    display: inline-block;
+    float: right;
+    font-style: italic;
+    font-size: 14px;
+    margin: 3px;
+}
+
+
