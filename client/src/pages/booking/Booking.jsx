@@ -18,7 +18,7 @@ export default class Booking extends React.Component{
 	}
 	componentDidMount() {
 		
-		Client.fetchShowings(showings => {
+		Client.fetchShowings(showings => {			
 			this.setState({
 				loading: false,
 				films: showings
@@ -44,13 +44,16 @@ export default class Booking extends React.Component{
 				for (let i=0; i<cinemas[m].showings.length; i++){
 			
 					for (let j = 0; j<films.length; j++){
-						if (cinemas[m].showings[i].filmId==films[j].filmId){
+						if (cinemas[m].showings[i].filmId==films[j].filmId && title.indexOf(films[j].title) == -1){
 							title.splice(0,0,films[j].title);
 						}
 					}
 				}
 			}
 		}
+		
+		
+		
 		return title;
 	}
 
