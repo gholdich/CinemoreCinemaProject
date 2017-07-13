@@ -32,6 +32,28 @@
 		"releaseDate": "2nd Jun 2017",
 		"director": "Patty Jenkins",
 		"cast": "Gal Gadot"
+	  },
+	  {
+		"filmId": 4,
+		"title": "The Wave",
+		"genres": ["True-Story", "Drama", "German-Cinema", "Thriller"],
+		"poster": "thewave.jpg",
+		"shortDes": "A high school teacher's experiment to demonstrate to his students what life is like under a dictatorship spins horribly out of control when he forms a social unit with a life of its own.",
+		"description": "High school teacher, Rainer Wegner, may be popular with the students, but he's also unorthodox. He's forced to teach autocracy for the school's project week. He's less than enthusiastic at first, but the response of the students is surprising to say the least. He forces the students to become more invested in the prospect of self rule, and soon the class project has its own power and eerily starts to resemble Germany's past. Can Wegner and his class realize what's happening before the horrors start repeating themselves?",
+		"releaseDate": "19th Sep 2008",
+		"director": "Dennis Gansel",
+		"cast": "Frederick Lau, Max Riemelt, Jennifer Ulrich"
+	  },
+	  {
+		"filmId": 5,
+		"title": "Finding Nemo",
+		"genres": ["Animation","Childrens","Comedy"],
+		"poster": "nemo.jpg",
+		"shortDes": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
+		"description": "A clown fish named Marlin lives in the Great Barrier Reef loses his son, Nemo. After he ventures into the open sea, despite his father's constant warnings about many of the ocean's dangers. Nemo is abducted by a boat and netted up and sent to a dentist's office in Sydney. So, while Marlin ventures off to try to retrieve Nemo, Marlin meets a fish named Dory, a blue tang suffering from short-term memory loss. The companions travel a great distance, encountering various dangerous sea creatures such as sharks, anglerfish and jellyfish, in order to rescue Nemo from the dentist's office, which is situated by Sydney Harbor. While the two are doing this, Nemo and the other sea animals in the dentist's fish tank plot a way to return to Sydney Harbor to live their lives free again.",
+		"releaseDate": "10 Oct 2003",
+		"director": "Andrew Stanton",
+		"cast": "Albert Brooks, Ellen DeGeneres, Alexander Gould"
 	  }
 	]
 }
