@@ -85,10 +85,7 @@ export default class LocationPin extends Component {
 						<select onChange={this.updateSelection.bind(this)}>
 							<option value="Select Location">Select Location</option>
 							{this.getOptions()}
-						</select>
-						<div className = "current">Current Location:</div>
-						<div className = "selection">{selectedLocation}</div>
-						
+						</select>					
 					<span id="bb"></span>
 					<span id="cc"></span>
 					</div>

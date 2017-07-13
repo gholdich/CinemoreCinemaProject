@@ -69,6 +69,7 @@ export default class Listing extends Component {
 		const { loading, showtimes } = this.state;
 		return(
 			<div className="page" id="filmShowings" >
+			
 				<div id="gridOfEquals" >
 					{ loading ? this.displayLoading() : this.displayFilms() }
 				</div>
