@@ -362,11 +362,13 @@ ul.navbar-nav li.link a span {
     float: left;
     font-weight: 600;
     font-size: 19px;
+	color: white;
 }
 
 .film-info .showtime .showtimeBlock #showtime-s-type {
     float: right;
     font-size: 14px;
+	color: white;
 }
 
 .film-info .showtime .showtimeBlock #showtime-screen {
@@ -375,5 +377,6 @@ ul.navbar-nav li.link a span {
     font-style: italic;
     font-size: 14px;
     margin: 3px;
+	color: white;
 }
 
