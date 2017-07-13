@@ -171,7 +171,7 @@ export default class Booking extends React.Component{
 					<input type="hidden" name="lc" value="GB" />
 					<input type="hidden" name="item_name" value="Cinema Ticket" />
 					<input type="hidden" name="amount" value="7.50" />
-					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="currency_code" value="GBP" />
 					<input type="hidden" name="button_subtype" value="services" />
 					<input type="hidden" name="no_note" value="0" />
 					<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
