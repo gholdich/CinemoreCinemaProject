@@ -6,19 +6,21 @@ export default class Booking extends React.Component{
 	constructor(){
 		super();
 		
-		var selectedLocation = 'Location';
-		var selectedFilm='Films';
-		var selectedTime='Time';
+		var selectedLocation = 'Location',
+			selectedFilm='Films',
+			selectedTime='Time';
 		
 		if(localStorage.selectedLocation) {
 			selectedLocation = JSON.parse(localStorage.selectedLocation);
+			if(localStorage.filmTime) {
+				selectedFilm = JSON.parse(localStorage.filmTime);
+				if(localStorage.filmTitle) {
+					selectedTime = JSON.parse(localStorage.filmTitle);
+				}
+			}
 		}
-		if(localStorage.filmTime) {
-			selectedFilm = JSON.parse(localStorage.filmTime);
-		}
-		if(localStorage.filmTitle) {
-			selectedTime = JSON.parse(localStorage.filmTitle);
-		}
+		
+		
 		
 		this.state={
 			location: selectedLocation,
@@ -49,12 +51,12 @@ export default class Booking extends React.Component{
 	}
 	
 	
-	getFilms(){
+	getFilms(location){
 		const { cinemas } = this.state;
 		const { films } = this.state;
 		let title=[];
 		for (var m = 0; m<cinemas.length; m++){
-			if (this.state.location===cinemas[m].location){
+			if (location===cinemas[m].location){
 				for (let i=0; i<cinemas[m].showings.length; i++){
 			
 					for (let j = 0; j<films.length; j++){
@@ -66,13 +68,11 @@ export default class Booking extends React.Component{
 			}
 		}
 		
-		
-		
 		return title;
 	}
 
-	getTimes(){
-		const { cinemas } = this.state;
+	getTimes(film){
+			const { cinemas } = this.state;
 			const { films } = this.state;
 			let times = [];
 
@@ -82,7 +82,7 @@ export default class Booking extends React.Component{
 				if (cinemas[m].location==this.state.location){
 					for (let j = 0; j<films.length; j++){
 					
-						if (this.state.film==films[j].title){
+						if (film==films[j].title){
 							for (let k =0; k<cinemas[m].showings.length; k++){
 							
 								if(cinemas[m].showings[k].filmId==films[j].filmId){
@@ -105,7 +105,7 @@ export default class Booking extends React.Component{
 	setLocation(e){
 		this.setState({
 			location: e.target.value,
-			title: this.getFilms(),
+			title: this.getFilms(e.target.value),
 			film: 'Please select a film',
 			time: 'Please select a time'
 			
@@ -117,7 +117,7 @@ export default class Booking extends React.Component{
 		this.setState({
 			film: e.target.value,
 			time: "Please select a time",
-			times: this.getTimes()});
+			times: this.getTimes(e.target.value)});
 			}
 		
 	setTime(e){
@@ -134,7 +134,7 @@ export default class Booking extends React.Component{
 			<div>
 				<form>
 					<select onClick={this.setLocation.bind(this)}>
-						<option value= "select" selected>{this.state.location}</option>
+						<option value={this.state.location}>{this.state.location}</option>
 						{cinemas.map((data,index)=>(
 							
 							<option key={index} value={cinemas[index].location} >{cinemas[index].location}</option>
@@ -143,7 +143,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setFilm.bind(this)}>
-						<option value= {this.state.film} selected>{this.state.film}</option>
+						<option value= {this.state.film} >{this.state.film}</option>
 						{title.map((data,index)=>(
 							<option key={index} value= {title[index]}>{title[index]}</option>
 						))
@@ -151,7 +151,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setTime.bind(this)}>
-						<option value= {this.state.time} selected>{this.state.time}</option>
+						<option value= {this.state.time}>{this.state.time}</option>
 						{times.map((data,index)=>(
 							<option key={index} value= {times[index]}>{times[index]}</option>
 						))
