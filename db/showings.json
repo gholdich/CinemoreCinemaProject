@@ -54,61 +54,6 @@
 		"releaseDate": "10 Oct 2003",
 		"director": "Andrew Stanton",
 		"cast": "Albert Brooks, Ellen DeGeneres, Alexander Gould"
-	  },
-	  {
-		"filmId": 6,
-		"title": "Gladiator",
-		"genres": ["Action","Adventure","Drama"],
-		"poster": "gladiator.jpg",
-		"shortDes": "When a Roman general is betrayed and his family murdered by an emperor's corrupt son, he comes to Rome as a gladiator to seek revenge.",
-		"description": "Maximus is a powerful Roman general, loved by the people and the aging Emperor, Marcus Aurelius. Before his death, the Emperor chooses Maximus to be his heir over his own son, Commodus, and a power struggle leaves Maximus and his family condemned to death. The powerful general is unable to save his family, and his loss of will allows him to get captured and put into the Gladiator games until he dies. The only desire that fuels him now is the chance to rise to the top so that he will be able to look into the eyes of the man who will feel his revenge.",
-		"releaseDate": "12 May 2000",
-		"director": "Ridley Scott",
-		"cast": "Russell Crowe, Joaquin Phoenix, Connie Nielsen"
-	  },
-	  {
-		"filmId": 7,
-		"title": "The Silence of the Lambs",
-		"genres": ["Crime", "Drama", "Thriller"],
-		"poster": "silence.jpg",
-		"shortDes": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
-		"description": "Young FBI agent Clarice Starling is assigned to help find a missing woman to save her from a psychopathic serial killer who skins his victims. Clarice attempts to gain a better insight into the twisted mind of the killer by talking to another psychopath: Hannibal Lecter, who used to be a respected psychiatrist. FBI agent Jack Crawford believes that Lecter, who is also a very powerful and clever mind manipulator, has the answers to their questions and can help locate the killer. However, Clarice must first gain Lecter's confidence before the inmate will give away any information.",
-		"releaseDate": "31 May 1991",
-		"director": "Jonathan Demme",
-		"cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney"
-	  },
-	  {
-		"filmId": 8,
-		"title": "Master and Commander",
-		"genres": ["Action","Adventure","Drama"],
-		"poster": "master.jpg",
-		"shortDes": "During the Napoleonic Wars, a brash British captain pushes his ship and crew to their limits in pursuit of a formidable French war vessel around South America.",
-		"description": "The year is 1805. Europe has fallen to Napoleon, and only the Royal Navy stands in his way to total victory. Off the cost of South America, a new conflict is brewing. Captain Jack "Lucky Jack" Aubrey of the Man-of-War HMS Surprise is under orders to sink or capture the French privateer Acheron, which has been deployed to the region. After seven weeks of uneventful sailing, the Acheron strikes first, all but crippling the Surprise in an engagement in which Aubrey realizes his enemy's ship is nautically superior to his own. Along with his close friend and confidant Stephan Maturin who also happens to be the ship's surgeon, Aubrey is now faced with the choice of retreating to England and admitting defeat or remaining at the Acheron's mercy. Aubrey must now do the impossible if he is to survive, repair his ship, catch up to his enemy and defeat the Acheron--somehow.",
-		"releaseDate": "28 Nov 2003",
-		"director": "Peter Weir",
-		"cast": "Russell Crowe, Paul Bettany, Billy Boyd"
-	  },
-	  {
-		"filmId": 9,
-		"title": "The Princess Bride",
-		"genres": ["Adventure","Family","Fantasy"],
-		"poster": "princessbride.jpg",
-		"shortDes": "While home sick in bed, a young boy's grandfather reads him a story called The Princess Bride.",
-		"description": "A kindly grandfather sits down with his ill grandson and reads him a story. The story is one that has been passed down from father to son for generations. As the grandfather reads the story, the action comes alive. The story is a classic tale of love and adventure as the beautiful Buttercup, engaged to the odious Prince Humperdinck, is kidnapped and held against her will in order to start a war, It is up to Westley (her childhood beau, now returned as the Dread Pirate Roberts) to save her. On the way he meets a thief and his hired helpers, an accomplished swordsman and a huge, super strong giant, both of whom become Westley's companions in his quest.",
-		"releaseDate": "9 Oct 1987",
-		"director": "Rob Reiner",
-		"cast": "Cary Elwes, Mandy Patinkin, Robin Wright"
-	  },
-	  {
-		"filmId": 10,
-		"title": "The Devil's Advocate",
-		"genres": ["drama","Mystery", "Thriller"],
-		"poster": "devilsAdvocate.jpg",
-		"shortDes": "An exceptionally adept Florida lawyer is offered a job to work in New York City for a high-end law firm with a high-end boss - the biggest opportunity of his career to date.",
-		"description": "Kevin Lomax, a ruthless young Florida attorney that never lost a case, is recruited by the most powerful law firm in the world. In spite of his mother's disagreement, which compares New York City to Babylon, he accepts the offer and the money that comes along. But soon, his wife starts feeling homesick as she witnesses devilish apparitions. However, Kevin is sinking in his new cases and pays less and less attention to his wife. His boss and mentor, John Milton, seems to always know how to overcome every problem and that just freaks Kevin right off.",
-		"releaseDate": "10 Oct 2003",
-		"director": "Taylor Hackford",
-		"cast": "Keanu Reeves, Al Pacino, Charlize Theron"
 	  }
 	]
 }
