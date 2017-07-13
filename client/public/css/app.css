@@ -193,10 +193,12 @@ ul.navbar-nav li.link a span {
 	font-size: 20px;
     line-height: 36px;
     margin-bottom: 6px;
-	color: #fff;	
+	color: #fff;
+	
 }
 
-.selection {	 
+.selection,
+.current {	 
 	font-style: italic;	 
  }
  

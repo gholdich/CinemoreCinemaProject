@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class ShowTimes extends Component {
+	
+	propergateBooking() {
+		const { time, filmTitle } = this.props;
+		this.props.onClick(filmTitle, time);
+	}
+	
 	render() {
-		const { time } = this.props;
+		const { time, filmTitle } = this.props;
 		return(
-			<span>
+			<span onClick={this.propergateBooking.bind(this)}>
 			<Link to={{ pathname: '/booking'}}>
-			<div className="showtimeBlock" >
+			<div className="showtimeBlock">
 				<span id="showtime-time">{ time }</span>
 				<span id="showtime-s-type">2D</span>
 				<div id="showtime-screen">Screen: 1</div>

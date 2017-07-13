@@ -33,21 +33,27 @@ export default class Listing extends Component {
 		});
 
 	}
+	//Here are the localStorage variables: selectedLocation; selectedCinemaId; filmTitle; filmTime;
+	updateLocalStorage_Book(filmTime, filmTitle) {
+			localStorage.filmTitle = JSON.stringify(filmTitle);
+			localStorage.filmTime = JSON.stringify(filmTime);
+			console.log(filmTitle + ": "+filmTime);
+	}
 	
 	displayFilms() {
 		return this.state.showings.map((film, idx) => {
 			return(
-				<FilmBlock key={idx} id={film.filmId} showtimeBlock={this.displayShowTimes(film.filmId)} 
+				<FilmBlock key={idx} id={film.filmId} showtimeBlock={this.displayShowTimes(film.filmId, film.title)} 
 				title={film.title} genres={film.genres} posterFileName={film.poster} description={film.description} 
 				shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} />
 			);
 		});
 	}
 
-	displayShowTimes(filmId) {
+	displayShowTimes(filmId, title) {
 		return this.state.showtimes.filter(showtime => showtime.filmId === filmId).map((showtime, idx) => {
 			return(
-				<ShowTimes key={idx} filmId={filmId} time={showtime.time} />
+				<ShowTimes key={idx} filmTitle={title} time={showtime.time} onClick={this.updateLocalStorage_Book.bind(this)} />
 			);
 		});
 	}
