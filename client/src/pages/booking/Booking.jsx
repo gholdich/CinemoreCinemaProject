@@ -126,15 +126,15 @@ export default class Booking extends React.Component{
 	}
 	
 	render(){
-		const {cinemas} = this.state;
-		const {title} = this.state;
-		const {films} = this.state;
-		const {times} = this.state;
+		const {cinemas, title, films, times} = this.state;
+		//const {title} = this.state;
+		//const {films} = this.state;
+		//const {times} = this.state;
 		return(
 			<div>
 				<form>
 					<select onClick={this.setLocation.bind(this)}>
-						<option value={this.state.location}>{this.state.location}</option>
+						<option placeholder={this.state.location}>{this.state.location}</option>
 						{cinemas.map((data,index)=>(
 							
 							<option key={index} value={cinemas[index].location} >{cinemas[index].location}</option>
@@ -143,7 +143,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setFilm.bind(this)}>
-						<option value= {this.state.film} >{this.state.film}</option>
+						<option placeholder={this.state.film} >{this.state.film}</option>
 						{title.map((data,index)=>(
 							<option key={index} value= {title[index]}>{title[index]}</option>
 						))
@@ -151,7 +151,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setTime.bind(this)}>
-						<option value= {this.state.time}>{this.state.time}</option>
+						<option placeholder={this.state.time}>{this.state.time}</option>
 						{times.map((data,index)=>(
 							<option key={index} value= {times[index]}>{times[index]}</option>
 						))
