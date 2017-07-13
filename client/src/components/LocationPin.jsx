@@ -64,6 +64,7 @@ export default class LocationPin extends Component {
 			this.setState({selectedLocation : text});
 			localStorage.selectedLocation = JSON.stringify(text);
 			localStorage.selectedCinemaId = JSON.stringify(value);
+			document.location.reload(true);
 		}
 	}
 	
@@ -80,12 +81,12 @@ export default class LocationPin extends Component {
 				/>
 				<div className="ToolTip">
 					<div id="aa" style={isActive ? { 'visibility': 'visible', 'opacity': 1 } : { 'visibility': 'hidden', 'opacity': 0 } }>
-						<div>Select Location</div>
+						<div>Change Location</div>
 						<select onChange={this.updateSelection.bind(this)}>
 							<option value="Select Location">Select Location</option>
 							{this.getOptions()}
 						</select>
-						<div>Location</div>
+						<div>Current Location</div>
 						<div className = "selection">{selectedLocation}</div>
 						
 					<span id="bb"></span>

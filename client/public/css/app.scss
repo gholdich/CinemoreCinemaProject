@@ -1,3 +1,10 @@
+$MainColour: #188ae2;
+$backColour: #ffffff;
+$negSkewX: skewX(-10deg);
+$posSkewX: skewX(10deg);
+$posSkewXMore: skewX(-20deg);
+$negSkewXMore: skewX(20deg);
+
 
 html {
 	font-family: sans-serif;
@@ -36,11 +43,11 @@ ul.navbar-nav {
 
 ul.navbar-nav li.link {
     display: inline-block;
-    -webkit-transform: skewX(-10deg);
-    -moz-transform: skewX(-10deg);
-    -ms-transform: skewX(-10deg);
-    -o-transform: skewX(-10deg);
-    transform: skewX(-10deg);
+    -webkit-transform: $negSkewX;
+    -moz-transform: $negSkewX;
+    -ms-transform: $negSkewX;
+    -o-transform: $negSkewX;
+    transform: $negSkewX;
     margin: 0 5px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -50,8 +57,8 @@ ul.navbar-nav li.link {
 
 ul.navbar-nav li.link a {
     padding: 10px 20px;
-    color: #fff;
-    background-color: #188ae2;
+    color: $backColour;
+    background-color: $MainColour;
     text-decoration: none;
     display: block;
     -webkit-transition: all 0.3s;
@@ -61,17 +68,17 @@ ul.navbar-nav li.link a {
 }
 
 ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover {
-	color: #fff;
+	color: $backColour;
     background-color: #113650;
 }
 
 ul.navbar-nav li.link a span {
 	display: block;
-    -webkit-transform: skewX(10deg);
-    -moz-transform: skewX(10deg);
-    -ms-transform: skewX(10deg);
-    -o-transform: skewX(10deg);
-    transform: skewX(10deg);
+    -webkit-transform: $posSkewX;
+    -moz-transform: $posSkewX;
+    -ms-transform: $posSkewX;
+    -o-transform: $posSkewX;
+    transform: $posSkewX;
 }
 
 
@@ -88,7 +95,7 @@ ul.navbar-nav li.link a span {
     position: relative;
     display: block;
     text-decoration: none;
-    color: #ffffff;
+    color: $backColour;
     font-size: 22px;
     font-weight: 600;
     height: 100%;
@@ -98,11 +105,11 @@ ul.navbar-nav li.link a span {
     z-index: 100;
     bottom: 0;
     left: 0;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
+    -webkit-transform: $posSkewXmore;
+    -moz-transform: $posSkewXmore;
+    -ms-transform: $posSkewXmore;
+    -o-transform: $posSkewXmore;
+    transform: $posSkewXmore;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -111,11 +118,11 @@ ul.navbar-nav li.link a span {
 
 #bookNow .center.quickBook a span {
 	display: block;
-	-webkit-transform: skewX(20deg);
-    -moz-transform: skewX(20deg);
-    -ms-transform: skewX(20deg);
-    -o-transform: skewX(20deg);
-    transform: skewX(20deg);
+	-webkit-transform: $negSkewXmore;
+    -moz-transform: $negSkewXmore;
+    -ms-transform: $negSkewXmore;
+    -o-transform: $negSkewXmore;
+    transform: $negSkewXmore;
 }
 
 #bookNow a:active, #bookNow a:hover {
@@ -134,7 +141,7 @@ ul.navbar-nav li.link a span {
 #bookNow .center.quickBook {
     display: inline-block;
     width: 800px;
-    background: #fff url(/images/quickbook-fade.png);
+    background: $backColour url(/images/quickbook-fade.png);
     background-repeat: no-repeat;
     height: 100%;
     margin: auto;
@@ -143,7 +150,7 @@ ul.navbar-nav li.link a span {
 	display: inline-block;
     position: absolute;
     width: 50%;
-    background: #ffffff;
+    background: $backColour;
     height: 100%;
     z-index: -10;
 }
@@ -174,7 +181,7 @@ ul.navbar-nav li.link a span {
     display: flex;
     padding: 5px 9px;
     margin: 10px;
-    color: #fff;
+    color: $backColour;
     border-bottom: 2px solid rgba(0, 0, 0, 0.11);
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(255, 255, 255, 0.10) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(255, 255, 255, 0.10) 100%);
@@ -193,7 +200,7 @@ ul.navbar-nav li.link a span {
 	font-size: 20px;
     line-height: 36px;
     margin-bottom: 6px;
-	color: #fff;	
+	color: $backColour;	
 }
 
 .selection {	 
@@ -207,7 +214,7 @@ ul.navbar-nav li.link a span {
 #gridOfEquals .film .genres .genre {
 	font-family: monospace;
     font-size: 11px;
-    background: #188ae2;
+    background: $MainColour;
     border: 1px solid rgba(0, 0, 0, 0.31);
     margin: 3px;
     padding: 2px;
@@ -267,7 +274,7 @@ ul.navbar-nav li.link a span {
 }
  
 #gridOfEquals .film-description::-webkit-scrollbar-thumb {
-  background-color: #fff;
+  background-color: $backColour;
   outline: 1px solid slategrey;
 }
 
@@ -290,7 +297,7 @@ ul.navbar-nav li.link a span {
 }
 
 #loading-icon img {
-    background: #fff;
+    background: $backColour;
 }
 
 
@@ -362,13 +369,11 @@ ul.navbar-nav li.link a span {
     float: left;
     font-weight: 600;
     font-size: 19px;
-	color: white;
 }
 
 .film-info .showtime .showtimeBlock #showtime-s-type {
     float: right;
     font-size: 14px;
-	color: white;
 }
 
 .film-info .showtime .showtimeBlock #showtime-screen {
@@ -377,6 +382,6 @@ ul.navbar-nav li.link a span {
     font-style: italic;
     font-size: 14px;
     margin: 3px;
-	color: white;
 }
+
 
