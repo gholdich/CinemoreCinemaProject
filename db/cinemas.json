@@ -89,7 +89,7 @@
 				
 				
 			]
-	  }
+	  },
 	  {
 		"cinemaId": 3,
 		"location": "Glasgow",
@@ -101,7 +101,7 @@
 					"friday": "",
 					"saturday": "",
 					"sunday": ""
-				},
+				}
 		"showings":[
 				{
 					"showingId": 1,

@@ -32,7 +32,7 @@
 		"releaseDate": "2nd Jun 2017",
 		"director": "Patty Jenkins",
 		"cast": "Gal Gadot"
-	  }
+	  },
 	  {
 		"filmId": 4,
 		"title": "The Wave",
@@ -43,7 +43,7 @@
 		"releaseDate": "19th Sep 2008",
 		"director": "Dennis Gansel",
 		"cast": "Frederick Lau, Max Riemelt, Jennifer Ulrich"
-	  }
+	  },
 	  {
 		"filmId": 5,
 		"title": "Finding Nemo",
