@@ -391,3 +391,15 @@ ul.navbar-nav li.link a span {
     top: -20px;
     right: 0px;
 }
+
+#conf{
+	    text-align: center;
+}
+
+.message{
+	padding: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
