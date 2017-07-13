@@ -5,10 +5,25 @@ export default class Booking extends React.Component{
 	
 	constructor(){
 		super();
+		
+		var selectedLocation = '';
+		var selectedFilm='';
+		var selectedTime='';
+		
+		if(localStorage.selectedLocation) {
+			selectedLocation = JSON.parse(localStorage.selectedLocation);
+		}
+		if(localStorage.filmTime) {
+			selectedFilm = JSON.parse(localStorage.filmTime);
+		}
+		if(localStorage.filmTitle) {
+			selectedTime = JSON.parse(localStorage.filmTitle);
+		}
+		
 		this.state={
-			location:'',
-			film:'',
-			time:'',
+			location: selectedLocation,
+			film: selectedFilm,
+			time:selectedTime,
 			cinemas: [],
 			films :[],
 			title: [],
@@ -17,7 +32,6 @@ export default class Booking extends React.Component{
 		};
 	}
 	componentDidMount() {
-		
 		Client.fetchShowings(showings => {			
 			this.setState({
 				loading: false,
@@ -115,15 +129,15 @@ export default class Booking extends React.Component{
 		return(
 			<div>
 				<form>
-					<select onMouseOut={this.setLocation.bind(this)}>
-						<option value= "select" >Please select a location</option>
+					<select onClick={this.setLocation.bind(this)}>
+						<option value= "select" selected>Please select a location</option>
 						{cinemas.map((data,index)=>(
 							<option key={index} value={cinemas[index].location}>{cinemas[index].location}</option>
 						))
 						
 						}
 					</select>
-					<select onMouseOut={this.setFilm.bind(this)}>
+					<select onClick={this.setFilm.bind(this)}>
 						<option value= "select" selected>Please select a film</option>
 						{title.map((data,index)=>(
 							<option key={index} value= {title[index]}>{title[index]}</option>
@@ -131,7 +145,7 @@ export default class Booking extends React.Component{
 						
 						}
 					</select>
-					<select onChange={this.setTime.bind(this)}>
+					<select onClick={this.setTime.bind(this)}>
 						<option value= "select" selected>Please select a time</option>
 						{times.map((data,index)=>(
 							<option key={index} value= {times[index]}>{times[index]}</option>
