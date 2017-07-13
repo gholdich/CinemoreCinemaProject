@@ -126,15 +126,15 @@ export default class Booking extends React.Component{
 	}
 	
 	render(){
-		const {cinemas} = this.state;
-		const {title} = this.state;
-		const {films} = this.state;
-		const {times} = this.state;
+		const {cinemas, title, films, times} = this.state;
+		//const {title} = this.state;
+		//const {films} = this.state;
+		//const {times} = this.state;
 		return(
 			<div>
 				<form>
 					<select onClick={this.setLocation.bind(this)}>
-						<option value={this.state.location}>{this.state.location}</option>
+						<option placeholder={this.state.location}>{this.state.location}</option>
 						{cinemas.map((data,index)=>(
 							
 							<option key={index} value={cinemas[index].location} >{cinemas[index].location}</option>
@@ -143,7 +143,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setFilm.bind(this)}>
-						<option value= {this.state.film} >{this.state.film}</option>
+						<option placeholder={this.state.film} >{this.state.film}</option>
 						{title.map((data,index)=>(
 							<option key={index} value= {title[index]}>{title[index]}</option>
 						))
@@ -151,7 +151,7 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setTime.bind(this)}>
-						<option value= {this.state.time}>{this.state.time}</option>
+						<option placeholder={this.state.time}>{this.state.time}</option>
 						{times.map((data,index)=>(
 							<option key={index} value= {times[index]}>{times[index]}</option>
 						))
@@ -166,10 +166,16 @@ export default class Booking extends React.Component{
 				{(this.state.time=="Please select a time") ? <p></p> : <p>{this.state.time}</p>}
 
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick" />
-					<input type="hidden" name="hosted_button_id" value="Y4FKYA8HS5RL2" />
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="wortho666-facilitator@gmail.com" />
+					<input type="hidden" name="lc" value="GB" />
+					<input type="hidden" name="item_name" value="Cinema Ticket" />
+					<input type="hidden" name="amount" value="7.50" />
+					<input type="hidden" name="currency_code" value="GBP" />
+					<input type="hidden" name="button_subtype" value="services" />
+					<input type="hidden" name="no_note" value="0" />
+					<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
 					<input type="image" src="/images/pay.png" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-					<img src="https://www.sandbox.paypal.com/en_GB/i/scr/pixel.gif" alt="" width="1" height="1" />
 				</form>
 
 			</div>
