@@ -90,5 +90,50 @@
 				
 			]
 	  }
+	  {
+		"cinemaId": 3,
+		"location": "Glasgow",
+		"openingTimes":{
+					"monday": "",
+					"tuesday": "",
+					"wednesday": "",
+					"thursday": "",
+					"friday": "",
+					"saturday": "",
+					"sunday": ""
+				},
+		"showings":[
+				{
+					"showingId": 1,
+					"screenId": "",
+					"filmId": 4,
+					"date": "",
+					"time": "10:02"
+				},
+				{
+					"showingId": 2,
+					"screenId": "",
+					"filmId": 5,
+					"date": "",
+					"time": "11:02"
+				},
+				{
+					"showingId": 3,
+					"screenId": "",
+					"filmId": 1,
+					"date": "",
+					"time": "12:02"
+				},
+				{
+					"showingId": 4,
+					"screenId": "",
+					"filmId": 4,
+					"date": "",
+					"time": "13:02"
+				}
+				
+				
+			]
+	  }
 	]
 }
