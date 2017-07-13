@@ -30,16 +30,16 @@
 				{
 					"showingId": 3,
 					"screenId": "",
-					"filmId": 2,
+					"filmId": 1,
 					"date": "",
 					"time": "12:00"
 				},
 				{
 					"showingId": 4,
 					"screenId": "",
-					"filmId": 3,
+					"filmId": 2,
 					"date": "",
-					"time": "12:00"
+					"time": "13:00"
 				}
 				
 				
@@ -61,14 +61,14 @@
 				{
 					"showingId": 1,
 					"screenId": "",
-					"filmId": 3,
+					"filmId": 2,
 					"date": "",
 					"time": "10:01"
 				},
 				{
 					"showingId": 2,
 					"screenId": "",
-					"filmId": 2,
+					"filmId": 3,
 					"date": "",
 					"time": "11:01"
 				},
@@ -84,7 +84,7 @@
 					"screenId": "",
 					"filmId": 3,
 					"date": "",
-					"time": "12:01"
+					"time": "13:01"
 				}
 				
 				

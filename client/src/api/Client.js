@@ -34,6 +34,14 @@ function fetchLocations(cb) {
     .then(parseJSON)
     .then(cb);
 }
+function fetchCinemas(cb) {
+  return fetch(`/api/cinemas`, {
+    accept: "application/json"
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -50,5 +58,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search, fetchShowings, fetchLocations, fetchShowTimes };
+const Client = { search, fetchShowings, fetchLocations, fetchShowTimes, fetchCinemas };
 export default Client;

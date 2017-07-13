@@ -1,167 +1,154 @@
 import React from 'react';
-var cinema=[
-			{
-				cinemaId: 1,
-				location: "Manchester",
-				showing: [{
-							film:"Wonder Woman",
-							time:[
-								"10.00",
-								"11.00",
-								"12:00"]},
-							
-							{film:"Ghost Busters",
-							time:[
-								"10.01",
-								"11.01",
-								"12:01"]},
-							
-							{film:"Jaws",
-							time:[
-								"10.02",
-								"11.02",
-								"12:02"]},
-							
-							{film:"Star Trek",
-							time:[
-								"10.03",
-								"11.03",
-								"12:03"]}
-				]
-			},
-			{
-				cinemaId: 2,
-				location: "London",
-				showing: [{
-							film:"American Psycho",
-							time:[
-								"10.10",
-								"11.10",
-								"12:10"]},
-							
-							{film:"Back to the Future",
-							time:[
-								"10.11",
-								"11.11",
-								"12:11"]},
-							
-							{film:"Shawshank Redemption",
-							time:[
-								"10.12",
-								"11.12",
-								"12:12"]},
-							
-							{film:"Green Mile",
-							time:[
-								"10.13",
-								"11.13",
-								"12:13"]}
-				]
-			}
-		]
-let num =0;
-let num1=0;
+import Client from '../../api/Client';
+
 export default class Booking extends React.Component{
+	
 	constructor(){
 		super();
 		this.state={
 			location:'',
 			film:'',
-			time:''
+			time:'',
+			cinemas: [],
+			films :[],
+			title: [],
+			loading: true,
+			times: []
 		};
 	}
-	
-	
-	
-	getIndex(){
+	componentDidMount() {
 		
+		Client.fetchShowings(showings => {
+			this.setState({
+				loading: false,
+				films: showings
+			});
+		});
+		
+		Client.fetchCinemas(cinema => {
+			this.setState({
+				loading: false,
+				cinemas: cinema
+			});
+		});
+		
+	}
+	
+	
+	getFilms(){
+		const { cinemas } = this.state;
+		const { films } = this.state;
+		let title=[];
+		for (var m = 0; m<cinemas.length; m++){
+			if (this.state.location===cinemas[m].location){
+				for (let i=0; i<cinemas[m].showings.length; i++){
+			
+					for (let j = 0; j<films.length; j++){
+						if (cinemas[m].showings[i].filmId==films[j].filmId){
+							title.splice(0,0,films[j].title);
+						}
+					}
+				}
+			}
+		}
+		return title;
+	}
 
-		for (let i = 0; i<cinema.length;i++){
-			if((cinema[i].location)===this.state.location){
-				num=i;
-				break;
+	getTimes(){
+		const { cinemas } = this.state;
+			const { films } = this.state;
+			let times = [];
+
 				
-			}	
-		}
-		console.log("Num :"+num);
-		console.log(cinema);
-		console.log(this.state.location);
-		return num;
-	}
-	getIndex2(){
-		this.getIndex();
-		for (let i = 0; i<cinema[num].showing.length;i++){
-			if((cinema[num].showing[i].film)===this.state.film){
-				num1=i;
-				break;
 				
-			}	
+			for (let m=0; m<cinemas.length; m++){
+				if (cinemas[m].location==this.state.location){
+					for (let j = 0; j<films.length; j++){
+					
+						if (this.state.film==films[j].title){
+							for (let k =0; k<cinemas[m].showings.length; k++){
+							
+								if(cinemas[m].showings[k].filmId==films[j].filmId){
+									console.log( "Times: "+films[j].filmId + cinemas[m].showings[k].filmId);
+									times.splice(0,0,cinemas[m].showings[k].time);
+								
+								}
+							}
+						}
+					}	
+				}
+			}
+			return times;
+				
+				
+			 
+			 
 		}
-		return num1;
-	}
-		
 	
 	setLocation(e){
-		
-		
-		this.getIndex();
-		this.setState({location: e.target.value, film:'',time:''});
-		this.render();
+		this.setState({
+			location: e.target.value,
+			title: this.getFilms()
+			});
+			//console.log(this.state.location);
+			//console.log(this.state.title)
 	}
 	setFilm(e){
+		this.setState({
+			film: e.target.value,
+			times: this.getTimes()});
+			}
 		
-		this.getIndex2();
-		this.setState({film: e.target.value});
-		this.render();
-		
-	}
 	setTime(e){
-		this.getIndex2();
 		this.setState({time: e.target.value});
-		this.render();
 		
 	}
 	
 	render(){
+		const {cinemas} = this.state;
+		const {title} = this.state;
+		const {films} = this.state;
+		const {times} = this.state;
 		return(
 			<div>
 				<form>
-					<select onChange={this.setLocation.bind(this)}>
-						<option value= "select" selected>Please select a location</option>
-						{cinema.map((data,index)=>(
-							<option key={index} value={cinema[index].location}>{cinema[index].location}</option>
+					<select onMouseOut={this.setLocation.bind(this)}>
+						<option value= "select" >Please select a location</option>
+						{cinemas.map((data,index)=>(
+							<option key={index} value={cinemas[index].location}>{cinemas[index].location}</option>
 						))
 						
 						}
 					</select>
-					<select onClick={this.setFilm.bind(this)}>
-						<option value= "select" selected>Please select a Film</option>
-						{cinema[num].showing.map((data,index)=>(
-							<option key={index} value= {cinema[num].showing[index].film}>{cinema[num].showing[index].film}</option>
+					<select onMouseOut={this.setFilm.bind(this)}>
+						<option value= "select" selected>Please select a film</option>
+						{title.map((data,index)=>(
+							<option key={index} value= {title[index]}>{title[index]}</option>
 						))
 						
 						}
 					</select>
-					<select onClick={this.setTime.bind(this)}>
+					<select onChange={this.setTime.bind(this)}>
 						<option value= "select" selected>Please select a time</option>
-						{cinema[num].showing[num1].time.map((data,index)=>(
-							<option key={index} value= {cinema[num].showing[num1].time[index]}>{cinema[num].showing[num1].time[index]}</option>
+						{times.map((data,index)=>(
+							<option key={index} value= {times[index]}>{times[index]}</option>
 						))
 						
 						}
 					</select>
 					
+
 				</form>
-				<div>
+				<p>
 				{this.state.location}
 					
-				</div>
-				<div>
+				</p>
+				<p>
 				{this.state.film}
-				</div>
-				<div>
+				</p>
+				<p>
 				{this.state.time}
-				</div>
+				</p>
 
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_s-xclick" />

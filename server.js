@@ -35,18 +35,11 @@ app.get("/api/films", (req, res) => {
 });
 
 app.get("/api/cinemas", (req, res) => {
-  const param = req.query.q;
-
-  if (!param) {
-    res.json({
-      error: "Missing required parameter `q`"
-    });
-    return;
-  }
   
-  const r = ((param) => {
-	  return getCinemas.cinema.filter(cinema => cinema.title.toLowerCase().includes(param));
-  })(param);
+  const r = (() => {
+	  return getCinemas.cinema;
+  })();
+  
   
   if (typeof r !== 'undefined') {
     res.json(r);
