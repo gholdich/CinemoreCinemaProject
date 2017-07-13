@@ -6,9 +6,9 @@ export default class Booking extends React.Component{
 	constructor(){
 		super();
 		
-		var selectedLocation = '';
-		var selectedFilm='';
-		var selectedTime='';
+		var selectedLocation = 'Location';
+		var selectedFilm='Films';
+		var selectedTime='Time';
 		
 		if(localStorage.selectedLocation) {
 			selectedLocation = JSON.parse(localStorage.selectedLocation);
@@ -86,7 +86,7 @@ export default class Booking extends React.Component{
 							for (let k =0; k<cinemas[m].showings.length; k++){
 							
 								if(cinemas[m].showings[k].filmId==films[j].filmId){
-									console.log( "Times: "+films[j].filmId + cinemas[m].showings[k].filmId);
+									//console.log( "Times: "+films[j].filmId + cinemas[m].showings[k].filmId);
 									times.splice(0,0,cinemas[m].showings[k].time);
 								
 								}
@@ -105,7 +105,10 @@ export default class Booking extends React.Component{
 	setLocation(e){
 		this.setState({
 			location: e.target.value,
-			title: this.getFilms()
+			title: this.getFilms(),
+			film: 'Please select a film',
+			time: 'Please select a time'
+			
 			});
 			//console.log(this.state.location);
 			//console.log(this.state.title)
@@ -113,6 +116,7 @@ export default class Booking extends React.Component{
 	setFilm(e){
 		this.setState({
 			film: e.target.value,
+			time: "Please select a time",
 			times: this.getTimes()});
 			}
 		
@@ -130,15 +134,16 @@ export default class Booking extends React.Component{
 			<div>
 				<form>
 					<select onClick={this.setLocation.bind(this)}>
-						<option value= "select" selected>Please select a location</option>
+						<option value= "select" selected>{this.state.location}</option>
 						{cinemas.map((data,index)=>(
-							<option key={index} value={cinemas[index].location}>{cinemas[index].location}</option>
-						))
+							
+							<option key={index} value={cinemas[index].location} >{cinemas[index].location}</option>
+								))
 						
 						}
 					</select>
 					<select onClick={this.setFilm.bind(this)}>
-						<option value= "select" selected>Please select a film</option>
+						<option value= {this.state.film} selected>{this.state.film}</option>
 						{title.map((data,index)=>(
 							<option key={index} value= {title[index]}>{title[index]}</option>
 						))
@@ -146,26 +151,19 @@ export default class Booking extends React.Component{
 						}
 					</select>
 					<select onClick={this.setTime.bind(this)}>
-						<option value= "select" selected>Please select a time</option>
+						<option value= {this.state.time} selected>{this.state.time}</option>
 						{times.map((data,index)=>(
 							<option key={index} value= {times[index]}>{times[index]}</option>
 						))
 						
 						}
 					</select>
-					
 
 				</form>
-				<p>
-				{this.state.location}
-					
-				</p>
-				<p>
-				{this.state.film}
-				</p>
-				<p>
-				{this.state.time}
-				</p>
+				
+				{(this.state.location=="select") ? <p></p> : <p>{this.state.location}</p>}
+				{(this.state.film=="Please select a film") ? <p></p> : <p>{this.state.film}</p>}
+				{(this.state.time=="Please select a time") ? <p></p> : <p>{this.state.time}</p>}
 
 				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_s-xclick" />
