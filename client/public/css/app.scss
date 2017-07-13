@@ -271,14 +271,14 @@ ul.navbar-nav li.link a span {
 }
 
 #loading-icon img {
-    background: #fff;
+    background: $whCol;
 }
 
 
 .ToolTip #aa {
 	position: absolute;
 	padding: 5px;
-	background: $whCol;
+	background: rgb(255, 255, 255);
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px;
 	border-radius: 3px;
 	transition: all 0.3s ease-in-out, visibility 0.3s ease-in-out;
