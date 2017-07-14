@@ -124,6 +124,16 @@ export default class Booking extends React.Component{
 		this.setState({time: e.target.value});
 		
 	}
+	getFilmPoster(e){
+		const {films}=this.state;
+		var filmPoster='';
+		for (let i = 0; i<films.length; i++){
+			if (films[i].title===this.state.film){
+				filmPoster =  "/images/posters/"+films[i].poster;
+			}
+		}
+		return filmPoster;
+	}
 	
 	render(){
 		const {cinemas} = this.state;
@@ -172,26 +182,34 @@ export default class Booking extends React.Component{
 							<div>
 								Your showing...
 							</div>
-							<br/>
 							<div>
-								{(this.state.location=="select") ? <p></p> : <p>{this.state.location}</p>}
-								{(this.state.film=="Please select a film") ? <p></p> : <p>{this.state.film}</p>}
-								{(this.state.time=="Please select a time") ? <p></p> : <p>{this.state.time}</p>}
+							</div>
+							<div>
+								
+								{(this.getFilmPoster()=='')?<p></p> : <img src={this.getFilmPoster()} style={{width:184, height:273}} alt={"Poster of "+title} />}
+							
+								<div>
+									{(this.state.location=="select") ? <p></p> : <p>{this.state.location}</p>}
+									{(this.state.film=="Please select a film") ? <p></p> : <p>{this.state.film}</p>}
+									{(this.state.time=="Please select a time") ? <p></p> : <p>{this.state.time}</p>}
+								</div>
 							</div>
 						</div>
 					</div>
-					<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_xclick" />
-						<input type="hidden" name="business" value="wortho666-facilitator@gmail.com" />
-						<input type="hidden" name="lc" value="GB" />
-						<input type="hidden" name="item_name" value="Cinema Ticket" />
-						<input type="hidden" name="amount" value="7.50" />
-						<input type="hidden" name="currency_code" value="GBP" />
-						<input type="hidden" name="button_subtype" value="services" />
-						<input type="hidden" name="no_note" value="0" />
-						<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
-						<input type="image" src="/images/pay.png" name="submit" alt="PayPal – The safer, easier way to pay online!" />
-					</form>
+					<div>
+						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_xclick" />
+							<input type="hidden" name="business" value="wortho666-facilitator@gmail.com" />
+							<input type="hidden" name="lc" value="GB" />
+							<input type="hidden" name="item_name" value="Cinema Ticket" />
+							<input type="hidden" name="amount" value="7.50" />
+							<input type="hidden" name="currency_code" value="GBP" />
+							<input type="hidden" name="button_subtype" value="services" />
+							<input type="hidden" name="no_note" value="0" />
+							<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest" />
+							<input type="image" src="/images/pay.png" name="submit" alt="PayPal – The safer, easier way to pay online!" />
+						</form>
+					</div>
 				</center>
 
 			</div>
