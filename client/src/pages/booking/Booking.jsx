@@ -1,5 +1,6 @@
 import React from 'react';
 import Client from '../../api/Client';
+import TicketNo from './TicketNo';
 
 export default class Booking extends React.Component{
 	
@@ -175,8 +176,6 @@ export default class Booking extends React.Component{
 						</select>
 					</form>
 				
-				
-				
 					<div>
 						<div>
 							<div>
@@ -195,6 +194,10 @@ export default class Booking extends React.Component{
 								</div>
 							</div>
 						</div>
+						
+					</div>
+					<div>
+						<TicketNo/>
 					</div>
 					<div>
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
