@@ -1,5 +1,4 @@
 import React from 'react';
-import TicketNo from './TicketNo';
 
 export default class TicketType extends React.Component{
 	constructor(){
