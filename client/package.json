@@ -15,7 +15,7 @@
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "nuka-carousel": "2.0.4",
-    "nuke-carousel": "0.1.5",
+    "nuka-carousel-autoscroll": "0.1.5",
     "react": "15.6.1",
     "react-addons-shallow-compare": "^15.6.0",
     "react-dom": "15.6.1",
