@@ -1,6 +1,6 @@
 import React from 'react';
 import Client from '../../api/Client';
-import TicketNo from './TicketNo';
+import TicketType from './TicketType';
 
 export default class Booking extends React.Component{
 	
@@ -31,9 +31,11 @@ export default class Booking extends React.Component{
 			films :[],
 			title: [],
 			loading: true,
-			times: []
+			times: [],
 		};
 	}
+	
+	
 	componentDidMount() {
 		Client.fetchShowings(showings => {			
 			this.setState({
@@ -197,7 +199,7 @@ export default class Booking extends React.Component{
 						
 					</div>
 					<div>
-						<TicketNo/>
+						<TicketType/>
 					</div>
 					<div>
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
