@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Slideshow from './Carousel';
+import Carousel from './Carousel';
 import ComingSoon from './ComingSoon';
 import News from './News';
 import Deals from './Deals';
@@ -10,7 +10,7 @@ export default class Home extends Component {
 		return(
 		<div className="mainDiv" id="homeDiv" >
 			<div id="carousel" >
-				<Slideshow/>
+				<Carousel/>
 			</div>
 			<div id="comingSoon" >
 				//load comingSoon component
