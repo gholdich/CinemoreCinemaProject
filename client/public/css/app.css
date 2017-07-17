@@ -38,21 +38,43 @@ ul.navbar-nav {
     border: 0;
 }
 
-ul.navbar-nav li.link {
+ul.navbar-nav li.link{
     display: inline-block;
     -webkit-transform: skewX(-10deg);
     -moz-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     -o-transform: skewX(-10deg);
     transform: skewX(-10deg);
-    margin: 0 5px;
+    margin: 0px 5px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 
-ul.navbar-nav li.link a {
+ul.navbar-nav .drop-link {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+    margin: 4px 5px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s, visibility 0.3s ease-in-out;
+	
+}
+
+ul.navbar-nav .drop-button {
+	margin: 5px;
+	-webkit-transform: skewX(-10deg);
+    -moz-transform: skewX(-10deg);
+    -ms-transform: skewX(-10deg);
+    -o-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+}
+
+
+ul.navbar-nav li.link a{
     padding: 10px 20px;
     color: #fff;
     background-color: #188ae2;
@@ -64,12 +86,38 @@ ul.navbar-nav li.link a {
     transition: all 0.3s;
 }
 
-ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover {
+ul.navbar-nav .drop-link a{
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #188ae2;
+    text-decoration: none;
+    display: block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s, visibility 0.3s ease-in-out;
+}
+
+ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover{
 	color: #fff;
     background-color: #113650;
 }
 
-ul.navbar-nav li.link a span {
+ul.navbar-nav .drop-link a:active, ul.navbar-nav .drop-link a:hover {
+	color: #fff;
+    background-color: #113650;
+}
+
+ul.navbar-nav li.link a span{
+	display: block;
+    -webkit-transform: skewX(10deg);
+    -moz-transform: skewX(10deg);
+    -ms-transform: skewX(10deg);
+    -o-transform: skewX(10deg);
+    transform: skewX(10deg);
+}
+
+ul.navbar-nav .drop-link a span {
 	display: block;
     -webkit-transform: skewX(10deg);
     -moz-transform: skewX(10deg);

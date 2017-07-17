@@ -6,7 +6,7 @@ export default class LocationLabel extends Component {
 	constructor(props) {
 		super(props);
 		
-		let selectedLocation = 'Select Location';
+		let selectedLocation = 'None Selected';
 		
 		if(localStorage.selectedLocation) {
 			selectedLocation = JSON.parse(localStorage.selectedLocation);

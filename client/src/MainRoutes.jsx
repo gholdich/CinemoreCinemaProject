@@ -7,6 +7,9 @@ import Locations from './pages/locations/locations';
 import Contact from './pages/contact/Contact';
 import Faq from './pages/faq/Faq';
 import Booking from './pages/booking/Booking';
+import About from './pages/about/About';
+import Facilities from './pages/facilities/Facilities';
+import LocalBusiness from'./pages/localBusinesses/LocalBusiness';
 import BookNow from './components/BookNow';
 import Confirmation from './pages/confirmation/Confirmation';
 
@@ -23,6 +26,9 @@ export default class MainRoutes extends Component {
 			  <Route path="/faq" component={Faq}/>
 			  <Route path="/contact" component={Contact}/>
 			  <Route path="/confirmation" component={Confirmation}/>
+			  <Route path="/about" component={About}/>
+			  <Route path="/facilities" component={Facilities}/>
+			  <Route path="/LocalBusiness" component={LocalBusiness}/>
 			</Switch>
 		  </main>
 		  <article>
