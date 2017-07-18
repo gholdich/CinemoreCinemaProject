@@ -26,7 +26,6 @@ export default class FilmBlock extends Component {
 					<div className="genres">{ this.showGenres() }</div>
 					<div className="short description">{ shortDes }</div>
 					<div className="release"><span className="info-title">Release Date:</span> <span className="info-text">{ release }</span></div>
-					
 					<div className="director"><span className="info-title">Director:</span> <span className="info-text">{ director }</span></div>
 					<div className="actors"><span className="info-title">Cast:</span> <span className="info-text">{ cast }</span></div>
 					<div className="showtime">{ showtimeBlock }</div>
