@@ -13,7 +13,7 @@ export default class Carousel extends Component {
 	      <img className="carouselPoster" src={"/images/carousel/Spider-Man-Homecoming.jpg"}/>
 	      <img className="carouselPoster" src={"/images/carousel/Alien-Covenant.png"}/>
 	      <img className="carouselPoster" src={"/images/carousel/The-Mummy.jpg"}/>
-				<img className="carouselPoster" src={"/images/carousel/AvengersAgeOfUltron.jpg"}/>
+		<img className="carouselPoster" src={"/images/carousel/AvengersAgeOfUltron.jpg"}/>
 	  	</NukaCarousel>
 
   	);

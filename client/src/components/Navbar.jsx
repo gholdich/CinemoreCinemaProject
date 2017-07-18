@@ -2,23 +2,37 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Client from '../api/Client';
 import ReactDOM from 'react-dom';
+import CinemaDrop from './CinemaDrop';
+import FilmDrop from './FilmDrop';
 
 export default class Navbar extends Component{
 	
 	constructor(){
-		super();
+			super();
+		
+			this.state = {
+				cinemaActive: true,
+				filmActive: true
+			}
+	}
 	
-		this.state = {
-			isActive: false
+	toggleCinema() {
+		this.setState({cinemaActive: !this.state.cinemaActive});
+		if(this.state.filmActive === false){
+			this.setState({filmActive: !this.state.filmActive});
+		}
+	}
+		
+	toggleFilm() {
+		this.setState({filmActive: !this.state.filmActive});
+		if(this.state.cinemaActive === false){
+			this.setState({cinemaActive: !this.state.cinemaActive});
 		}
 	}
 	
-	toggleDropDown() {
-        this.setState({isActive: !this.state.isActive});
-    }
-	
 	render(){
-		const { isActive } = this.state;
+		const { cinemaActive } = this.state;
+		const { filmActive } = this.state;
 		return(
 			<div>
 				<ul className="nav navbar-nav">
@@ -26,14 +40,16 @@ export default class Navbar extends Component{
 						<Link to={{ pathname: "/" }}><span>Home</span></Link>
 					</li>
 					
-					<li className="link">
-						<Link to={{ pathname: "/Films" }}><span>Films</span></Link>
+					<li className="link" onMouseEnter={this.toggleFilm.bind(this)} onMouseLeave={this.toggleFilm.bind(this)}>
+						<Link to={{ pathname: "/Films" }}
+						><span>Films</span></Link>
+						<FilmDrop filmActive = {this.state.filmActive}/>	
 					</li>
 					
-					<li className="link">
-						<Link to={{ pathname: "/Locations" }} 
-						onMouseEnter={this.toggleDropDown.bind(this)}
-						/*onMouseLeave={this.toggleDropDown.bind(this)}*/><span>Cinemas</span></Link>
+					<li className="link" onMouseEnter={this.toggleCinema.bind(this)} onMouseLeave={this.toggleCinema.bind(this)}>
+						<Link to={{ pathname: "/Cinema" }} 
+						><span>Cinemas</span></Link>
+						<CinemaDrop cinemaActive = {this.state.cinemaActive}/>
 					</li>
 					
 					<li className="link">
@@ -44,21 +60,7 @@ export default class Navbar extends Component{
 						<Link to={{ pathname: "/Contact" }}><span>Contact Us</span></Link>
 					</li>
 					
-					<div id = "cinemaDrop" className="drop-link" style={isActive ? 	{ 'visibility': 'visible', 'opacity': 1 } : 
-																	{ 'visibility': 'hidden', 'opacity': 0 } }>
-						<div className="drop-button">
-							<Link to = {{ pathname: "/About" }}><span>About</span></Link>
-						</div>
-												
-						<div className="drop-button">
-							<Link to = {{ pathname: "/Facilities" }}><span>Facilities</span></Link>
-						</div>
-						
-						<div className="drop-button">
-							<Link to = {{ pathname: "/LocalBusiness" }}><span>Local Area</span></Link>
-						</div>
-						
-					</div>
+					
 				</ul>
 			</div>
 		);
