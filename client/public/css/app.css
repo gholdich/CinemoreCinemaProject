@@ -243,6 +243,10 @@ ul.navbar-nav li.link a span{
 	border: ;
 }
 
+.inputElement {
+	width: 200px;
+	height: 22px;
+}
 
 #gridOfEquals {
     width: 1000px;

@@ -10,7 +10,6 @@ export default class Contact extends Component {
 
 	storeAsJson(e) {
 		e.preventDefault();
-		document.getElementById("contactForm").reset();
 		let submission = {
 			"honorific": honorific,
 			"firstName": document.getElementById("firstName").value,
@@ -22,6 +21,7 @@ export default class Contact extends Component {
 		}
 		let myJSON = JSON.stringify(submission);
 		localStorage.setItem("testJSON", myJSON);
+		document.getElementById("contactForm").reset();
 	}
 
 	outputJson() {
@@ -49,7 +49,7 @@ export default class Contact extends Component {
 					<table className="contactFormTable">
 						<tr className="formRow">
 							<td className="rowElement">Title:</td>
-							<td className="rowElement" id="honorific" value="select" onChange={this.getHonorific.bind(this)}><select>
+							<td className="rowElement" id="honorific" value="select" onChange={this.getHonorific.bind(this)}><select className="inputElement">
 										<option value="Select" >Select</option>
 										<option>Dr</option>
 										<option>Miss</option>
@@ -60,23 +60,23 @@ export default class Contact extends Component {
 						</tr>
 						<tr className="formRow">
 							<td className="rowElement">First name:</td>
-							<td className="rowElement"><input type="text" placeholder="Enter first name" id="firstName" /></td>
+							<td className="rowElement"><input type="text" className="inputElement" placeholder="Enter first name" id="firstName" /></td>
 						</tr>
 						<tr className="formRow">
 							<td className="rowElement">Surname:</td>
-							<td className="rowElement"><input type="text" placeholder="Enter surname" id="surname" /></td>
+							<td className="rowElement"><input type="text" className="inputElement" placeholder="Enter surname" id="surname" /></td>
 						</tr>
 						<tr className="formRow">
 							<td className="rowElement">Date of birth:</td>
-							<td className="rowElement"><input type="date" id="dob" /></td>
+							<td className="rowElement"><input type="date" className="inputElement" id="dob" /></td>
 						</tr>
 						<tr className="formRow">
 							<td className="rowElement">E-Mail:</td>
-							<td className="rowElement"><input type="text" placeholder="Enter email" id="email" /></td>
+							<td className="rowElement"><input type="text" className="inputElement" placeholder="Enter email" id="email" /></td>
 						</tr>
 						<tr className="formRow">
 							<td className="rowElement" id="contactReason">Reason for contacting:</td>
-							<td className="rowElement" value="select" onChange={this.getReason.bind(this)}><select>
+							<td className="rowElement" value="select" onChange={this.getReason.bind(this)}><select className="inputElement">
 										<option>Select</option>
 										<option>Complaint</option>
 										<option>Report good experience</option>
