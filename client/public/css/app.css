@@ -54,14 +54,19 @@ ul.navbar-nav li.link{
 
 .dropDown{
 	position: absolute;
-	
+
 	display: block;
 	list-style: none;
 	background-color: #fff;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
+<<<<<<< HEAD
+    transition: all 0.3s, visibility 0.3s ease-in-out;
+
+=======
     transition: all 0.3s;
+>>>>>>> c43b671361f0f4d01800969c88412d7af89ac766
 }
 
 .dropLink{
@@ -191,7 +196,7 @@ ul.navbar-nav li.link a span{
 }
 
 #carousel {
-	
+
 	max-width: 1100px;
 	max-height: 450px;
 	margin: auto;
@@ -224,13 +229,24 @@ ul.navbar-nav li.link a span{
 
 }
 
-.formSubmitBtn {
+.Btn {
 	display: block;
 	margin: auto;
+	margin-top: 10px;
 	font-size: larger;
-	padding: 5px;
+	padding: 3px;
 }
 
+#comments {
+	padding: 10px;
+	color: white;
+	border: ;
+}
+
+.inputElement {
+	width: 200px;
+	height: 22px;
+}
 
 #gridOfEquals {
     width: 1000px;
