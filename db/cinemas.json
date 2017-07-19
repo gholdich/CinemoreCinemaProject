@@ -4,13 +4,13 @@
 		"cinemaId": 1,
 		"location": "Manchester",
 		"openingTimes":{
-					"monday": "09:00 - ",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "09:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 01:00",
+					"friday": "09:00 - 23:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 23:00"
 		},
 		"showings":[
 				{
