@@ -4,14 +4,14 @@
 		"cinemaId": 1,
 		"location": "Manchester",
 		"openingTimes":{
-					"monday": "",
+					"monday": "09:00 - ",
 					"tuesday": "",
 					"wednesday": "",
 					"thursday": "",
 					"friday": "",
 					"saturday": "",
 					"sunday": ""
-				},
+		},
 		"showings":[
 				{
 					"showingId": 1,
@@ -42,8 +42,8 @@
 					"time": "13:00"
 				}
 				
-				
-			]
+		],
+		"about": "Opened in April 2017, QA Cinemas Manchester is flagship venue of the chain."
 	  },
 	  {
 		"cinemaId": 2,
@@ -88,7 +88,8 @@
 				}
 				
 				
-			]
+		],
+		"about": "The largest QA Cinema. This venue boasts 10 screens, inluding 3 iMax theatres."
 	  },
 	  {
 		"cinemaId": 3,
@@ -133,7 +134,8 @@
 				}
 				
 				
-			]
+			],
+			"about": "Situated in a chamring converted factory, QA Cinemas Glasgow food outlets offer a host of traditional Scottish delicacies as well as the timesless cinema classics."
 	  },
 	  {
 		"cinemaId": 4,
@@ -178,7 +180,8 @@
 				}
 				
 				
-			]
+			],
+			"about": "The latest addition to the QA Cinemas inventory, Nottingham features state of the art interiours and facilities and screens with all new extra-comfort seats as standard. Visit QA Cinemas Nottingham for the ultimate, indulgent cinema experience."
 	  },
 	  {
 		"cinemaId": 5,
@@ -237,7 +240,8 @@
 				}
 				
 				
-			]
+			],
+			"about": "Located amongst the campus of Bristol University, this branch of QA Cinemas couldn't be more perfectly situated for students. With that in mind, Bristol offers an array of student deals and events. All are welcome at QA Cinemas Bristol. Why not enjoy a delicious a la cart menu at our very own italian restaurant, Roma-QA"
 	  },
 	  {
 		"cinemaId": 6,
@@ -279,10 +283,9 @@
 					"filmId": 7,
 					"date": "",
 					"time": "13:02"
-				}
-				
-				
-			]
+				}	
+			],
+			"about": "QA Cinemas Southampton will take you back to the golden eara of cinema. Located in the recently aquired and newly refurbished cinema (formerly Hollywood Cinemas), this branch keeps all the classic and timeless character while also showcasing the latest in odern refinement."
 	  }
 	]
 }
