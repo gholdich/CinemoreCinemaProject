@@ -61,7 +61,7 @@ ul.navbar-nav .drop-link {
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s, visibility 0.3s ease-in-out;
-	
+
 }
 
 ul.navbar-nav .drop-button {
@@ -249,11 +249,18 @@ ul.navbar-nav .drop-link a span {
 
 }
 
-.formSubmitBtn {
+.Btn {
 	display: block;
 	margin: auto;
+	margin-top: 10px;
 	font-size: larger;
-	padding: 5px;
+	padding: 3px;
+}
+
+#comments {
+	padding: 10px;
+	color: white;
+	border: ;
 }
 
 
