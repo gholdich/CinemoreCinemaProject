@@ -61,7 +61,7 @@ export default class Cinema extends Component {
 		const { loading, about } = this.state;
 		return(
 			<div id = "gridOfEquals">
-					<AboutQA />
+					<AboutQA />0
 					<div>
 						{ loading ? this.displayLoading() : this.displayAbout() }
 					</div>
