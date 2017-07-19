@@ -11,6 +11,7 @@ export default class Booking extends React.Component{
 			selectedFilm='Films',
 			selectedTime='Time';
 		
+		
 		if(localStorage.selectedLocation) {
 			selectedLocation = JSON.parse(localStorage.selectedLocation);
 			if(localStorage.filmTime) {
@@ -32,6 +33,7 @@ export default class Booking extends React.Component{
 			title: [],
 			loading: true,
 			times: [],
+			price:0
 		};
 	}
 	
@@ -137,12 +139,15 @@ export default class Booking extends React.Component{
 		}
 		return filmPoster;
 	}
-	
+	handleChange(price){
+		this.setState({price: price});
+	}
 	render(){
 		const {cinemas} = this.state;
 		const {title} = this.state;
 		const {films} = this.state;
 		const {times} = this.state;
+		const {price} = this.state;
 		return(
 			<div>
 				<div>
@@ -199,7 +204,7 @@ export default class Booking extends React.Component{
 						
 					</div>
 					<div>
-						<TicketType/>
+						<TicketType price={price} onPriceChange={this.handleChange.bind(this)}/>
 					</div>
 					<div>
 						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -207,7 +212,7 @@ export default class Booking extends React.Component{
 							<input type="hidden" name="business" value="wortho666-facilitator@gmail.com" />
 							<input type="hidden" name="lc" value="GB" />
 							<input type="hidden" name="item_name" value="Cinema Ticket" />
-							<input type="hidden" name="amount" value="7.50" />
+							<input type="hidden" name="amount" value={this.state.price} />
 							<input type="hidden" name="currency_code" value="GBP" />
 							<input type="hidden" name="button_subtype" value="services" />
 							<input type="hidden" name="no_note" value="0" />

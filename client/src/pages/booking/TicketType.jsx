@@ -10,21 +10,32 @@ export default class TicketType extends React.Component{
 			childPrice:0,
 			concession:0,
 			concessionPrice:0,
-			price:0
 			
 		};
 		
 	}
+
 	componentDidUpdate(){
-		this.setState({adultPrice: this.state.adult*7.5});
-		this.setState({childPrice: this.state.child*3});
-		this.setState({concessionPrice: this.state.concession*5});
-		this.setState({price: this.state.adultPrice+this.state.childPrice+this.state.concessionPrice});
+		if (this.state.adultPrice!==this.state.adult*7.5){
+			this.setState({adultPrice: this.state.adult*7.5});
+		}
+		if (this.state.childPrice!==this.state.child*3){
+			this.setState({childPrice: this.state.child*3});
+		}
+		if (this.state.concessionPrice!==this.state.concession*5){
+			this.setState({concessionPrice: this.state.concession*5});
+		}
+		if (this.props.price!==(this.state.adultPrice+this.state.childPrice+this.state.concessionPrice)){
+			this.props.onPriceChange(this.state.adultPrice+this.state.childPrice+this.state.concessionPrice);
+		}
+		
 		
 	}
+	
 	addAdultTickets(e){
 
 		this.setState({adult: this.state.adult+1});
+		
 		
 	}
 	removeAdultTickets(e){
@@ -55,8 +66,11 @@ export default class TicketType extends React.Component{
 				this.setState({concession: this.state.concession-1});
 			}
 	}
+
 	
 	render(){
+		//const price = this.props.price;
+		
 		return(
 			<div>
 				<div>
@@ -77,9 +91,9 @@ export default class TicketType extends React.Component{
 					<button onClick={this.removeConcessionTickets.bind(this)}>Remove concession ticket</button>
 					£{this.state.concessionPrice}
 				</div>
-				<div>
-					Total price : £{this.state.price}
-				</div>
+					<div>
+						£{this.state.adultPrice+this.state.childPrice+this.state.concessionPrice}
+					</div>
 				
 
 			
