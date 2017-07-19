@@ -19,7 +19,8 @@ export default class Cinema extends Component {
 			cinemaId: selectedCinemaId,
 			abouts: [],
 			venue: '',
-			openingTimes: []
+			openingTimes: [],
+			picture: []
 		}
 	}
 	
