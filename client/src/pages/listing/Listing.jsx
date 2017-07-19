@@ -45,7 +45,7 @@ export default class Listing extends Component {
 			return(
 				<FilmBlock key={idx} id={film.filmId} showtimeBlock={this.displayShowTimes(film.filmId, film.title)}
 				title={film.title} genres={film.genres} posterFileName={film.poster} description={film.description}
-				shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} />
+				shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} videoId={film.videoId}/>
 			);
 		});
 	}

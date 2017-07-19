@@ -3,7 +3,7 @@ import React , { Component } from 'react';
 
 
 export default class FilmBlock extends Component {
-	
+
 	showGenres() {
 		return this.props.genres.map((genre, idx) => {
 			return (
@@ -13,9 +13,10 @@ export default class FilmBlock extends Component {
 				);
 		});
 	}
-	
+
 	render() {
-		const { id, title, posterFileName, shortDes, release, director, cast, showtimeBlock } = this.props;
+
+		const { id, title, posterFileName, shortDes, release, director, cast, showtimeBlock, videoId } = this.props;
 		return(
 			<div className="film" >
 				<div className="film-poster" >
@@ -29,6 +30,9 @@ export default class FilmBlock extends Component {
 					<div className="director"><span className="info-title">Director:</span> <span className="info-text">{ director }</span></div>
 					<div className="actors"><span className="info-title">Cast:</span> <span className="info-text">{ cast }</span></div>
 					<div className="showtime">{ showtimeBlock }</div>
+					<div className="trailer">
+						<iframe src={this.props.videoId} width="640" height="480" frameBorder="0" allowFullScreen></iframe>
+					</div>
 				</div>
 			</div>
 		);
