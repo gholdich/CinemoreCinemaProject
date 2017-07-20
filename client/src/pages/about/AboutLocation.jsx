@@ -11,9 +11,9 @@ export default class AboutLocation extends Component {
 				</div>
 				<div className="film-info">
 					<div className = "title">{ venue }</div>
-					<div className="short description">{ about }</div>
-					<div className="showtime">{ openingTimes }</div>
+					<div className="short description">{ about }<div>{ openingTimes }</div></div>	
 				</div>
+				
 			</div>
 		)
 	}

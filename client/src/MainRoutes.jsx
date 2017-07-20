@@ -12,6 +12,7 @@ import Confirmation from './pages/confirmation/Confirmation';
 import Cinema from './pages/about/Cinema';
 import Classifications from './pages/classifications/Classifications';
 import Formats from './pages/formats/Formats';
+import Footer from './components/Footer';
 
 export default class MainRoutes extends Component {
 	constructor(props) {
@@ -45,13 +46,17 @@ export default class MainRoutes extends Component {
 		  </main>
 		  <article>
 			<Switch>
+
 			  <Route exact path='/' component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			  <Route path="/films" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			  <Route path="/faq" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			  <Route path="/contact" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
-				<Route path="/cinema" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
+			  <Route path="/cinema" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
+			  <Route path="/classifications" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
+			  <Route path="/formats" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			</Switch>
 		  </article>
+		  <Footer />
 		</div>
 		);
 	}
