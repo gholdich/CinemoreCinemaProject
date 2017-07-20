@@ -10,6 +10,8 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
+    "mongodb": "^2.2.30",
+    "mongoose": "^4.11.3",
     "node-sass": "^4.5.3",
     "react-scroll": "^1.5.4"
   },

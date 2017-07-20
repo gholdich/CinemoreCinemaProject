@@ -1,9 +1,32 @@
 const express = require("express");
 const fs = require("fs");
-const getShowings = require('./db/showings');
-const getCinemas = require('./db/cinemas');
-
+const MongoClient= require('mongodb');
 const app = express();
+
+//const db = mongoose.connection
+
+var commentsArray=[];
+var cinemaArray=[];
+var filmArray=[];
+MongoClient.connect('mongodb://localhost/local', function(err, db) {
+	
+	const cinemas = db.collection('cinemas').find({}).toArray(function(err,docs){
+		cinemaArray = docs;
+	});
+	const films = db.collection('films').find({}).toArray(function(err,docs){
+		console.log('Result of find:',docs);
+		filmArray = docs;
+	});
+        db.close();
+		
+
+      });
+//console.log("this is comments:"+comments1);
+  
+//console.log(mongoose.connection);
+
+//console.log(db.children);
+
 
 app.set("port", process.env.PORT || 8081);
 
@@ -11,6 +34,7 @@ app.set("port", process.env.PORT || 8081);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 
 app.get("/api/films", (req, res) => {
   const param = req.query.q;
@@ -23,7 +47,7 @@ app.get("/api/films", (req, res) => {
   }
   
   const r = ((param) => {
-	  return getShowings.showings.filter(film => film.title.toLowerCase().includes(param));
+	  return filmArray.filter(film => film.title.toLowerCase().includes(param));
   })(param);
   
   
@@ -36,13 +60,8 @@ app.get("/api/films", (req, res) => {
 
 app.get("/api/cinemas", (req, res) => {
   
-  const r = (() => {
-	  return getCinemas.cinema;
-  })();
-  
-  
-  if (typeof r !== 'undefined') {
-    res.json(r);
+  if (typeof cinemaArray !== 'undefined') {
+    res.json(cinemaArray);
   } else {
     res.json([]);
   }
@@ -51,7 +70,7 @@ app.get("/api/cinemas", (req, res) => {
 app.get("/api/showings", (req, res) => {
   
   const r = (() => {
-	  return getShowings.showings;
+	  return filmArray;
   })();
   
   if (typeof r !== 'undefined') {
@@ -65,7 +84,7 @@ app.get("/api/showings", (req, res) => {
 app.get("/api/locations", (req, res) => {
   
   const r = (() => {
-	  return getCinemas.cinema.map(cinema => {
+	  return cinemaArray.map(cinema => {
 		return { 'id': cinema.cinemaId, 'name': cinema.location };
 	});
   })();
@@ -89,7 +108,7 @@ app.get("/api/showtimes", (req, res) => {
   }
   
   const r = ((param) => {
-	  return getCinemas.cinema.filter(cinema => cinema.cinemaId == param).map(cinema => cinema.showings)[0];
+	  return cinemaArray.filter(cinema => cinema.cinemaId == param).map(cinema => cinema.showings)[0];
   })(param);
   
   

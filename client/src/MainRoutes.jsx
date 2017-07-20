@@ -46,8 +46,7 @@ export default class MainRoutes extends Component {
 		  </main>
 		  <article>
 			<Switch>
-			 
-			  
+
 			  <Route exact path='/' component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			  <Route path="/films" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			  <Route path="/faq" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>

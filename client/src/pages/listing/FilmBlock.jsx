@@ -35,20 +35,22 @@ export default class FilmBlock extends Component {
 						<img className="poster" src={"/images/posters/"+posterFileName} alt={"Poster of "+title} />
 						</div>
 					<div className="buttonDiv" >
-						<button type="text" className="watchTrailer"  onClick={this.toggleTrailer.bind(this)} >Watch Trailer</button>
+
+						{(this.state.trailerActive) ? <button type="text" className="watchTrailer"  onClick={this.toggleTrailer.bind(this)} >Watch Trailer</button> :
+						<button type="text" className="watchTrailer"  onClick={this.toggleTrailer.bind(this)} >Hide Trailer</button>}
 					</div>
 				</div>
 				<div className="film-info">
 					<div className="title">{ title }</div>
 					<div className="genres">{ this.showGenres() }</div>
+					<div className="trailer">
+						<Trailer trailerActive={this.state.trailerActive} videoId={this.props.videoId}/>
+					</div>
 					<div className="short description">{ shortDes }</div>
 					<div className="release"><span className="info-title">Release Date:</span> <span className="info-text">{ release }</span></div>
 					<div className="director"><span className="info-title">Director:</span> <span className="info-text">{ director }</span></div>
 					<div className="actors"><span className="info-title">Cast:</span> <span className="info-text">{ cast }</span></div>
 					<div className="showtime">{ showtimeBlock }</div>
-					<div className="trailer">
-						<Trailer trailerActive={this.state.trailerActive} videoId={this.props.videoId}/>
-					</div>
 				</div>
 			</div>
 		);
