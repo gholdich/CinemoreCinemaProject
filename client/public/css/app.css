@@ -57,7 +57,7 @@ ul.navbar-nav{
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s, visibility 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
     
 
@@ -72,19 +72,21 @@ ul.navbar-nav li.link{
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s, visibility 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .dropDown{
 	position: absolute;
-
 	display: block;
 	list-style: none;
 	background-color: #fff;
+	opacity: 0;
+	visibility: hidden;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s, visibility 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+	
 }
 
 .dropLink{

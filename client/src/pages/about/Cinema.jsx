@@ -33,14 +33,14 @@ export default class Cinema extends Component {
 					abouts: cinema.about,
 					venue: cinema.location,
 					openingTimes: [
-								cinema.openingTimes.monday,
-								cinema.openingTimes.tuesday,
-								cinema.openingTimes.wednesday,
-								cinema.openingTimes.thursday,
-								cinema.openingTimes.friday,
-								cinema.openingTimes.saturday,
-								cinema.openingTimes.sunday
-							]
+						cinema.openingTimes.monday,
+						cinema.openingTimes.tuesday,
+						cinema.openingTimes.wednesday,
+						cinema.openingTimes.thursday,
+						cinema.openingTimes.friday,
+						cinema.openingTimes.saturday,
+						cinema.openingTimes.sunday
+					]
 				});	
 			})
 			console.log(this.state.openingTimes);
