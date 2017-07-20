@@ -12,6 +12,7 @@ export default class BookNow extends Component {
 	}
 	
 	render() {
+		const location = this.props.location;
 		return(
 			<div id="bookNow">
 				<div className="left quickBook">
