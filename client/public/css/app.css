@@ -38,6 +38,29 @@ ul.navbar-nav{
     border: 0;
 }
 
+.footer {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: 0;
+    max-width: 60%;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+.footer li.link{
+    display: inline-block;
+    
+    margin: 0px 5px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s, visibility 0.3s ease-in-out;
+}
+    
+
 ul.navbar-nav li.link{
     display: inline-block;
     -webkit-transform: skewX(-10deg);

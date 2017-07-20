@@ -12,6 +12,7 @@ import Confirmation from './pages/confirmation/Confirmation';
 import Cinema from './pages/about/Cinema';
 import Classifications from './pages/classifications/Classifications';
 import Formats from './pages/formats/Formats';
+import Footer from './components/Footer';
 
 export default class MainRoutes extends Component {
 	constructor(props) {
@@ -52,6 +53,7 @@ export default class MainRoutes extends Component {
 				<Route path="/cinema" component={() => <BookNow onChange={this.handleChange} location={location} film={film} time={time}/>}/>
 			</Switch>
 		  </article>
+		  <Footer />
 		</div>
 		);
 	}
