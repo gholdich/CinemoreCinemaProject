@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import AboutQA from './AboutQA';
 import AboutLocation from './AboutLocation';
 import Client from '../../api/Client';
-
+import OpeningTimes from './OpeningTimes';
 
 export default class Cinema extends Component {
 	
@@ -18,7 +18,9 @@ export default class Cinema extends Component {
 			loading: true,
 			cinemaId: selectedCinemaId,
 			abouts: [],
-			venue: ''
+			venue: '',
+			openingTimes: [],
+			picture: []
 		}
 	}
 	
@@ -28,7 +30,8 @@ export default class Cinema extends Component {
 				this.setState({
 					loading: false,
 					abouts: venue.map(cinema => cinema.about),
-					venue: venue.map(cinema => cinema.location)
+					venue: venue.map(cinema => cinema.location),
+					openingTimes : 	venue.map(cinema => cinema.openingTimes.monday)
 				});
 		});
 	}
@@ -36,18 +39,17 @@ export default class Cinema extends Component {
 	displayAbout() {
 			return(
 				<AboutLocation id={this.state.cinemaId} 
-				venue={this.state.venue} about={this.state.abouts} />
+				venue={this.state.venue} about={this.state.abouts}
+				openingTimes={this.displayOpeningTimes()}/>
 			);
 	}
 	
-	// displayLocationAbout(cinemaId, cinema) {
-		// return this.state.cinemas.filter(about => about.cinemaId === cinemaId).map((about, idx) => {
-			// return(
-				// <AboutLocation key={idx} id={cinema.cinemaId} 
-				// venue={cinema.location} about={cinema.about} />
-			// );
-		// });
-	// }
+	displayOpeningTimes() {
+			return(
+				<OpeningTimes id={this.state.cinemaId} 
+				time={this.state.openingTimes}/>
+			);
+	}
 	
 	displayLoading() {
 		return(
@@ -59,7 +61,7 @@ export default class Cinema extends Component {
 		const { loading, about } = this.state;
 		return(
 			<div id = "gridOfEquals">
-					<AboutQA />
+					<AboutQA />0
 					<div>
 						{ loading ? this.displayLoading() : this.displayAbout() }
 					</div>

@@ -18,16 +18,10 @@ export default class Navbar extends Component{
 	
 	toggleCinema() {
 		this.setState({cinemaActive: !this.state.cinemaActive});
-		if(this.state.filmActive === false){
-			this.setState({filmActive: !this.state.filmActive});
-		}
 	}
 		
 	toggleFilm() {
 		this.setState({filmActive: !this.state.filmActive});
-		if(this.state.cinemaActive === false){
-			this.setState({cinemaActive: !this.state.cinemaActive});
-		}
 	}
 	
 	render(){
