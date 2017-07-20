@@ -1,8 +1,19 @@
 import React , { Component } from 'react';
-
-
+import Trailer from './Trailer.jsx';
 
 export default class FilmBlock extends Component {
+
+	constructor(){
+			super();
+
+			this.state = {
+				trailerActive: true,
+			}
+	}
+
+	toggleTrailer() {
+		this.setState({trailerActive: !this.state.trailerActive});
+	}
 
 	showGenres() {
 		return this.props.genres.map((genre, idx) => {
@@ -15,12 +26,17 @@ export default class FilmBlock extends Component {
 	}
 
 	render() {
-
+		const { trailerActive } = this.state;
 		const { id, title, posterFileName, shortDes, release, director, cast, showtimeBlock, videoId } = this.props;
 		return(
 			<div className="film" >
-				<div className="film-poster" >
-					<img className="poster" src={"/images/posters/"+posterFileName} alt={"Poster of "+title} />
+				<div>
+					<div className="film-poster" >
+						<img className="poster" src={"/images/posters/"+posterFileName} alt={"Poster of "+title} />
+						</div>
+					<div className="buttonDiv" >
+						<button type="text" className="watchTrailer"  onClick={this.toggleTrailer.bind(this)} >Watch Trailer</button>
+					</div>
 				</div>
 				<div className="film-info">
 					<div className="title">{ title }</div>
@@ -31,7 +47,7 @@ export default class FilmBlock extends Component {
 					<div className="actors"><span className="info-title">Cast:</span> <span className="info-text">{ cast }</span></div>
 					<div className="showtime">{ showtimeBlock }</div>
 					<div className="trailer">
-						<iframe src={this.props.videoId} width="640" height="480" frameBorder="0" allowFullScreen></iframe>
+						<Trailer trailerActive={this.state.trailerActive} videoId={this.props.videoId}/>
 					</div>
 				</div>
 			</div>
