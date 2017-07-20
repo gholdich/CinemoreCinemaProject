@@ -128,7 +128,7 @@ export default class Listing extends Component {
 	
 	handleSearch(filterText){
 		this.setState({filterText: filterText});
-		appActions.filterBySearch(filterText);
+		appActions.filterBySearch(filterText.toUpperCase());
 	}
 
 

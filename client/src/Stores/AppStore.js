@@ -114,15 +114,15 @@ class AppStore extends EventEmitter {
 		//console.log(searchParameters);
 		console.log(this.films);
 		this.start.forEach((film) => {
-			if(film.title.indexOf(searchParameters) !== -1){
+			if(film.title.toUpperCase().indexOf(searchParameters) !== -1){
 				//console.log(film.title);
 				this.filteredListing.push(film);
-			}else if(film.cast.indexOf(searchParameters) !== -1){
+			}else if(film.cast.toUpperCase().indexOf(searchParameters) !== -1){
 				//console.log(film.title);
 				this.filteredListing.push(film);
 			}else{
 				for(let i = 0; i < film.genres.length; i++){
-					if(film.genres[i].indexOf(searchParameters) !== -1){
+					if(film.genres[i].toUpperCase().indexOf(searchParameters) !== -1){
 						//console.log(film.title);
 						this.filteredListing.push(film);
 					}
