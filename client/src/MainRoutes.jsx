@@ -37,6 +37,8 @@ export default class MainRoutes extends Component {
 			  <Route path="/faq" component={BookNow}/>
 			  <Route path="/contact" component={BookNow}/>
 			  <Route path="/cinema" component={BookNow}/>
+			  <Route path="/classifications" component={BookNow}/>
+			  <Route path="/formats" component={BookNow}/>
 			</Switch>
 		  </article>
 		</div>

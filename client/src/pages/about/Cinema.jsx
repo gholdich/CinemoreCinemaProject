@@ -19,7 +19,7 @@ export default class Cinema extends Component {
 			cinemaId: selectedCinemaId,
 			abouts: [],
 			venue: '',
-			openingTimes: [],
+			openingTimes : {},
 			picture: []
 		}
 	}
@@ -27,13 +27,24 @@ export default class Cinema extends Component {
 	componentDidMount() {
 		Client.fetchCinemas(cinema => {
 			var venue = cinema.filter(cinema => cinema.cinemaId == this.state.cinemaId);
+			venue.map(cinema => {
 				this.setState({
 					loading: false,
-					abouts: venue.map(cinema => cinema.about),
-					venue: venue.map(cinema => cinema.location),
-					openingTimes : 	venue.map(cinema => cinema.openingTimes.monday)
-				});
-		});
+					abouts: cinema.about,
+					venue: cinema.location,
+					openingTimes: [
+								cinema.openingTimes.monday,
+								cinema.openingTimes.tuesday,
+								cinema.openingTimes.wednesday,
+								cinema.openingTimes.thursday,
+								cinema.openingTimes.friday,
+								cinema.openingTimes.saturday,
+								cinema.openingTimes.sunday
+							]
+				});	
+			})
+			console.log(this.state.openingTimes);
+		})
 	}
 		
 	displayAbout() {
@@ -47,7 +58,13 @@ export default class Cinema extends Component {
 	displayOpeningTimes() {
 			return(
 				<OpeningTimes id={this.state.cinemaId} 
-				time={this.state.openingTimes}/>
+				timeMon={this.state.openingTimes[0]}
+				timeTue={this.state.openingTimes[1]}
+				timeWed={this.state.openingTimes[2]}
+				timeThu={this.state.openingTimes[3]}
+				timeFri={this.state.openingTimes[4]}
+				timeSat={this.state.openingTimes[5]}
+				timeSun={this.state.openingTimes[6]}/>
 			);
 	}
 	
@@ -61,7 +78,7 @@ export default class Cinema extends Component {
 		const { loading, about } = this.state;
 		return(
 			<div id = "gridOfEquals">
-					<AboutQA />0
+					<AboutQA />
 					<div>
 						{ loading ? this.displayLoading() : this.displayAbout() }
 					</div>

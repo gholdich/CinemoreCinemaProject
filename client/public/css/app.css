@@ -61,12 +61,7 @@ ul.navbar-nav li.link{
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
-<<<<<<< HEAD
     transition: all 0.3s, visibility 0.3s ease-in-out;
-
-=======
-    transition: all 0.3s;
->>>>>>> c43b671361f0f4d01800969c88412d7af89ac766
 }
 
 .dropLink{
@@ -317,6 +312,7 @@ ul.navbar-nav li.link a span{
 
 #gridOfEquals .film .film-info .description {
     margin: 12px 3px;
+	display: flex;
 }
 
 #gridOfEquals .film .film-info .release,
@@ -442,6 +438,36 @@ ul.navbar-nav li.link a span{
     height: 50px;
     margin: 10px 3px;
     padding: 3px;
+}
+
+.openingTimes-container{
+	margin: 0px 15px;
+}
+
+.openingTimeBlock{
+	display: inline-block;
+    text-align: -webkit-center;
+    text-align: center;
+    border: 1px solid rgba(195, 195, 195, 0.5);
+    background: #3c3c3c;
+    width: 250px;
+    height: 160px;
+    margin: 10px 3px;
+    padding: 3px;
+}
+
+.openingTimeBlock .openingTime-time{
+	float: right;
+    font-weight: 400;
+    font-size: 19px;
+	color: white;
+}
+
+.openingTime-day{
+	float: left;
+    font-weight: 400;
+    font-size: 19px;
+	color: white;
 }
 
 .film-info .showtime .showtimeBlock #showtime-time {
