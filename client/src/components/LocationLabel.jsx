@@ -5,8 +5,7 @@ import LocationPin from './LocationPin';
 export default class LocationLabel extends Component {
 	constructor(props) {
 		super(props);
-		
-		let selectedLocation = 'None Selected';
+		let selectedLocation = 'Select Location';
 		
 		if(localStorage.selectedLocation) {
 			selectedLocation = JSON.parse(localStorage.selectedLocation);
@@ -18,9 +17,12 @@ export default class LocationLabel extends Component {
 	}
 	
 	render() {
-		//const { selectedLocation } = this.state;
 		return(
-			<div className = "location-label">Current Location : <span className = "selection">{this.state.location}</span></div>
+			<div className = "location-label">
+				Current Location : <span className = "selection" >
+										{this.props.location}
+									</span>
+			</div>
 		);
 	}
 }

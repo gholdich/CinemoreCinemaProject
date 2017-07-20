@@ -60,11 +60,12 @@ export default class LocationPin extends Component {
 	updateSelection(e) {
 		if(e.target.value !== 'Select Location') {
 		const value = e.target.value,
-			  text = e.target[value].text;
-			this.setState({selectedLocation : text});
-			localStorage.selectedLocation = JSON.stringify(text);
-			localStorage.selectedCinemaId = JSON.stringify(value);
-			document.location.reload(true);
+		text = e.target[value].text;
+		this.setState({selectedLocation : text});
+		localStorage.selectedLocation = JSON.stringify(text);
+		localStorage.selectedCinemaId = JSON.stringify(value);
+			
+		this.props.onChange(text);
 		}
 	}
 	
