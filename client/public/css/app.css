@@ -482,8 +482,15 @@ ul.navbar-nav li.link a span{
     padding-left: 5px;
 }
 
+.overlay {
+	box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.7);
+}
+
 .trailer {
-	padding: 5px;
+	position: absolute;
+	z-index: 5;
+	margin: auto;
+	padding-top: 2px;
 
 }
 
@@ -499,10 +506,8 @@ ul.navbar-nav li.link a span{
   border: 2px groove black;;
   border-radius: 5px;
 	color: white;
-	padding-bottom: 5px;
 }
 
 .watchTrailer:hover{
 	border:	2px groove silver;
-	background-color: ;
 }
