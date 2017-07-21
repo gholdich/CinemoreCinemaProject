@@ -19,18 +19,18 @@ export default class BookNow extends Component {
 			<div id="bookNow">
 				<div className="left quickBook">
 					<div className="left quickBook one">
-						<p
-						{location} >
+						<p>
+						{location}
 						</p>
 					</div>
 					<div className="left quickBook two">
-						<p
-						{film}>
+						<p>
+						{film}
 						</p>
 					</div>
 					<div className="left quickBook three">
-						<p
-						{time}>
+						<p>
+						{time}
 						</p>
 					</div>
 				</div>
