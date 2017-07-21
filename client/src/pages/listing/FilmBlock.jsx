@@ -27,7 +27,7 @@ export default class FilmBlock extends Component {
 
 	render() {
 		const { trailerActive } = this.state;
-		const { id, title, posterFileName, shortDes, release, director, cast, showtimeBlock, videoId } = this.props;
+		const { id, title, posterFileName, shortDes, release, director, cast, showtimeBlock, videoId, classification } = this.props;
 		return(
 			<div className="film" >
 				<div>
@@ -41,10 +41,10 @@ export default class FilmBlock extends Component {
 					</div>
 				</div>
 				<div className="film-info">
-					<div className="title">{ title }</div>
+					<div className="title">{ title } <img src={classification} /></div>
 					<div className="genres">{ this.showGenres() }</div>
 					<div className="trailer">
-						<Trailer trailerActive={this.state.trailerActive} videoId={this.props.videoId}/>
+						<Trailer trailerActive={this.state.trailerActive} videoId={videoId}/>
 					</div>
 					<div className="short description">{ shortDes }</div>
 					<div className="release"><span className="info-title">Release Date:</span> <span className="info-text">{ release }</span></div>

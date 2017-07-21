@@ -3,6 +3,7 @@
 	  {
 		"filmId": 1,
 		"title": "Spider-Man: Homecoming",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Sci-Fi"],
 		"poster": "spiderman.jpg",
 		"carouselPoster":"Spider-Man-Homecoming.jpg",
@@ -16,6 +17,7 @@
 	  {
 		"filmId": 2,
 		"title": "War For The Planet Of The Apes",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Drama", "Sci-Fi", "Thriller"],
 		"poster": "WarForThePlanetOfTheApes.jpg",
 		"carouselPoster":"War-For-The-Planet-Of-The-Apes.png",
@@ -29,6 +31,7 @@
 	  {
 		"filmId": 3,
 		"title": "Wonder Woman",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Fantasy", "Sci-Fi", "War"],
 		"poster": "wonderwoman.jpg",
 		"carouselPoster":"wonderwoman.jpg",
@@ -42,6 +45,7 @@
 	  {
 		"filmId": 4,
 		"title": "The Wave",
+		"classification": "images/classifications/15.png",
 		"genres": ["True-Story", "Drama", "German-Cinema", "Thriller"],
 		"poster": "thewave.jpg",
 		"carouselPoster":"",
@@ -55,6 +59,7 @@
 	  {
 		"filmId": 5,
 		"title": "Finding Nemo",
+		"classification": "images/classifications/u.png",
 		"genres": ["Animation","Childrens","Comedy"],
 		"poster": "",
 		"carouselPoster":"",
@@ -68,6 +73,7 @@
 	  {
 		"filmId": 6,
 		"title": "Gladiator",
+		"classification": "images/classifications/15.png",
 		"genres": ["Action","Adventure","Drama"],
 		"poster": "gladiator.jpg",
 		"carouselPoster":"",
@@ -81,6 +87,7 @@
 	  {
 		"filmId": 7,
 		"title": "The Silence of the Lambs",
+		"classification": "images/classifications/18.png",
 		"genres": ["Crime", "Drama", "Thriller"],
 		"poster": "silence.jpg",
 		"carouselPoster":"",
@@ -94,6 +101,7 @@
 	  {
 		"filmId": 8,
 		"title": "Master and Commander",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action","Adventure","Drama"],
 		"poster": "",
 		"carouselPoster":"",
@@ -107,6 +115,7 @@
 	  {
 		"filmId": 9,
 		"title": "The Princess Bride",
+		"classification":"images/classifications/pg.png" ,
 		"genres": ["Adventure","Family","Fantasy"],
 		"poster": "princessbride.jpg",
 		"carouselPoster":"",
@@ -120,6 +129,7 @@
 	  {
 		"filmId": 10,
 		"title": "The Devil's Advocate",
+		"classification": "images/classifications/18.png",
 		"genres": ["drama","Mystery", "Thriller"],
 		"poster": "devilsAdvocate.jpg",
 		"carouselPoster":"",

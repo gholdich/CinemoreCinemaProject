@@ -98,7 +98,8 @@ const films =[
 		"description": "High school teacher, Rainer Wegner, may be popular with the students, but he's also unorthodox. He's forced to teach autocracy for the school's project week. He's less than enthusiastic at first, but the response of the students is surprising to say the least. He forces the students to become more invested in the prospect of self rule, and soon the class project has its own power and eerily starts to resemble Germany's past. Can Wegner and his class realize what's happening before the horrors start repeating themselves?",
 		"releaseDate": "19th Sep 2008",
 		"director": "Dennis Gansel",
-		"cast": "Frederick Lau, Max Riemelt, Jennifer Ulrich"
+		"cast": "Frederick Lau, Max Riemelt, Jennifer Ulrich",
+		"videoId": "https://www.youtube.com/embed/4FYDF8wGn5E"
 	  },
 	  {
 		"filmId": 5,
@@ -110,7 +111,8 @@ const films =[
 		"description": "A clown fish named Marlin lives in the Great Barrier Reef loses his son, Nemo. After he ventures into the open sea, despite his father's constant warnings about many of the ocean's dangers. Nemo is abducted by a boat and netted up and sent to a dentist's office in Sydney. So, while Marlin ventures off to try to retrieve Nemo, Marlin meets a fish named Dory, a blue tang suffering from short-term memory loss. The companions travel a great distance, encountering various dangerous sea creatures such as sharks, anglerfish and jellyfish, in order to rescue Nemo from the dentist's office, which is situated by Sydney Harbor. While the two are doing this, Nemo and the other sea animals in the dentist's fish tank plot a way to return to Sydney Harbor to live their lives free again.",
 		"releaseDate": "10 Oct 2003",
 		"director": "Andrew Stanton",
-		"cast": "Albert Brooks, Ellen DeGeneres, Alexander Gould"
+		"cast": "Albert Brooks, Ellen DeGeneres, Alexander Gould",
+		"videoId": "https://www.youtube.com/embed/2zLkasScy7A"
 	  },
 	  {
 		"filmId": 6,
@@ -122,7 +124,8 @@ const films =[
 		"description": "Maximus is a powerful Roman general, loved by the people and the aging Emperor, Marcus Aurelius. Before his death, the Emperor chooses Maximus to be his heir over his own son, Commodus, and a power struggle leaves Maximus and his family condemned to death. The powerful general is unable to save his family, and his loss of will allows him to get captured and put into the Gladiator games until he dies. The only desire that fuels him now is the chance to rise to the top so that he will be able to look into the eyes of the man who will feel his revenge.",
 		"releaseDate": "12 May 2000",
 		"director": "Ridley Scott",
-		"cast": "Russell Crowe, Joaquin Phoenix, Connie Nielsen"
+		"cast": "Russell Crowe, Joaquin Phoenix, Connie Nielsen",
+		"videoId": "https://www.youtube.com/embed/Q-b7B8tOAQU"
 	  },
 	  {
 		"filmId": 7,
@@ -134,7 +137,8 @@ const films =[
 		"description": "Young FBI agent Clarice Starling is assigned to help find a missing woman to save her from a psychopathic serial killer who skins his victims. Clarice attempts to gain a better insight into the twisted mind of the killer by talking to another psychopath: Hannibal Lecter, who used to be a respected psychiatrist. FBI agent Jack Crawford believes that Lecter, who is also a very powerful and clever mind manipulator, has the answers to their questions and can help locate the killer. However, Clarice must first gain Lecter's confidence before the inmate will give away any information.",
 		"releaseDate": "31 May 1991",
 		"director": "Jonathan Demme",
-		"cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney"
+		"cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney",
+		"videoId": "https://www.youtube.com/embed/W6Mm8Sbe__o"
 	  },
 	  {
 		"filmId": 8,
@@ -146,7 +150,8 @@ const films =[
 		"description": "The year is 1805. Europe has fallen to Napoleon, and only the Royal Navy stands in his way to total victory. Off the cost of South America, a new conflict is brewing. Captain Jack \"Lucky Jack\" Aubrey of the Man-of-War HMS Surprise is under orders to sink or capture the French privateer Acheron, which has been deployed to the region. After seven weeks of uneventful sailing, the Acheron strikes first, all but crippling the Surprise in an engagement in which Aubrey realizes his enemy's ship is nautically superior to his own. Along with his close friend and confidant Stephan Maturin who also happens to be the ship's surgeon, Aubrey is now faced with the choice of retreating to England and admitting defeat or remaining at the Acheron's mercy. Aubrey must now do the impossible if he is to survive, repair his ship, catch up to his enemy and defeat the Acheron--somehow.",
 		"releaseDate": "28 Nov 2003",
 		"director": "Peter Weir",
-		"cast": "Russell Crowe, Paul Bettany, Billy Boyd"
+		"cast": "Russell Crowe, Paul Bettany, Billy Boyd",
+		"videoId": "https://www.youtube.com/embed/5kLoPYkYs9I"
 	  },
 	  {
 		"filmId": 9,
@@ -158,7 +163,8 @@ const films =[
 		"description": "A kindly grandfather sits down with his ill grandson and reads him a story. The story is one that has been passed down from father to son for generations. As the grandfather reads the story, the action comes alive. The story is a classic tale of love and adventure as the beautiful Buttercup, engaged to the odious Prince Humperdinck, is kidnapped and held against her will in order to start a war, It is up to Westley (her childhood beau, now returned as the Dread Pirate Roberts) to save her. On the way he meets a thief and his hired helpers, an accomplished swordsman and a huge, super strong giant, both of whom become Westley's companions in his quest.",
 		"releaseDate": "9 Oct 1987",
 		"director": "Rob Reiner",
-		"cast": "Cary Elwes, Mandy Patinkin, Robin Wright"
+		"cast": "Cary Elwes, Mandy Patinkin, Robin Wright",
+		"videoId": "https://www.youtube.com/embed/O3CIXEAjcc8"
 	  },
 	  {
 		"filmId": 10,
@@ -170,7 +176,8 @@ const films =[
 		"description": "Kevin Lomax, a ruthless young Florida attorney that never lost a case, is recruited by the most powerful law firm in the world. In spite of his mother's disagreement, which compares New York City to Babylon, he accepts the offer and the money that comes along. But soon, his wife starts feeling homesick as she witnesses devilish apparitions. However, Kevin is sinking in his new cases and pays less and less attention to his wife. His boss and mentor, John Milton, seems to always know how to overcome every problem and that just freaks Kevin right off.",
 		"releaseDate": "16 Jan 1998",
 		"director": "Taylor Hackford",
-		"cast": "Keanu Reeves, Al Pacino, Charlize Theron"
+		"cast": "Keanu Reeves, Al Pacino, Charlize Theron",
+		"videoId": "https://www.youtube.com/embed/O3CIXEAjcc8"
 	  }
 	];
 const cinemas=[ {
@@ -222,13 +229,13 @@ const cinemas=[ {
 		"cinemaId": 2,
 		"location": "London",
 		"openingTimes":{
-					"monday": "",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "10:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 23:00",
+					"friday": "09:00 - 01:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 22:00"
 				},
 		"showings":[
 				{
@@ -268,13 +275,13 @@ const cinemas=[ {
 		"cinemaId": 3,
 		"location": "Glasgow",
 		"openingTimes":{
-					"monday": "",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "10:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 23:00",
+					"friday": "09:00 - 01:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 22:00"
 				},
 		"showings":[
 				{
@@ -314,13 +321,13 @@ const cinemas=[ {
 		"cinemaId": 4,
 		"location": "Nottingham",
 		"openingTimes":{
-					"monday": "",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "10:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 23:00",
+					"friday": "09:00 - 01:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 22:00"
 				},
 		"showings":[
 				{
@@ -360,13 +367,13 @@ const cinemas=[ {
 		"cinemaId": 5,
 		"location": "Bristol",
 		"openingTimes":{
-					"monday": "",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "10:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 23:00",
+					"friday": "09:00 - 01:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 22:00"
 				},
 		"showings":[
 				{
@@ -420,13 +427,13 @@ const cinemas=[ {
 		"cinemaId": 6,
 		"location": "Southampton",
 		"openingTimes":{
-					"monday": "",
-					"tuesday": "",
-					"wednesday": "",
-					"thursday": "",
-					"friday": "",
-					"saturday": "",
-					"sunday": ""
+					"monday": "10:00 - 23:00",
+					"tuesday": "09:00 - 23:00",
+					"wednesday": "09:00 - 23:00",
+					"thursday": "09:00 - 23:00",
+					"friday": "09:00 - 01:00",
+					"saturday": "09:00 - 01:00",
+					"sunday": "11:00 - 22:00"
 				},
 		"showings":[
 				{

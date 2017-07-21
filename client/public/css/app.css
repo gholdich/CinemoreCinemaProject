@@ -52,14 +52,14 @@ ul.navbar-nav{
 
 .footer li.link{
     display: inline-block;
-    
+
     margin: 0px 5px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s ease-in-out;
 }
-    
+
 
 ul.navbar-nav li.link{
     display: inline-block;
@@ -291,6 +291,12 @@ ul.navbar-nav li.link a span{
     line-height: 36px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.50);
     margin-bottom: 6px;
+}
+
+#gridOfEquals .film .title img {
+	width: 35px;
+	height:auto;
+	float: right;
 }
 
 .location-tool  {
@@ -538,8 +544,8 @@ ul.navbar-nav li.link a span{
 }
 
 .trailer {
-	position: absolute;
-	z-index: 5;
+	position: fixed;
+	z-index: 1;
 	margin: auto;
 	padding-top: 2px;
 
@@ -554,8 +560,8 @@ ul.navbar-nav li.link a span{
 	font-family: monospace;
   font-size: 18px;
   background: #188ae2;
-  border: 2px groove black;;
-  border-radius: 5px;
+  border: 2px groove black;
+  border-radius: 3px;
 	color: white;
 }
 
