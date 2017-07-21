@@ -44,7 +44,7 @@ export default class LocationPin extends Component {
 	getOptions() {
 		return this.state.options.map((option, index) => {
 			return(
-					<option key={index} value={option.id}>{option.name}</option>
+					<option key={index} value={option.name}>{option.name}</option>
 			);
 		});
 	}
@@ -58,14 +58,20 @@ export default class LocationPin extends Component {
 	}
 	
 	updateSelection(e) {
+		const options = this.state.options;
 		if(e.target.value !== 'Select Location') {
-		const value = e.target.value,
-		text = e.target[value].text;
-		this.setState({selectedLocation : text});
-		localStorage.selectedLocation = JSON.stringify(text);
-		localStorage.selectedCinemaId = JSON.stringify(value);
-			
-		this.props.onChange(text);
+		const value = e.target.value;
+		this.setState({selectedLocation : value});
+		localStorage.selectedLocation = JSON.stringify(value);
+		
+		for (let i = 0; i<options.length; i++){
+			console.log(options[i].name);
+			if(e.target.value===this.state.options[i].name){
+				console.log(this.state.options[i].id);
+				localStorage.selectedCinemaId = JSON.stringify(this.state.options[i].id);
+			}
+		}
+		this.props.onChange(value);
 		}
 	}
 	
