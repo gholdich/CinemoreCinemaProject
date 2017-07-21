@@ -3,11 +3,11 @@ import NukaCarousel from 'nuka-carousel';
 
 export default class Carousel extends Component {
 
-	mixins: [NukaCarousel.ControllerMixin]
+	//mixins: [NukaCarousel.ControllerMixin]
 	render() {
   	return (
 
-	   	<NukaCarousel wrapAround = {true} autoplay = {true} autoplayInterval = {2500}>
+	   	<NukaCarousel className="carousel" wrapAround = {true} autoplay = {true} autoplayInterval = {2500}>
 	      <img className="carouselPoster" src={"/images/carousel/wonderwoman.jpg"}/>
 	      <img className="carouselPoster" src={"/images/carousel/War-For-The-Planet-Of-The-Apes.png"}/>
 	      <img className="carouselPoster" src={"/images/carousel/Spider-Man-Homecoming.jpg"}/>

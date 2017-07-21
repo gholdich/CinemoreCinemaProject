@@ -41,6 +41,10 @@ class AppStore extends EventEmitter {
 		return this.cinemas;
 	}
 	
+	getFilms(){
+		return this.films;
+	}
+	
 	getCinemaFromIndex(index){
 		return this.cinemas[index].location;
 	}
