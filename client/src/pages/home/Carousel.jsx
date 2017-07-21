@@ -8,11 +8,11 @@ export default class Carousel extends Component {
   	return (
 
 	   	<NukaCarousel className="carousel" wrapAround = {true} autoplay = {true} autoplayInterval = {2500}>
-	      <img className="carouselPoster" src={"/images/carousel/wonderwoman.jpg"}/>
-	      <img className="carouselPoster" src={"/images/carousel/War-For-The-Planet-Of-The-Apes.png"}/>
-	      <img className="carouselPoster" src={"/images/carousel/Spider-Man-Homecoming.jpg"}/>
-	      <img className="carouselPoster" src={"/images/carousel/Alien-Covenant.png"}/>
-	      <img className="carouselPoster" src={"/images/carousel/The-Mummy.jpg"}/>
+	      <img onLoad={() => {window.dispatchEvent(new Event('resize'));}} className="carouselPoster" src={"/images/carousel/wonderwoman.jpg"}/>
+	      <img onLoad={() => {window.dispatchEvent(new Event('resize'));}} className="carouselPoster" src={"/images/carousel/War-For-The-Planet-Of-The-Apes.png"}/>
+	      <img onLoad={() => {window.dispatchEvent(new Event('resize'));}} className="carouselPoster" src={"/images/carousel/Spider-Man-Homecoming.jpg"}/>
+	      <img onLoad={() => {window.dispatchEvent(new Event('resize'));}} className="carouselPoster" src={"/images/carousel/Alien-Covenant.png"}/>
+	      <img onLoad={() => {window.dispatchEvent(new Event('resize'));}} className="carouselPoster" src={"/images/carousel/The-Mummy.jpg"}/>
 		<img className="carouselPoster" src={"/images/carousel/AvengersAgeOfUltron.jpg"}/>
 	  	</NukaCarousel>
 
