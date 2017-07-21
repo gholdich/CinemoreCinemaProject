@@ -502,6 +502,11 @@ ul.navbar-nav li.link a span{
 	color: white;
 }
 
+.OpeningTimesDiv{
+	border-left: 2px solid rgba(255, 255, 255, 0.50);
+	margin: 0px 0px 0px 5px;
+}
+
 .film-info .showtime .showtimeBlock #showtime-time {
     float: left;
     font-weight: 600;

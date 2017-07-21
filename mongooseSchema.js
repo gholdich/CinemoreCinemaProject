@@ -37,6 +37,7 @@ var cinemaSchema = mongoose.Schema({
 		
 		"cinemaId": Number,
 		"location": String,
+		"picture": String,
 		"openingTimes":[timeSchema],
 		"showings":[showingsSchema],
 		"about": String
@@ -183,6 +184,7 @@ const films =[
 const cinemas=[ {
 		"cinemaId": 1,
 		"location": "Manchester",
+		"picture": "dancehouse2.jpg",
 		"openingTimes":{
 					"monday": "09:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
@@ -223,7 +225,7 @@ const cinemas=[ {
 				}
 				
 		],
-		"about": "Opened in April 2017, QA Cinemas Manchester is flagship venue of the chain."
+		"about": "Opened in April 2017, QA Cinemas Manchester is the flagship venue of the chain."
 	  },
 	  {
 		"cinemaId": 2,
@@ -315,11 +317,12 @@ const cinemas=[ {
 				
 				
 			],
-			"about": "Situated in a chamring converted factory, QA Cinemas Glasgow food outlets offer a host of traditional Scottish delicacies as well as the timesless cinema classics."
+			"about": "Situated in a chamring converted factory, QA Cinemas Glasgow has food outlets offering a host of traditional Scottish delicacies, as well as the timesless cinema classics."
 	  },
 	  {
 		"cinemaId": 4,
 		"location": "Nottingham",
+		"picture": "nottingham.jpg",
 		"openingTimes":{
 					"monday": "10:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
@@ -421,11 +424,12 @@ const cinemas=[ {
 				
 				
 			],
-			"about": "Located amongst the campus of Bristol University, this branch of QA Cinemas couldn't be more perfectly situated for students. With that in mind, Bristol offers an array of student deals and events. All are welcome at QA Cinemas Bristol. Why not enjoy a delicious a la cart menu at our very own italian restaurant, Roma-QA"
+			"about": "Located amongst the campus of Bristol University, this branch of QA Cinemas couldn't be more perfectly situated for students. With that in mind, Bristol offers an array of student deals and events. All are welcome at QA Cinemas Bristol. Why not enjoy a delicious a-la-cart menu at our very own italian restaurant, Roma-QA"
 	  },
 	  {
 		"cinemaId": 6,
 		"location": "Southampton",
+		"picture": "southampton.jpg",
 		"openingTimes":{
 					"monday": "10:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
@@ -465,7 +469,7 @@ const cinemas=[ {
 					"time": "13:02"
 				}	
 			],
-			"about": "QA Cinemas Southampton will take you back to the golden eara of cinema. Located in the recently aquired and newly refurbished cinema (formerly Hollywood Cinemas), this branch keeps all the classic and timeless character while also showcasing the latest in odern refinement."
+			"about": "QA Cinemas Southampton will take you back to the golden era of cinema. Located in the recently aquired and newly refurbished cinema (formerly Hollywood Cinemas), this branch keeps all the classic and timeless character while also showcasing the latest in modern refinement."
 	  }];
 
 
