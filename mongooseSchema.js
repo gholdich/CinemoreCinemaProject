@@ -1,11 +1,18 @@
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/local');
-
+var forumSchema = mongoose.Schema({
+	
+	'username': String,
+	'topic': String,
+	'opener': String,
+	'comments': Array
+});
 var filmSchema = mongoose.Schema({
 	
 		"filmId": Number,
 		"title": String,
+		"classification":String
 		"genres": Array,
 		"poster": String,
 		"carouselPoster": String,
@@ -47,11 +54,12 @@ var cinemaSchema = mongoose.Schema({
 
 var Film = mongoose.model('Film', filmSchema);
 var Cinema = mongoose.model('Cinema', cinemaSchema);
-
+var Forum = mongoose.model('Forum', forumSchema)
 const films =[
 	  {
 		"filmId": 1,
 		"title": "Spider-Man: Homecoming",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Sci-Fi"],
 		"poster": "spiderman.jpg",
 		"carouselPoster":"Spider-Man-Homecoming.jpg",
@@ -65,6 +73,7 @@ const films =[
 	  {
 		"filmId": 2,
 		"title": "War For The Planet Of The Apes",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Drama", "Sci-Fi", "Thriller"],
 		"poster": "WarForThePlanetOfTheApes.jpg",
 		"carouselPoster":"War-For-The-Planet-Of-The-Apes.png",
@@ -78,6 +87,7 @@ const films =[
 	  {
 		"filmId": 3,
 		"title": "Wonder Woman",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action", "Adventure", "Fantasy", "Sci-Fi", "War"],
 		"poster": "wonderwoman.jpg",
 		"carouselPoster":"wonderwoman.jpg",
@@ -92,6 +102,7 @@ const films =[
 		"filmId": 4,
 		"title": "The Wave",
 		"genres": ["True-Story", "Drama", "German-Cinema", "Thriller"],
+		"classification": "images/classifications/15.png",
 		"poster": "thewave.jpg",
 		"carouselPoster":"",
 		"shortDes": "A high school teacher's experiment to demonstrate to his students what life is like under a dictatorship spins horribly out of control when he forms a social unit with a life of its own.",
@@ -104,6 +115,7 @@ const films =[
 	  {
 		"filmId": 5,
 		"title": "Finding Nemo",
+		"classification": "images/classifications/u.png",
 		"genres": ["Animation","Childrens","Comedy"],
 		"poster": "nemo.jpg",
 		"carouselPoster":"",
@@ -117,6 +129,7 @@ const films =[
 	  {
 		"filmId": 6,
 		"title": "Gladiator",
+		"classification": "images/classifications/15.png",
 		"genres": ["Action","Adventure","Drama"],
 		"poster": "gladiator.jpg",
 		"carouselPoster":"",
@@ -130,6 +143,7 @@ const films =[
 	  {
 		"filmId": 7,
 		"title": "The Silence of the Lambs",
+		"classification": "images/classifications/18.png",
 		"genres": ["Crime", "Drama", "Thriller"],
 		"poster": "silence.jpg",
 		"carouselPoster":"",
@@ -143,6 +157,7 @@ const films =[
 	  {
 		"filmId": 8,
 		"title": "Master and Commander",
+		"classification": "images/classifications/12a.png",
 		"genres": ["Action","Adventure","Drama"],
 		"poster": "master.jpg",
 		"carouselPoster":"",
@@ -156,6 +171,7 @@ const films =[
 	  {
 		"filmId": 9,
 		"title": "The Princess Bride",
+		"classification":"images/classifications/pg.png" ,
 		"genres": ["Adventure","Family","Fantasy"],
 		"poster": "princessbride.jpg",
 		"carouselPoster":"",
@@ -169,6 +185,7 @@ const films =[
 	  {
 		"filmId": 10,
 		"title": "The Devil's Advocate",
+		"classification": "images/classifications/18.png",
 		"genres": ["drama","Mystery", "Thriller"],
 		"poster": "devilsAdvocate.jpg",
 		"carouselPoster":"",
@@ -480,3 +497,4 @@ cinemas.map(data =>{
 	
 	cinema.save();
 });
+
