@@ -27,8 +27,8 @@ export default class MainRoutes extends Component {
 	
 	render(props) {
 		const location = this.props.location;
-		const time = this.props.film;
-		const film = this.props.time;
+		const time = this.props.time;
+		const film = this.props.film;
 		return (
 		<div id="content">
 		  <main>

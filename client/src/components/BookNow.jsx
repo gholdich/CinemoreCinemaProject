@@ -13,13 +13,24 @@ export default class BookNow extends Component {
 	
 	render() {
 		const location = this.props.location;
+		const film = this.props.film;
+		const time = this.props.time;
 		return(
 			<div id="bookNow">
 				<div className="left quickBook">
 					<div className="left quickBook one">
-						<p>
-							onClick={this.handleChange} 
-							defaultValue={location} 
+						<p
+						{location} >
+						</p>
+					</div>
+					<div className="left quickBook two">
+						<p
+						{film}>
+						</p>
+					</div>
+					<div className="left quickBook three">
+						<p
+						{time}>
 						</p>
 					</div>
 				</div>
