@@ -86,7 +86,7 @@ ul.navbar-nav li.link{
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: opacity 0.3s ease-in-out;
-	
+
 }
 
 .dropLink{
@@ -549,7 +549,7 @@ ul.navbar-nav li.link a span{
 }
 
 .trailer {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	margin: auto;
 	padding-top: 2px;
