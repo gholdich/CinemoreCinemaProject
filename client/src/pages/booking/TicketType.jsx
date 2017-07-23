@@ -75,21 +75,19 @@ export default class TicketType extends React.Component{
 			<div>
 				<div>
 					Adult Ticket Number: {this.state.adult}
-					<button onClick={this.addAdultTickets.bind(this)}>Add adult ticket</button>
-					<button onClick={this.removeAdultTickets.bind(this)}>Remove adult ticket</button>
-					£{this.state.adultPrice}
+					<button onClick={this.addAdultTickets.bind(this)}>+</button>
+					<button onClick={this.removeAdultTickets.bind(this)}>-</button>
 				</div>
 				<div>
 					Child Ticket Number: {this.state.child}
-					<button onClick={this.addChildTickets.bind(this)}>Add child ticket</button>
-					<button onClick={this.removeChildTickets.bind(this)}>Remove child ticket</button>
-					£{this.state.childPrice}
+					<button onClick={this.addChildTickets.bind(this)}>+</button>
+					<button onClick={this.removeChildTickets.bind(this)}>-</button>
 				</div>
 				<div>
 					Concession Ticket Number: {this.state.concession}
-					<button onClick={this.addConcessionTickets.bind(this)}>Add concession ticket</button>
-					<button onClick={this.removeConcessionTickets.bind(this)}>Remove concession ticket</button>
-					£{this.state.concessionPrice}
+					<button onClick={this.addConcessionTickets.bind(this)}>+</button>
+					<button onClick={this.removeConcessionTickets.bind(this)}>-</button>
+	
 				</div>
 					<div>
 						£{this.state.adultPrice+this.state.childPrice+this.state.concessionPrice}

@@ -12,7 +12,7 @@ var filmSchema = mongoose.Schema({
 	
 		"filmId": Number,
 		"title": String,
-		"classification":String
+		"classification":String,
 		"genres": Array,
 		"poster": String,
 		"carouselPoster": String,

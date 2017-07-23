@@ -17,15 +17,11 @@ MongoClient.connect('mongodb://localhost/local', function(err, db) {
 		console.log('Result of find:',docs);
 		filmArray = docs;
 	});
-        db.close();
+	/* const contactformAPI =db.collection('contactform');
+        db.close(); */
 		
 
       });
-//console.log("this is comments:"+comments1);
-  
-//console.log(mongoose.connection);
-
-//console.log(db.children);
 
 
 app.set("port", process.env.PORT || 8081);
@@ -35,7 +31,16 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
+/* app.get("api/contactform", (req,res) => {
+	var r = contactformAPI.find({}).toArray();
+	if (typeof r !== 'undefined') {
+    res.json(r);
+  } 
+  else {
+    res.json([]);
+  }
+	
+}); */
 app.get("/api/films", (req, res) => {
   const param = req.query.q;
 
