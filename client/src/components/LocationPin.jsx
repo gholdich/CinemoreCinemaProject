@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Client from '../api/Client';
 import ReactDOM from 'react-dom';
+import appStore from '../Stores/AppStore';
 
 
 export default class LocationPin extends Component {
@@ -20,12 +21,22 @@ export default class LocationPin extends Component {
 		}
 	}
 
+	componentWillMount(){
+
+	}
+
 	componentDidMount() {
 		Client.fetchLocations(locations => {
 			this.setState({options: locations});
 		});
 		document.addEventListener('click', this.handleClickOutside.bind(this), true);
-	}
+
+		appStore.getCinemas().map((locations)=>{
+			this.setState({options: locations})
+			console.log(locations);
+		});
+
+}
 
 	componentWillUnmount() {
 		document.removeEventListener('click', this.handleClickOutside.bind(this), true);

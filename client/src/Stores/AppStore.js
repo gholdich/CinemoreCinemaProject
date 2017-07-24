@@ -12,6 +12,7 @@ class AppStore extends EventEmitter {
 		this.films = [];
 		this.filteredListing = [];
 		this.locatedFilms = [];
+		this.locations = [];
 		//this.showings = Client.fetchShowings();
 		this.data = {
 			location: "London",
@@ -31,6 +32,12 @@ class AppStore extends EventEmitter {
 		});
 		Client.fetchCinemas(cinemas => {
 			this.cinemas = cinemas;
+			//console.log("loadData");
+			//console.log(this.cinemas);
+		});
+		Client.fetchLocations(locations => {
+			this.locations = locations;
+			//console.log(this.locations);
 		});
 	}
 
@@ -39,7 +46,10 @@ class AppStore extends EventEmitter {
 	}
 
 	getCinemas(){
-		return this.cinemas;
+		//this.loadData();
+		//console.log("getCinemas");
+		//console.log(this.locations);
+		return this.locations;
 	}
 
 	cinemaByLocation(location){
@@ -47,6 +57,7 @@ class AppStore extends EventEmitter {
 		this.cinemas.forEach((cinema) => {
 			//cinema.filter(cinema => cinema.cinemaId == this.state.cinemaId);
 			if(cinema.location == location){
+				console.log("match found");
 				this.filteredCinemas.push(cinema);
 			}
 		});
@@ -122,6 +133,8 @@ class AppStore extends EventEmitter {
 	} */
 
 	getFilteredFilms(){
+		//console.log("get filtered in appstore");
+		//console.log(this.filteredListing);
 		return this.filteredListing;
 	}
 
@@ -134,7 +147,7 @@ class AppStore extends EventEmitter {
 		}
 		//console.log(this.films);
 		//console.log(searchParameters);
-		console.log(this.films);
+		//console.log(this.films);
 		this.start.forEach((film) => {
 			if(film.title.toUpperCase().indexOf(searchParameters) !== -1){
 				//console.log(film.title);
@@ -151,8 +164,8 @@ class AppStore extends EventEmitter {
 				}
 			}
 		});
-		console.log("store filtered listing")
-		console.log(this.filteredListing);
+		//console.log("store filtered listing")
+		//console.log(this.filteredListing);
 		this.emit('searchChange');
 	}
 
