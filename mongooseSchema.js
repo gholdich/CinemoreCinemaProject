@@ -2,17 +2,17 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/local');
 var forumSchema = mongoose.Schema({
-	
+
 	'username': String,
 	'topic': String,
 	'opener': String,
 	'comments': Array
 });
 var filmSchema = mongoose.Schema({
-	
+
 		"filmId": Number,
 		"title": String,
-		"classification":String
+		"classification":String,
 		"genres": Array,
 		"poster": String,
 		"carouselPoster": String,
@@ -22,7 +22,7 @@ var filmSchema = mongoose.Schema({
 		"director": String,
 		"cast": String,
 		"videoId": String
-	
+
 	});
 var timeSchema=mongoose.Schema({
 	"monday": String,
@@ -39,15 +39,15 @@ var showingsSchema= mongoose.Schema({
 	"filmId": Number,
 	"date": String,
 	"time": String
-});	
+});
 var cinemaSchema = mongoose.Schema({
-		
+
 		"cinemaId": Number,
 		"location": String,
 		"openingTimes":[timeSchema],
 		"showings":[showingsSchema],
 		"about": String
-	  
+
 });
 
 
@@ -78,7 +78,7 @@ const films =[
 		"poster": "WarForThePlanetOfTheApes.jpg",
 		"carouselPoster":"War-For-The-Planet-Of-The-Apes.png",
 		"shortDes": "It's man versus ape in the final bloodbath that will determine the fate of the entire world.",
-		"description": "It's man versus ape in the final bloodbath that will determine the fate of the entire world. There's two choices: cooperate or destroy. And it's clear which decision has been made. This time, it's war. The humans believe there is no place for the apes within modern society – their way of life is primitive and different, and they can't be trusted to integrate peacefully. So, they only have one aim: exterminate them. The apes, led by Caesar (Andy Serkis), are forced into a bitter bloodbath, virtually helpless against the advanced weaponry that the humans possess. Caesar watches as his friends and family are slaughtered, and a new resolve takes over. Somewhere deep within him, the animal is awoken. A fresh hatred grips Caesar and he sets out to destroy the man (Woody Harrelson) who has led the war which will destroy his species. During his quest, Caesar wrestles to stop the rage he feels from taking over his own glimmer of humanity, as he risks truly becoming the monster that the humans see him as. When man and ape finally face each other, the future of both species hangs in the balance. Matt Reeves (Cloverfield) directs the third instalment of the franchise, set in a sci-fi universe that has gripped audiences since the first film was released in 1968. The modern adaptation features the incredible Andy Serkis, who played Gollum in the Lord of the Rings franchise, alongside Woody Harrelson (The Hunger Games franchise) as the cold-blooded colonel. Immerse yourself in the on-screen action when you book tickets for War For The Planet Of The Apes in superb 3D at Vue Cinemas! ",
+		"description": "It's man versus ape in the final bloodbath that will determine the fate of the entire world. There's two choices: cooperate or destroy. And it's clear which decision has been made. This time, it's war. The humans believe there is no place for the apes within modern society ï¿½ their way of life is primitive and different, and they can't be trusted to integrate peacefully. So, they only have one aim: exterminate them. The apes, led by Caesar (Andy Serkis), are forced into a bitter bloodbath, virtually helpless against the advanced weaponry that the humans possess. Caesar watches as his friends and family are slaughtered, and a new resolve takes over. Somewhere deep within him, the animal is awoken. A fresh hatred grips Caesar and he sets out to destroy the man (Woody Harrelson) who has led the war which will destroy his species. During his quest, Caesar wrestles to stop the rage he feels from taking over his own glimmer of humanity, as he risks truly becoming the monster that the humans see him as. When man and ape finally face each other, the future of both species hangs in the balance. Matt Reeves (Cloverfield) directs the third instalment of the franchise, set in a sci-fi universe that has gripped audiences since the first film was released in 1968. The modern adaptation features the incredible Andy Serkis, who played Gollum in the Lord of the Rings franchise, alongside Woody Harrelson (The Hunger Games franchise) as the cold-blooded colonel. Immerse yourself in the on-screen action when you book tickets for War For The Planet Of The Apes in superb 3D at Vue Cinemas! ",
 		"releaseDate": "11th Jul 2017",
 		"director": "Matt Reeves",
 		"cast": "Woody Harrelson, Judy Greer, Andy Serkis",
@@ -238,7 +238,7 @@ const cinemas=[ {
 					"date": "",
 					"time": "13:00"
 				}
-				
+
 		],
 		"about": "Opened in April 2017, QA Cinemas Manchester is flagship venue of the chain."
 	  },
@@ -283,8 +283,8 @@ const cinemas=[ {
 					"date": "",
 					"time": "13:01"
 				}
-				
-				
+
+
 		],
 		"about": "The largest QA Cinema. This venue boasts 10 screens, inluding 3 iMax theatres."
 	  },
@@ -329,8 +329,8 @@ const cinemas=[ {
 					"date": "",
 					"time": "13:02"
 				}
-				
-				
+
+
 			],
 			"about": "Situated in a chamring converted factory, QA Cinemas Glasgow food outlets offer a host of traditional Scottish delicacies as well as the timesless cinema classics."
 	  },
@@ -375,8 +375,8 @@ const cinemas=[ {
 					"date": "",
 					"time": "13:02"
 				}
-				
-				
+
+
 			],
 			"about": "The latest addition to the QA Cinemas inventory, Nottingham features state of the art interiours and facilities and screens with all new extra-comfort seats as standard. Visit QA Cinemas Nottingham for the ultimate, indulgent cinema experience."
 	  },
@@ -435,8 +435,8 @@ const cinemas=[ {
 					"date": "",
 					"time": "13:02"
 				}
-				
-				
+
+
 			],
 			"about": "Located amongst the campus of Bristol University, this branch of QA Cinemas couldn't be more perfectly situated for students. With that in mind, Bristol offers an array of student deals and events. All are welcome at QA Cinemas Bristol. Why not enjoy a delicious a la cart menu at our very own italian restaurant, Roma-QA"
 	  },
@@ -480,7 +480,7 @@ const cinemas=[ {
 					"filmId": 7,
 					"date": "",
 					"time": "13:02"
-				}	
+				}
 			],
 			"about": "QA Cinemas Southampton will take you back to the golden eara of cinema. Located in the recently aquired and newly refurbished cinema (formerly Hollywood Cinemas), this branch keeps all the classic and timeless character while also showcasing the latest in odern refinement."
 	  }];
@@ -489,12 +489,11 @@ const cinemas=[ {
 
 films.map(data => {
 	const film = new Film(data);
-	
+
 	film.save();
 });
 cinemas.map(data =>{
 	const cinema= new Cinema(data);
-	
+
 	cinema.save();
 });
-
