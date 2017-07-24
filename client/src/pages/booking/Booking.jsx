@@ -155,7 +155,7 @@ export default class Booking extends React.Component{
 				</div>
 				<center>
 					<form>
-						<select  onClick={this.setLocation.bind(this)}>
+						<select className="bookingfilter" onClick={this.setLocation.bind(this)}>
 							<option value={this.state.location}>{this.state.location}</option>
 							{cinemas.map((data,index)=>(
 							
@@ -164,7 +164,7 @@ export default class Booking extends React.Component{
 						
 							}
 						</select>
-						<select onClick={this.setFilm.bind(this)}>
+						<select className= "bookingfilter"onClick={this.setFilm.bind(this)}>
 							<option value= {this.state.film} >{this.state.film}</option>
 							{title.map((data,index)=>(
 							
@@ -173,7 +173,7 @@ export default class Booking extends React.Component{
 						
 							}
 						</select>
-						<select  onClick={this.setTime.bind(this)}>
+						<select className="bookingfilter" onClick={this.setTime.bind(this)}>
 							<option value= {this.state.time}>{this.state.time}</option>
 							{times.map((data,index)=>(
 								<option key={index} value= {times[index]}>{times[index]}</option>
@@ -183,18 +183,18 @@ export default class Booking extends React.Component{
 						</select>
 					</form>
 				
-					<div>
-						<div>
-							<div>
+				{(this.state.time!="Please select a time") ? <div className="confirmation">
+						<div className="booking_confirmation">
+							<div className="showing_title">
 								Your showing...
 							</div>
 							<div>
 							</div>
-							<div>
+							<div className= "hidden">
 								
-								{(this.getFilmPoster()=='')?<p></p> : <img src={this.getFilmPoster()} style={{width:184, height:273}} alt={"Poster of "+title} />}
+								{(this.getFilmPoster()=='')?<p></p> : <img className= "booking_poster"src={this.getFilmPoster()} style={{width:184, height:273}} alt={"Poster of "+title} />}
 							
-								<div>
+								<div className="booking_info">
 									{(this.state.location=="select") ? <p></p> : <p>{this.state.location}</p>}
 									{(this.state.film=="Please select a film") ? <p></p> : <p>{this.state.film}</p>}
 									{(this.state.time=="Please select a time") ? <p></p> : <p>{this.state.time}</p>}
@@ -202,7 +202,7 @@ export default class Booking extends React.Component{
 							</div>
 						</div>
 						
-					</div>
+				</div>: <div></div>}
 					<div>
 						<TicketType price={price} onPriceChange={this.handleChange.bind(this)}/>
 					</div>

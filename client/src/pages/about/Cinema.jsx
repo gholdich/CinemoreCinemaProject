@@ -3,13 +3,17 @@ import AboutQA from './AboutQA';
 import AboutLocation from './AboutLocation';
 import Client from '../../api/Client';
 import OpeningTimes from './OpeningTimes';
+import * as appActions from "../../Action/AppActions";
+import appStore from '../../Stores/AppStore';
 
 export default class Cinema extends Component {
 	
 	constructor(){
 		super();
-		
+		// this._onChange = this._onChange.bind(this);
+		// this._onLocationChange = this._onLocationChange.bind(this);
 		var selectedCinemaId = 0;
+		
 		if(localStorage.selectedCinemaId) {
 			selectedCinemaId = JSON.parse(localStorage.selectedCinemaId);
 		}
@@ -20,9 +24,19 @@ export default class Cinema extends Component {
 			abouts: [],
 			venue: '',
 			openingTimes : {},
-			picture: []
+			picture: ''
 		}
 	}
+	
+	// componentWillMount(){
+		// console.log("Will Mount");
+		// appStore.on("locationChange", this._onLocationChange);
+	// }
+	
+	// componentWillUnmount(){
+		// console.log("Unmount");
+		// appStore.removeListener("locationChange", this._onLocationChange);
+	// }
 	
 	componentDidMount() {
 		Client.fetchCinemas(cinema => {
@@ -40,7 +54,8 @@ export default class Cinema extends Component {
 						cinema.openingTimes[0].friday,
 						cinema.openingTimes[0].saturday,
 						cinema.openingTimes[0].sunday
-					]
+					],
+					picture: cinema.picture
 				});	
 			})
 			console.log(this.state.openingTimes);
@@ -50,7 +65,8 @@ export default class Cinema extends Component {
 	displayAbout() {
 			return(
 				<AboutLocation id={this.state.cinemaId} 
-				venue={this.state.venue} about={this.state.abouts}
+				venue={this.state.venue} pictureFileName={this.state.picture} 
+				about={this.state.abouts}
 				openingTimes={this.displayOpeningTimes()}/>
 			);
 	}

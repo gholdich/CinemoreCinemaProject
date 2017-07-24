@@ -58,6 +58,7 @@ export default class Listing extends Component {
 
 	componentDidMount() {
 		//console.log("Mounting");
+
 		Client.fetchShowings(films => {
 			Client.fetchShowTimes(this.state.cinemaId, showtime => {
 				this.setState({
@@ -66,7 +67,8 @@ export default class Listing extends Component {
 					showtimes: showtime
 				});
 			});
-		});
+
+		}); 
 
 		appActions.filterByLocation(this.props.location);
 
