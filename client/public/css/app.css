@@ -595,6 +595,8 @@ ul.navbar-nav li.link a span{
 	margin: 10px;
 	display: inline-block;
 	font-family: sans-serif;
+	overflow: auto;
+	height:350px;
 	
 }
 .booking_confirmation:before,
@@ -614,5 +616,6 @@ ul.navbar-nav li.link a span{
 .showing_title{
 	border-bottom: #188ae2 solid 5px;
 	margin : 5px ;
-	font-size: medium;
+	font-size: large;
+	
 }
