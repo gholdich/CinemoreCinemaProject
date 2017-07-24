@@ -336,6 +336,12 @@ ul.navbar-nav li.link a span{
     height: 273px;
 }
 
+.location-image img {
+    height: 268px;
+    position: relative;
+    top: 15px;
+}
+
 #gridOfEquals .film .film-info {
     width: 100%;
     margin: 10px 10px 10px 20px;

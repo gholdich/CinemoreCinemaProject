@@ -12,7 +12,7 @@ var filmSchema = mongoose.Schema({
 	
 		"filmId": Number,
 		"title": String,
-		"classification":String
+		"classification":String,
 		"genres": Array,
 		"poster": String,
 		"carouselPoster": String,
@@ -247,6 +247,7 @@ const cinemas=[ {
 	  {
 		"cinemaId": 2,
 		"location": "London",
+		"picture": "london.jpg",
 		"openingTimes":{
 					"monday": "10:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
@@ -293,6 +294,7 @@ const cinemas=[ {
 	  {
 		"cinemaId": 3,
 		"location": "Glasgow",
+		"picture": "glasgow.jpg",
 		"openingTimes":{
 					"monday": "10:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
@@ -386,6 +388,7 @@ const cinemas=[ {
 	  {
 		"cinemaId": 5,
 		"location": "Bristol",
+		"picture": "bristol.jpg",
 		"openingTimes":{
 					"monday": "10:00 - 23:00",
 					"tuesday": "09:00 - 23:00",
