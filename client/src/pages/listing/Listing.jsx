@@ -33,17 +33,18 @@ export default class Listing extends Component {
 	componentWillMount(){
 		//console.log("Will Mount");
 		appStore.on("searchChange", this._onChange);
-		appStore.on("locationChange", this._onLocationChange);
+		appStore.on("venueChange", this._onLocationChange);
 	}
 
 	componentWillUnmount(){
 		//console.log("Unmount");
 		appStore.removeListener("searchChange", this._onChange);
-		appStore.removeListener("locationChange", this._onLocationChange);
+		appStore.removeListener("venueChange", this._onLocationChange);
 	}
 
 	_onChange(){
 		this.setState({showings: appStore.getFilteredFilms()});
+
 	}
 
 	_onLocationChange(){
@@ -51,6 +52,7 @@ export default class Listing extends Component {
 		//console.log(arr);
 
 		this.setState({filteredShowings: arr});
+
 		//console.log(this.state.showings);
 		//console.log("here");
 		//console.log(this.state.showings);
@@ -68,7 +70,7 @@ export default class Listing extends Component {
 				});
 			});
 
-		}); 
+		});
 
 		appActions.filterByLocation(this.props.location);
 
@@ -86,6 +88,7 @@ export default class Listing extends Component {
 		//console.log(this.state.filterText);
 		//console.log("filtered ");
 		//console.log(this.state.showings);
+		console.log(this.state.filteredShowings);
 		if(this.state.filterText != ""){
 			return this.state.showings.map((film, idx) => {
 				return(

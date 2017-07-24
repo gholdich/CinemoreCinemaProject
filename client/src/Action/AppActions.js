@@ -13,3 +13,10 @@ export function filterByLocation(location){
 		location
 	});
 }
+
+export function filterCinemaInfo(location){
+	AppDispatcher.dispatch({
+		type: "ABOUT_LOCATION",
+		location
+	});
+}

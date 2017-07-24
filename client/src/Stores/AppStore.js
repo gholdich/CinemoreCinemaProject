@@ -8,6 +8,7 @@ class AppStore extends EventEmitter {
 	constructor(){
 		super();
 		this.cinemas = [];
+		this.filteredCinemas = [];
 		this.films = [];
 		this.filteredListing = [];
 		this.locatedFilms = [];
@@ -19,11 +20,11 @@ class AppStore extends EventEmitter {
 		}
 		this.location = "Choose a Location";
 	}
-	
+
 	getLocation(){
 		return this.location;
 	}
-	
+
 	loadData(){
 		Client.fetchShowings(films => {
 			this.films = films;
@@ -32,39 +33,54 @@ class AppStore extends EventEmitter {
 			this.cinemas = cinemas;
 		});
 	}
-	
+
 	getBooking(){
 		return this.data;
 	}
-	
+
 	getCinemas(){
 		return this.cinemas;
 	}
-	
+
+	cinemaByLocation(location){
+		this.filteredCinemas = [];
+		this.cinemas.forEach((cinema) => {
+			//cinema.filter(cinema => cinema.cinemaId == this.state.cinemaId);
+			if(cinema.location == location){
+				this.filteredCinemas.push(cinema);
+			}
+		});
+		this.emit("venueChange");
+	}
+
+	getLocatedCinemas(){
+		return this.filteredCinemas;
+	}
+
 	getFilms(){
 		return this.films;
 	}
-	
+
 	getCinemaFromIndex(index){
 		return this.cinemas[index].location;
 	}
-	
+
 	getShowings(){
 		return this.showings;
 	}
-	
+
 	getShowingFromIndex(index){
 		return this.showings[index];
 	}
-	
+
 	getFilms(){
 		return this.films;
 	}
-	
+
 	getFilmFromIndex(index){
 		return this.films[index];
 	}
-	
+
 	filmsByLocation(location){
 		this.locatedFilms = [];
 
@@ -83,12 +99,14 @@ class AppStore extends EventEmitter {
 		});
 		this.emit('locationChange');
 	}
-	
+
 	getFilmsByLocation(){
 		return this.locatedFilms;
-		
+
 	}
-	
+
+
+
 	/* getFilteredShowing(cinema_id, film_id){
 		var filteredShowings = [];
 		for(let i = 0; i < this.cinemas.length;i++){
@@ -98,15 +116,15 @@ class AppStore extends EventEmitter {
 						filteredShowings.push(this.showings[i]);
 					}
 				}
-			}	
+			}
 	    }
 		return filteredShowings;
 	} */
-	
+
 	getFilteredFilms(){
 		return this.filteredListing;
 	}
-	
+
 	filmSearch(searchParameters) {
 		this.filteredListing = [];
 		if(this.locatedFilms == ""){
@@ -137,7 +155,7 @@ class AppStore extends EventEmitter {
 		console.log(this.filteredListing);
 		this.emit('searchChange');
 	}
-	
+
 	handleActions(action){
 		switch(action.type){
 			case "VIEW_ACTION":
@@ -148,11 +166,13 @@ class AppStore extends EventEmitter {
 				break;
 			case "LOCATION_FILTER_SEARCH":
 				this.filmsByLocation(action.location);
+			case "ABOUT_LOCATION":
+				this.cinemaByLocation(action.location);
 			default:
 				break;
 		}
 	}
-	
+
 	/* handleActions(action) {
 		switch(action.type) {
 			case "FILTER_SEARCH":
@@ -161,9 +181,8 @@ class AppStore extends EventEmitter {
 			default:
 				break;
 		}
-	}  */ 
+	}  */
 }
 	const appStore = new AppStore;
 	dispatcher.register(appStore.handleActions.bind(appStore));
 	export default appStore;
-	
