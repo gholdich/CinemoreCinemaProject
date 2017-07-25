@@ -64,8 +64,48 @@ function addToContactForm(data){
 	}).then( (res) => {
 		console.log(res);
 	});
-
-
+}
+function addQuestion(data){
+	console.log('client.js information sent');
+	return fetch('/api/forum',{
+		
+		method:'POST',
+		headers:{
+			'Accept': "application/json",
+			'Content-Type': 'application/json'
+			},
+		body: JSON.stringify({
+			username:data.username,
+			question: data.question,
+			comments : []
+		})
+	}).then( (res) => {
+		console.log(res);
+	})
+}
+function fetchForum(cb){
+	return fetch(`/api/forum`, {
+    accept: "application/json"
+  })
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+	
+}
+ function addComment(comment, question){
+	return fetch('/api/forum',{
+		
+		method:'PUT',
+		headers:{
+			'Accept': "application/json",
+			'Content-Type': 'application/json'
+			},
+		body: JSON.stringify({
+			comment : comment,
+			question : question
+		})
+	}).then( (res) => {
+	console.log(res)})
 }
 
 function checkStatus(response) {
@@ -83,5 +123,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search, fetchShowings, fetchLocations, fetchShowTimes, fetchCinemas, addToContactForm };
+const Client = { addComment, search, fetchShowings, fetchLocations, fetchShowTimes, fetchCinemas, addToContactForm, addQuestion, fetchForum };
 export default Client;

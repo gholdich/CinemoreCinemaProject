@@ -19,38 +19,81 @@ var contactFormSchema = mongoose.Schema({
 			"contactReason": String,
 			"message": String
 });
+var forumSchema= mongoose.Schema({
+	
+	"username": String,
+	"question": String,
+	"comments": Array
+})
 
 var ContactForm = mongoose.model('ContactForm', contactFormSchema);
+var Forum = mongoose.model('Forum', forumSchema);
 
 var commentsArray=[];
 var cinemaArray=[];
 var filmArray=[];
 var contactformArray=[];
+var forumArray=[];
 
-MongoClient.connect('mongodb://localhost/local', function(err, db) {
+MongoClient.connect('mongodb://localhost/local', function(err, db) {//connects server to mongo
 	
-	const cinemas = db.collection('cinemas').find({}).toArray(function(err,docs){
-		cinemaArray = docs;
+	const cinemas = db.collection('cinemas').find({}).toArray(function(err,docs){//finds collection called cinemas
+		cinemaArray = docs;//save cinema info from mongodb to array 
 	});
 	const films = db.collection('films').find({}).toArray(function(err,docs){
 		//console.log('Result of find:',docs);
 		filmArray = docs;
 	});
+	const forum = db.collection('forums');
 });
 
 
-app.set("port", process.env.PORT || 8081);
+app.set("port", process.env.PORT || 8081);//set the port of server at 8081(localhost:8081)
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
+app.get('/api/forum', (req,res)=>{//gets mongodb information and sends it to the /api/forum/- this is created here
+	MongoClient.connect('mongodb://localhost/local', function(err, db){
+		const forum = db.collection('forums').find({}).toArray(function(err,docs){
+			//console.log('Result of find:',docs);
+			forumArray = docs;
+		})
+	});
+	const r = (() => {
+	  return forumArray;
+  })();
+  
+  if (typeof r !== 'undefined') {
+    res.json(r);
+  } else {
+    res.json([]);
+  }
+	
+});
+app.post('/api/forum', (req,res)=>{//.post adds information to the api, the method tells the api what you intend to do
+	console.log('You\'ve received a request to add a post to the forum on the faq page');
+	const forum = new Forum({
+		'username': req.body.username,
+		'question': req.body.question,
+		'comments': req.body.comments
+	});
+	forum.save();
+});
+app.put('/api/forum', (req,res)=>{//.put edits elements of the api
+	console.log('You\'ve received a put request');
+	MongoClient.connect('mongodb://localhost/local', function(err, db){
+		const forum = db.collection('forums').update({question: req.body.question},{$push:{comments: req.body.comment}})//this command finds the document with question : req.body.question(this is detailed in client)
+																														//$push adds to the array of your choice
+	});
+	
+}); 
 app.get("/api/contactform", (req,res) => {
 	
 	MongoClient.connect('mongodb://localhost/local', function(err, db) {
 		const contactform = db.collection('contactforms').find({}).toArray(function(err,docs){
-			console.log('Result of find:',docs);
+			//console.log('Result of find:',docs);
 			contactformArray = docs;
 		})
 	})
