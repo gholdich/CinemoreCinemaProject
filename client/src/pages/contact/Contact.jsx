@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import Client from '../../api/Client';
 
 var honorific = "";
 var reason = "";
 
 export default class Contact extends Component {
+	
+	
 	handleSubmit(e) {
 		e.preventDefault()
 	}
@@ -11,14 +14,15 @@ export default class Contact extends Component {
 	storeAsJson(e) {
 		e.preventDefault();
 		let submission = {
-			"honorific": honorific,
-			"firstName": document.getElementById("firstName").value,
-			"surname": document.getElementById('surname').value,
-			"dob": document.getElementById("dob").value,
-			"email": document.getElementById("email").value,
-			"contactReason": reason,
-			"message": document.getElementById("message").value
+			honorific: honorific,
+			firstName: document.getElementById("firstName").value,
+			surname: document.getElementById('surname').value,
+			dob: document.getElementById("dob").value,
+			email: document.getElementById("email").value,
+			contactReason: reason,
+			message: document.getElementById("message").value
 		}
+		Client.addToContactForm(submission);
 		let myJSON = JSON.stringify(submission);
 		localStorage.setItem("testJSON", myJSON);
 		document.getElementById("contactForm").reset();
@@ -27,7 +31,7 @@ export default class Contact extends Component {
 	outputJson() {
 		let text = localStorage.getItem("testJSON");
 		let submission = JSON.parse(text);
-		console.log(submission);
+		
 		document.getElementById("comments").innerHTML += submission.honorific + " "
 		+ submission.surname + " said:<br>"
 		+ submission.message +"<br> <br>";

@@ -42,6 +42,31 @@ function fetchCinemas(cb) {
     .then(parseJSON)
     .then(cb);
 }
+function addToContactForm(data){
+	console.log(JSON.stringify(data));
+	return fetch('/api/contactform',{
+		method: 'POST',
+		headers:{
+			'Accept': "application/json",
+			'Content-Type': 'application/json'
+			},
+		body: JSON.stringify({
+			honorific: data.honorific,
+			firstName: data.firstName,
+			surname: data.surname,
+			dob: data.dob,
+			email: data.email,
+			contactReason: data.contactReason,
+			message: data.message
+			
+		}) 
+		
+	}).then( (res) => {
+		console.log(res);
+	});
+
+
+}
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -58,5 +83,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search, fetchShowings, fetchLocations, fetchShowTimes, fetchCinemas };
+const Client = { search, fetchShowings, fetchLocations, fetchShowTimes, fetchCinemas, addToContactForm };
 export default Client;
