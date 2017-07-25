@@ -6,6 +6,7 @@ import LocationSelect from './LocationSelect';
 import * as appActions from "../../Action/AppActions";
 import MovieSearch from './MovieSearch';
 import appStore from '../../Stores/AppStore';
+import Order from './Order';
 
 export default class Listing extends Component {
 	constructor() {
@@ -24,10 +25,12 @@ export default class Listing extends Component {
 			showings: [],
 			filteredShowings: [],
 			showtimes: [],
-			filterText: ""
+			filterText: "",
+			filterValue: "a"
 		}
 
 		this.handleSearch = this.handleSearch.bind(this);
+		this.handleFilter = this.handleFilter.bind(this);
 	}
 
 	componentWillMount(){
@@ -52,6 +55,7 @@ export default class Listing extends Component {
 		//console.log(arr);
 
 		this.setState({filteredShowings: arr});
+		this.setState({showings : appStore.getSortedFilms()});
 
 		//console.log(this.state.showings);
 		//console.log("here");
@@ -88,6 +92,7 @@ export default class Listing extends Component {
 		//console.log(this.state.filterText);
 		//console.log("filtered ");
 		//console.log(this.state.showings);
+		/*
 		console.log(this.state.filteredShowings);
 		if(this.state.filterText != ""){
 			return this.state.showings.map((film, idx) => {
@@ -114,7 +119,15 @@ export default class Listing extends Component {
 						shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} videoId={film.videoId} classification={film.classification}/>
 					);
 				});
-			}
+			}*/
+	//this.setState({showings : appStore.getSortedFilms()});
+		return this.state.showings.map((film, idx) => {
+				return(
+					<FilmBlock key={idx} id={film.filmId} showtimeBlock={this.displayShowTimes(film.filmId, film.title)}
+					title={film.title} genres={film.genres} posterFileName={film.poster} description={film.description}
+					shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} videoId={film.videoId} classification={film.classification} />
+				);
+			});
 	}
 
 	displayShowTimes(filmId, title) {
@@ -135,14 +148,19 @@ export default class Listing extends Component {
 		this.setState({filterText: filterText});
 		appActions.filterBySearch(filterText.toUpperCase());
 	}
+	
+	handleFilter(filterValue){
+		this.setState({filterValue: filterValue});
+		appActions.sortFilms(filterValue, this.props.location);
+	}
 
 
 	render(){ // removed <LocationSelect />
 		const { loading, showtimes } = this.state;
 		return(
 			<div>
-				<MovieSearch filterText={this.state.filterText} onSearch={this.handleSearch.bind(this)} />
-
+				<MovieSearch filterText={this.state.filterText} onSearch={this.handleSearch} />
+				<Order onFilter={this.handleFilter} filterValue={this.state.filterValue} />
 				<div className="page" id="filmShowings" >
 
 					<div id="gridOfEquals" >

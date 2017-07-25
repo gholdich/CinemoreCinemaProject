@@ -20,3 +20,10 @@ export function filterCinemaInfo(location){
 		location
 	});
 }
+
+export function sortFilms(filterValue, location){
+	AppDispatcher.dispatch({
+		type: "SORT_FILMS",
+		filterValue, location
+	})
+}
