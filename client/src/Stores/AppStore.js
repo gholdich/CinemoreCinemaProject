@@ -169,6 +169,26 @@ class AppStore extends EventEmitter {
 		this.emit('searchChange');
 	}
 
+	sortFilms(filterValue, location){
+		this.sortedListing = this.films;
+		console.log(this.sortedListing);
+		if(filterValue == "Date"){
+			this.sortedListing.sort();
+			console.log(this.sortedListing);
+		}else if (filterValue == "Age"){
+			this.sortedListing.sort();
+			console.log(this.sortedListing);
+		}else{
+			this.sortedListing.sort(this.sortedListing.releaseDate);
+			console.log(this.sortedListing);
+		}
+		this.emit("sorted");
+	}
+	
+	getSortedFilms(){
+		return this.sortedListing;
+	}
+	
 	handleActions(action){
 		switch(action.type){
 			case "VIEW_ACTION":
@@ -181,6 +201,9 @@ class AppStore extends EventEmitter {
 				this.filmsByLocation(action.location);
 			case "ABOUT_LOCATION":
 				this.cinemaByLocation(action.location);
+			case "SORT_FILMS":
+				//this.filmsByLocation(action.location);
+				this.sortFilms(action.filterValue, action.location);
 			default:
 				break;
 		}
