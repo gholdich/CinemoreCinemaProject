@@ -5,7 +5,8 @@ export default class ShowTimes extends Component {
 	
 	propergateBooking() {
 		const { time, filmTitle } = this.props;
-		this.props.onClick(filmTitle, time);
+		this.props.onFilmChange(filmTitle);
+		this.props.onTimeChange(time);
 	}
 	
 	render() {

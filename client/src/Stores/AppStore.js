@@ -19,11 +19,21 @@ class AppStore extends EventEmitter {
 			film: "test film",
 			time: "test time"
 		}
-		this.location = "Choose a Location";
+		this.location = "No Location";
+		this.film = "No Film";
+		this.time = "No Time";
 	}
 
 	getLocation(){
 		return this.location;
+	}
+	
+	getFilm(){
+		return this.film;
+	}
+	
+	getTime(){
+		return this.time;
 	}
 
 	loadData(){

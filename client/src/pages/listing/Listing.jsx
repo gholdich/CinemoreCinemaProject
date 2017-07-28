@@ -90,6 +90,14 @@ export default class Listing extends Component {
 			localStorage.filmTime = JSON.stringify(filmTime);
 			console.log(filmTitle + ": "+filmTime);
 	}
+	
+	handleFilmChange(e){
+		this.props.onFilmChange(e);
+	}
+	
+	handleTimeChange(e){
+		this.props.onTimeChange(e);
+	}
 
 	displayFilms() {
 		//console.log("Message ");
@@ -137,7 +145,7 @@ export default class Listing extends Component {
 	displayShowTimes(filmId, title) {
 		return this.state.showtimes.filter(showtime => showtime.filmId === filmId).map((showtime, idx) => {
 			return(
-				<ShowTimes key={idx} filmTitle={title} time={showtime.time} onClick={this.updateLocalStorage_Book.bind(this)} />
+				<ShowTimes key={idx} filmTitle={title} time={showtime.time} onFilmChange={this.handleFilmChange.bind(this)} onTimeChange={this.handleTimeChange.bind(this)} onClick={this.updateLocalStorage_Book.bind(this)} />
 			);
 		});
 	}

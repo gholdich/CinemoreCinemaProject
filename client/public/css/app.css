@@ -200,6 +200,24 @@ ul.navbar-nav li.link a span{
     z-index: -10;
 }
 
+#bookNow .left.quickBook.one {
+    position: absolute;
+    width: 40%;
+    background: #005cf1;
+    height: auto;
+    z-index: -10;
+	text-align: left;
+}
+
+p.cent {
+    text-align: center;
+}
+
+p.right {
+	text-align: right;
+}
+
+
 #navbar-container {
     margin: auto 0 auto auto;
 	display: inherit;
