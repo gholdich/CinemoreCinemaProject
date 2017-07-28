@@ -66,6 +66,7 @@ function addToContactForm(data){
 	});
 }
 function addQuestion(data){
+	console.log(data.username);
 	console.log('client.js information sent');
 	return fetch('/api/forum',{
 		
@@ -75,13 +76,14 @@ function addQuestion(data){
 			'Content-Type': 'application/json'
 			},
 		body: JSON.stringify({
-			username:data.username,
+			username: data.username,
 			question: data.question,
 			comments : []
 		})
 	}).then( (res) => {
 		console.log(res);
 	})
+	
 }
 function fetchForum(cb){
 	return fetch(`/api/forum`, {

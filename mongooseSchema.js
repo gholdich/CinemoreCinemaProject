@@ -4,8 +4,7 @@ mongoose.connect('mongodb://localhost/local');
 var forumSchema = mongoose.Schema({
 
 	'username': String,
-	'topic': String,
-	'opener': String,
+	'question': String,
 	'comments': Array
 });
 var filmSchema = mongoose.Schema({
@@ -50,12 +49,30 @@ var cinemaSchema = mongoose.Schema({
 		"about": String
 
 });
+ 
 
 
 
 var Film = mongoose.model('Film', filmSchema);
 var Cinema = mongoose.model('Cinema', cinemaSchema);
-var Forum = mongoose.model('Forum', forumSchema)
+var Forum = mongoose.model('Forum', forumSchema);
+
+const forums= [{
+	'username': 'user1',
+	'question': 'Do they all have toilet facilities?',
+	'comments': ['QAC says: All our establishments have toilet facilities']},{
+	'username': 'user2',
+	'question': 'Do they all have disabled access?',
+	'comments': ['QAC says: Yes, and all out staff are happy to help if there are any concerns']},{
+	'username': 'user3',
+	'question': 'Are there babychanging facilities?',
+	'comments': ['QAC says: There are baby changing facilities in the women and the men bathrooms']}
+	,{
+	'username': 'user4',
+	'question': 'Is there car parking facilities?',
+	'comments': ['QAC says: Yes, there is large parking areas so dont worry there is always room']}	
+	];
+
 const films =[
 	  {
 		"filmId": 1,
@@ -504,3 +521,7 @@ cinemas.map(data =>{
 
 	cinema.save();
 });
+forums.map(data =>{
+	const forum = new Forum(data);
+	forum.save();
+})

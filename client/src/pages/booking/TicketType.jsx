@@ -72,26 +72,28 @@ export default class TicketType extends React.Component{
 		//const price = this.props.price;
 		
 		return(
-			<div>
+			<div className= 'ticket_types'>
 				<div>
-					Adult Ticket Number: {this.state.adult}
-					<button onClick={this.addAdultTickets.bind(this)}>+</button>
-					<button onClick={this.removeAdultTickets.bind(this)}>-</button>
+					<span className= 'bookinglabel'>Adult Tickets </span>
+					<button className= 'bookinglabel' onClick={this.addAdultTickets.bind(this)}>+</button>
+					<button className= 'bookinglabel' onClick={this.removeAdultTickets.bind(this)}>-</button>
+					{this.state.adult}
 				</div>
 				<div>
-					Child Ticket Number: {this.state.child}
-					<button onClick={this.addChildTickets.bind(this)}>+</button>
-					<button onClick={this.removeChildTickets.bind(this)}>-</button>
+					<span className= 'bookinglabel'>Child Ticket</span>
+					<button className= 'bookinglabel' onClick={this.addChildTickets.bind(this)}>+</button>
+					<button className= 'bookinglabel' onClick={this.removeChildTickets.bind(this)}>-</button>
+					{this.state.child}
 				</div>
 				<div>
-					Concession Ticket Number: {this.state.concession}
-					<button onClick={this.addConcessionTickets.bind(this)}>+</button>
-					<button onClick={this.removeConcessionTickets.bind(this)}>-</button>
-	
+					<span className= 'bookinglabel'>Concession Ticket</span>
+					<button className= 'bookinglabel' onClick={this.addConcessionTickets.bind(this)}>+</button>
+					<button className= 'bookinglabel' onClick={this.removeConcessionTickets.bind(this)}>-</button>
+					{this.state.concession}
 				</div>
-					<div>
+					<h3 >
 						£{this.state.adultPrice+this.state.childPrice+this.state.concessionPrice}
-					</div>
+					</h3>
 				
 
 			

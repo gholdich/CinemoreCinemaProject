@@ -26,7 +26,8 @@ export default class Forum extends React.Component{
 					loading: false
 				})
 		
-		});},100);
+		});
+		},100);
 	}
 
 	
@@ -38,22 +39,22 @@ export default class Forum extends React.Component{
 		this.setState({question: e.target.value});
 	}
 	sendQuestion(e){
-		var forumQuestion={
+		let forumQuestion={
 			username: this.state.username,
 			question: this.state.question,
 		};
 		let variable=this;
 		Client.addQuestion(forumQuestion);
-		setTimeout(function(){
+		/* setTimeout(function(){
 		Client.fetchForum(forums =>{
 				variable.setState({
 					forum : forums,
 					loading: false
 				})
 		
-		})},100);
+		})},1000); */
 	}
-	setCommentUsername(e){
+	/* setCommentUsername(e){
 		this.setState({commentusername: e.target.value});
 	}
 	setComment(e){
@@ -69,22 +70,19 @@ export default class Forum extends React.Component{
 					loading: false
 				})
 		
-		})},100);
-	}
+		})},1000);
+	} */
 	
 	render(){
 		const {forum} = this.state;
 		let forummap = forum.map((data,index)=>{
 							return (
 							<div key={index}> 
-								<div value={forum[index].username}>{forum[index].username}</div>
-								<div value= {forum[index].question}>{forum[index].question}</div>
-								<div value={forum[index].comments}>{forum[index].comments}</div>
-								<form>
-									<input placeholder= "Username" onChange= {this.setCommentUsername.bind(this)}/>
-									<input placeholder = "Comment" onChange= {this.setComment.bind(this)}/>
-									<button value={forum[index].question} onClick={this.addComment.bind(this)}>Add comment</button>
-								</form>
+								<div>
+								<div className= 'forum_element forum_question' value= {forum[index].question}>{forum[index].question}</div>
+								<div className= 'forum_comment' value={forum[index].comments}>{forum[index].comments}</div>
+								</div>
+								
 								
 							</div>
 						)});
@@ -92,11 +90,7 @@ export default class Forum extends React.Component{
 		
 		return(
 			<div>
-				<form>
-					<input placeholder= 'Username' onChange={this.setUsername.bind(this)}/>
-					<input placeholder= 'Question' onChange={this.setQuestion.bind(this)}/>
-					<button onClick={this.sendQuestion.bind(this)}> Ask question</button>
-				</form>
+				
 				
 				<div >
 					{forummap}
@@ -105,4 +99,15 @@ export default class Forum extends React.Component{
 		);
 	}
 }
+/* <form className= 'forum_form'>
+									<input placeholder= "Username" onChange= {this.setCommentUsername.bind(this)}/>
+									<input placeholder = "Comment" onChange= {this.setComment.bind(this)}/>
+									<button className='faq_form_button' value={forum[index].question} onClick={this.addComment.bind(this)}>Add comment</button>
+								</form> */
 //{console.log(this.state.forum)}
+/*<form>
+					<input placeholder= 'Username' onChange={this.setUsername.bind(this)}/>
+					<input placeholder= 'Question' onChange={this.setQuestion.bind(this)}/>
+					<button className= 'faq_form_button' onClick={this.sendQuestion.bind(this)}> Ask question</button>
+				</form> */
+				/* <div className= 'forum_element' value={forum[index].username}>{forum[index].username}</div> */
