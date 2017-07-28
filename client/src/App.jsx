@@ -75,6 +75,7 @@ export default class App extends Component {
 
 				<Header location={this.state.location} onChange={this.handleChange} />
 				<MainRoutes location={this.state.location} film={this.state.film} time={this.state.time} onChange={this.handleChange} onTimeChange={this.handleTimeChange.bind(this)} onFilmChange={this.handleFilmChange.bind(this)}/>
+
 				<Footer />
 
 			</div>
