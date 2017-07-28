@@ -70,7 +70,7 @@ export default class App extends Component {
 		return(
 			<div>
 				<Header location={this.state.location} onChange={this.handleChange}/>
-				<MainRoutes location={this.state.location} film={this.state.data.film} time={this.state.data.time} onChange={this.handleChange}/>
+				<MainRoutes location={this.state.location} film={this.state.data.film} time={this.state.data.time} onChange={this.handleChange} onTimeChange={this.handleTimeChange.bind(this)} onFilmChange={this.handleFilmChange.bind(this)}/>
 				<Footer />
 			</div>
 		);
