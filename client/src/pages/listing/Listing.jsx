@@ -33,29 +33,33 @@ export default class Listing extends Component {
 		this.handleFilter = this.handleFilter.bind(this);
 	}
 
+	//flux listener - james
 	componentWillMount(){
 		//console.log("Will Mount");
 		appStore.on("searchChange", this._onChange);
 		appStore.on("venueChange", this._onLocationChange);
 	}
 
+	//flux remove listeners - james
 	componentWillUnmount(){
 		//console.log("Unmount");
 		appStore.removeListener("searchChange", this._onChange);
 		appStore.removeListener("venueChange", this._onLocationChange);
 	}
 
+	//handle flux call for a filtered film list - james
 	_onChange(){
 		this.setState({showings: appStore.getFilteredFilms()});
 
 	}
 
+	//handle flux call for a filtered film list by location - james
 	_onLocationChange(){
 		var arr = appStore.getFilmsByLocation();
 		//console.log(arr);
 
 		this.setState({filteredShowings: arr});
-		this.setState({showings : appStore.getSortedFilms()});
+		//this.setState({showings : appStore.getSortedFilms()});
 
 		//console.log(this.state.showings);
 		//console.log("here");
@@ -92,7 +96,7 @@ export default class Listing extends Component {
 		//console.log(this.state.filterText);
 		//console.log("filtered ");
 		//console.log(this.state.showings);
-		/*
+		
 		console.log(this.state.filteredShowings);
 		if(this.state.filterText != ""){
 			return this.state.showings.map((film, idx) => {
@@ -119,15 +123,15 @@ export default class Listing extends Component {
 						shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} videoId={film.videoId} classification={film.classification}/>
 					);
 				});
-			}*/
+			}
 	//this.setState({showings : appStore.getSortedFilms()});
-		return this.state.showings.map((film, idx) => {
+		/*return this.state.showings.map((film, idx) => {
 				return(
 					<FilmBlock key={idx} id={film.filmId} showtimeBlock={this.displayShowTimes(film.filmId, film.title)}
 					title={film.title} genres={film.genres} posterFileName={film.poster} description={film.description}
 					shortDes={film.shortDes} release={film.releaseDate} director={film.director} cast={film.cast} videoId={film.videoId} classification={film.classification} />
 				);
-			});
+			});*/
 	}
 
 	displayShowTimes(filmId, title) {
@@ -160,7 +164,6 @@ export default class Listing extends Component {
 		return(
 			<div>
 				<MovieSearch filterText={this.state.filterText} onSearch={this.handleSearch} />
-				<Order onFilter={this.handleFilter} filterValue={this.state.filterValue} />
 				<div className="page" id="filmShowings" >
 
 					<div id="gridOfEquals" >
@@ -171,3 +174,4 @@ export default class Listing extends Component {
 		);
 	}
 }
+//<Order onFilter={this.handleFilter} filterValue={this.state.filterValue} />

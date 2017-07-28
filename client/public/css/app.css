@@ -38,6 +38,12 @@ ul.navbar-nav{
     border: 0;
 }
 
+.resize {
+    width:200px;
+    height: auto;
+	margin: 5px;
+}
+
 .footer {
 	list-style: none;
     margin: auto;
