@@ -51,6 +51,10 @@ class AppStore extends EventEmitter {
 		//console.log(this.locations);
 		return this.locations;
 	}
+	
+	getAllCinemas(){
+		return this.cinemas;
+	}
 
 	cinemaByLocation(location){
 		this.filteredCinemas = [];

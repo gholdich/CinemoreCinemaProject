@@ -69,7 +69,7 @@ function addToContactForm(data){
 }
 
 function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
+  if (response.status >= 200 && response.status < 3000) {
     return response;
   }
   const error = new Error(`HTTP Error ${response.statusText}`);

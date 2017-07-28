@@ -5,8 +5,8 @@ export default class Footer extends Component {
 	render() {
 		return(
 			<footer >
-				<div>
-					<ul className="nav footer">
+				<div className="footer-container">
+					<ul className="nav footer-nav">
 						<li className="link">
 							<Link to={{ pathname: "/" }}><span>Home</span></Link>
 						</li>

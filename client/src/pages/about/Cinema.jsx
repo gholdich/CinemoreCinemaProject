@@ -14,11 +14,12 @@ export default class Cinema extends Component {
 		// this._onLocationChange = this._onLocationChange.bind(this);
 		var selectedCinemaId = 0;
 
-		if(localStorage.selectedCinemaId) {
-			selectedCinemaId = JSON.parse(localStorage.selectedCinemaId);
-		}
+		//if(localStorage.selectedCinemaId) {
+		//	selectedCinemaId = JSON.parse(localStorage.selectedCinemaId);
+		//}
 
 		this.state = {
+			cinemas: [],
 			loading: true,
 			cinemaId: selectedCinemaId,
 			abouts: [],
@@ -33,11 +34,10 @@ export default class Cinema extends Component {
 	componentWillMount(){
 		// console.log("Will Mount");
 		appStore.on("venueChange", this._onLocationChange);
-	}
-
-	_onLocationChange(){
-		var arr = appStore.getLocatedCinemas();
-		appStore.getLocatedCinemas().map((cinema) => {
+		this.setState({
+			loading: false,
+		});
+		appStore.getAllCinemas().map((cinema) => {
 			this.setState({
 				loading: false,
 				abouts: cinema.about,
@@ -53,8 +53,31 @@ export default class Cinema extends Component {
 				],
 				picture: cinema.picture
 
-			})
-		})
+			});
+		});
+	}
+
+	_onLocationChange(){
+		var arr = appStore.getLocatedCinemas();
+		appStore.getLocatedCinemas().map((cinema) => {
+			this.setState({
+				loading: false,
+				abouts: cinema.about,
+				venue: cinema.location,
+				cinemaId: cinema.cinemaId,
+				openingTimes: [
+					cinema.openingTimes[0].monday,
+					cinema.openingTimes[0].tuesday,
+					cinema.openingTimes[0].wednesday,
+					cinema.openingTimes[0].thursday,
+					cinema.openingTimes[0].friday,
+					cinema.openingTimes[0].saturday,
+					cinema.openingTimes[0].sunday
+				],
+				picture: cinema.picture
+
+			});
+		});
 
 		//console.log(loc);
 		//this.setState({venue: arr[0]});
@@ -68,7 +91,8 @@ export default class Cinema extends Component {
 
 	componentDidMount() {
 
-		var cinemas = appStore.getCinemas();
+		
+		
 
 		appActions.filterCinemaInfo(this.props.location);
 
@@ -99,12 +123,27 @@ export default class Cinema extends Component {
 	}
 
 	displayAbout() {
+		//console.log(this.state.cinemaId);
+		
+		if(this.state.cinemaId === 0){
+			//console.log(this.state.cinemas);
+			this.state.cinemas.map((cinema) => {
+				console.log(cinema);
+				return(
+					<AboutLocation id={cinema.cinemaId}
+					venue={cinema.venue} pictureFileName={cinema.picture}
+					about={cinema.about}
+					/>
+				);
+			});
+		}else{
 			return(
-				<AboutLocation id={this.state.cinemaId}
-				venue={this.state.venue} pictureFileName={this.state.picture}
-				about={this.state.abouts}
-				openingTimes={this.displayOpeningTimes()}/>
-			);
+					<AboutLocation id={this.state.cinemaId}
+					venue={this.state.venue} pictureFileName={this.state.picture}
+					about={this.state.abouts}
+					openingTimes={this.displayOpeningTimes()}/>
+				);
+		}
 	}
 
 	displayOpeningTimes() {

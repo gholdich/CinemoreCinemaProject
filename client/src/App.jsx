@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 //import Footer from './components/Footer';
 import MainRoutes from './MainRoutes';
-
+import Footer from './components/Footer';
 import * as AppActions from "./Action/AppActions";
 import appStore from "./Stores/AppStore";
 
@@ -54,7 +54,7 @@ export default class App extends Component {
 			<div>
 				<Header location={this.state.location} onChange={this.handleChange}/>
 				<MainRoutes location={this.state.location} film={this.state.data.film} time={this.state.data.time} onChange={this.handleChange}/>
-				
+				<Footer />
 			</div>
 		);
 	}

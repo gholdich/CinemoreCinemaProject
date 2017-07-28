@@ -30,7 +30,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	height: 85px;
 }
 
-ul.navbar-nav{
+ul.navbar-nav, ul.footer-nav{
 	list-style: none;
     margin: 0;
     padding: 0;
@@ -45,9 +45,10 @@ ul.navbar-nav{
     text-align: center;
     border: 0;
     max-width: 60%;
-    position: relative;
+    position: fixed;
     right: 20px;
     bottom: 10px;
+	display: inline-flex;
 }
 
 .footer li.link {
@@ -61,7 +62,7 @@ ul.navbar-nav{
 }
 
 
-ul.navbar-nav li.link {
+ul.navbar-nav li.link, ul.footer-nav li.link {
     display: inline-block;
     -webkit-transform: skewX(-10deg);
     -moz-transform: skewX(-10deg);
@@ -94,7 +95,7 @@ ul.navbar-nav li.link {
 }
 
 
-ul.navbar-nav li.link a{
+ul.navbar-nav li.link a, ul.footer-nav li.link a{
     padding: 10px 20px;
     color: #fff;
     background-color: #188ae2;
@@ -106,13 +107,17 @@ ul.navbar-nav li.link a{
     transition: all 0.3s;
 }
 
-ul.navbar-nav li.link a:active, ul.navbar-nav li.link a:hover{
+ul.footer-nav li.link {
+	margin: 4px 5px;
+}
+
+ul.navbar-nav li.link a:active, ul.footer-nav li.link a:active, ul.navbar-nav li.link a:hover, ul.footer-nav li.link a:hover{
 	color: #fff;
     background-color: #113650;
 }
 
 
-ul.navbar-nav li.link a span{
+ul.navbar-nav li.link a span, ul.footer-nav li.link a span{
 	display: block;
     -webkit-transform: skewX(10deg);
     -moz-transform: skewX(10deg);
@@ -199,12 +204,17 @@ ul.navbar-nav li.link a span{
 	display: inherit;
 }
 
-#header-container {
+#header-container, .footer-container {
 	position: relative;
 	z-index: 2;
 	display: flex;
     width: 800px;
     margin: auto;
+}
+
+.footer-container {
+	margin: 5px auto 65px;
+	z-index: 0;
 }
 
 #content {

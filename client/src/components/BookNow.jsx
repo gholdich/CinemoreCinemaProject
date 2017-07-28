@@ -38,10 +38,12 @@ export default class BookNow extends Component {
 					<Link to={{ pathname: '/booking'}}>
 						<span>Book Now!</span>
 					</Link> 
+					
 				</div>
-				<div className="right quickBook">
 				
+				<div className="right quickBook">
 				</div>
+				
 			</div>
 		);
 	}
