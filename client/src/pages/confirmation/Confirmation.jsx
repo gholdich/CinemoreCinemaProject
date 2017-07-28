@@ -27,15 +27,23 @@ export default class Confirmation extends Component {
 		};
 	}
 	
+	/*componentWillMount(){
+		this.setState({
+			location: this.props.location,
+			film: this.props.film,
+			time: this.props.time,
+		})
+	}*/
+	
 	
 	render(){
 		return(
 			<div id="conf">
 				<h2 className="message">Payment Confirmed</h2>
 				<h3 className="message">Enjoy viewing</h3>
-				<p className="message">{this.state.film} at:</p>
-				<p className="message">{this.state.location} QA Cinema at</p>
-				<p className="message">{this.state.time}</p>
+				<p className="message">{this.props.film} at:</p>
+				<p className="message">{this.props.location} QA Cinema at</p>
+				<p className="message">{this.props.time}</p>
 			</div>
 		);
 	}

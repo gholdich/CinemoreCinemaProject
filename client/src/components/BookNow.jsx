@@ -15,21 +15,18 @@ export default class BookNow extends Component {
 		const location = this.props.location;
 		const film = this.props.film;
 		const time = this.props.time;
+		console.log(location);
+		console.log(film);
+		console.log(time);
 		return(
 			<div id="bookNow">
 				<div className="left quickBook">
 					<div className="left quickBook one">
 						<p>
-						{location}
-						</p>
-					</div>
-					<div className="left quickBook two">
-						<p>
-						{film}
-						</p>
-					</div>
-					<div className="left quickBook three">
-						<p>
+						{location}&nbsp;
+						</p><p className="cent">
+						{film}&nbsp;
+						</p><p className="right">
 						{time}
 						</p>
 					</div>

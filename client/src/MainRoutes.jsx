@@ -25,6 +25,16 @@ export default class MainRoutes extends Component {
 		this.props.onChange(e);
 	}
 	
+	handleFilmChange(e){
+		console.log(e);
+		this.props.onFilmChange(e);
+	}
+	
+	handleTimeChange(e){
+		console.log(e);
+		this.props.onTimeChange(e);
+	}
+	
 	render(props) {
 		const location = this.props.location;
 		const time = this.props.time;
@@ -35,7 +45,7 @@ export default class MainRoutes extends Component {
 			<Switch>
 			  <Route exact path='/' component={() => <Home onChange={this.handleChange} location={location} film={film} time={time}/>} />
 			  <Route path="/booking" component={() => <Booking location={location} film={film} time={time}/>}/>
-			  <Route path="/films" component={() => <Listing location={location} film={film} time={time}/>}/>
+			  <Route path="/films" component={() => <Listing onChange={this.handleChange} onTimeChange={this.handleTimeChange.bind(this)} onFilmChange={this.handleFilmChange.bind(this)} location={location} film={film} time={time}/>}/>
 			  <Route path="/faq" component={Faq}/>
 			  <Route path="/contact" component={Contact}/>
 			  <Route path="/confirmation" component={() => <Confirmation location={location} film={film} time={time}/>}/>

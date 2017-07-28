@@ -37,6 +37,12 @@ export default class Booking extends React.Component{
 		};
 	}
 	
+	componentWillMount(){
+		this.setState({
+			film: this.props.film,
+			time: this.props.time
+		});
+	}
 	
 	componentDidMount() {
 		Client.fetchShowings(showings => {			
@@ -108,6 +114,7 @@ export default class Booking extends React.Component{
 		}
 	
 	setLocation(e){
+		localStorage.setItem("selectedLocation", JSON.stringify(e.target.value));
 		this.setState({
 			location: e.target.value,
 			title: this.getFilms(e.target.value),
@@ -119,6 +126,7 @@ export default class Booking extends React.Component{
 			//console.log(this.state.title)
 	}
 	setFilm(e){
+		localStorage.setItem("filmTitle", JSON.stringify(e.target.value));
 		this.setState({
 			film: e.target.value,
 			time: "Please select a time",
@@ -126,6 +134,7 @@ export default class Booking extends React.Component{
 			}
 		
 	setTime(e){
+		localStorage.setItem("filmTime", JSON.stringify(e.target.value));
 		this.setState({time: e.target.value});
 		
 	}

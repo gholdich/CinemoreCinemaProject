@@ -13,6 +13,8 @@ export default class App extends Component {
 		this.state = {
 			data: appStore.getBooking(),
 			location: appStore.getLocation(),
+			film: appStore.getFilm(),
+			time: appStore.getTime(),
 			otherState: "data"
 		}
 		//console.log(this.state.data);
@@ -44,8 +46,23 @@ export default class App extends Component {
 	}
 	
 	handleChange(e){
+		console.log(e);
 		this.setState({
 			location: e
+		});
+	}
+	
+	handleFilmChange(e){
+		console.log(e);
+		this.setState({
+			film: e
+		});
+	}
+	
+	handleTimeChange(e){
+		console.log(e);
+		this.setState({
+			time: e
 		});
 	}
 	

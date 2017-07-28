@@ -38,6 +38,12 @@ ul.navbar-nav, ul.footer-nav{
     border: 0;
 }
 
+.resize {
+    width:200px;
+    height: auto;
+	margin: 5px;
+}
+
 .footer {
 	list-style: none;
     margin: auto;
@@ -198,6 +204,24 @@ ul.navbar-nav li.link a span, ul.footer-nav li.link a span{
     height: 100%;
     z-index: -10;
 }
+
+#bookNow .left.quickBook.one {
+    position: absolute;
+    width: 40%;
+    background: #005cf1;
+    height: auto;
+    z-index: -10;
+	text-align: left;
+}
+
+p.cent {
+    text-align: center;
+}
+
+p.right {
+	text-align: right;
+}
+
 
 #navbar-container {
     margin: auto 0 auto auto;
@@ -634,4 +658,54 @@ ul.navbar-nav li.link a span, ul.footer-nav li.link a span{
 	margin : 5px ;
 	font-size: large;
 	
+}
+.faqpage{
+	background-color: #fff;
+	border: #188ae2 solid 10px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.forum_question{
+	font-size: 150%;
+}
+.forum_element{
+	background-color: #cbdfe8;
+    color: black;
+	margin : 5px;
+	
+}
+.forum_comment{
+	text-align: center;
+	margin : 5px;
+	font-style: italic;
+	color: gray;
+}
+.forum_form{
+	width: 100%;
+	display: inline;
+	
+}
+.faq_title{
+	font-style: italic;
+    color: gray;
+	margin:5px;
+}
+.faq_form_button{
+	 padding: 10px 20px;
+    color: #fff;
+    background-color: #188ae2;
+    text-decoration: none;
+    display: block;
+}
+.ticket_types{
+	background-color: #fff;
+	border: #188ae2 solid 10px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.bookinglabel{
+	padding : 10px;
+	margin: 10px;
 }
