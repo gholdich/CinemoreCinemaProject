@@ -1,5 +1,5 @@
 
-var mongoose = require('mongoose');
+var mongoose = require('mongoose');//Rosie O'Leary
 mongoose.connect('mongodb://localhost/local');
 var forumSchema = mongoose.Schema({
 
