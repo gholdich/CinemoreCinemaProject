@@ -1,5 +1,5 @@
-const express = require("express");
-const fs = require("fs");
+const express = require("express");//Greg Holdich wrote initial server.js
+const fs = require("fs");	//Rosie O'Leary wrote mongo and mongoose parts with writing to a collection
 const MongoClient= require('mongodb');
 const app = express();
 var bodyParser = require('body-parser');
