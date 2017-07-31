@@ -1,5 +1,5 @@
 //Connection to server
-function search(query, cb) {
+function search(query, cb) {//Greg Holdick wrote original client.js file
   return fetch(`/api/films?q=${query}`, {
     accept: "application/json"
   })
@@ -42,7 +42,7 @@ function fetchCinemas(cb) {
     .then(parseJSON)
     .then(cb);
 }
-function addToContactForm(data){
+function addToContactForm(data){//Rosie O'Leary
 	console.log(JSON.stringify(data));
 	return fetch('/api/contactform',{
 		method: 'POST',
@@ -65,7 +65,7 @@ function addToContactForm(data){
 		console.log(res);
 	});
 }
-function addQuestion(data){
+function addQuestion(data){//Rosie O'Leary
 	console.log(data.username);
 	console.log('client.js information sent');
 	return fetch('/api/forum',{
@@ -85,7 +85,7 @@ function addQuestion(data){
 	})
 	
 }
-function fetchForum(cb){
+function fetchForum(cb){//Rosie O'Leary
 	return fetch(`/api/forum`, {
     accept: "application/json"
   })
@@ -94,7 +94,7 @@ function fetchForum(cb){
     .then(cb);
 	
 }
- function addComment(comment, question){
+ function addComment(comment, question){//Rosie O'Leary
 	return fetch('/api/forum',{
 		
 		method:'PUT',
