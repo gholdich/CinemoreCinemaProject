@@ -2,7 +2,7 @@ import React from 'react';
 import Client from '../../api/Client';
 import TicketType from './TicketType';
 
-export default class Booking extends React.Component{
+export default class Booking extends React.Component{//Rosie O'Leary
 	
 	constructor(){
 		super();
