@@ -1,7 +1,7 @@
 import React from 'react';
 import Client from '../../api/Client';
 
-export default class Forum extends React.Component{
+export default class Forum extends React.Component{//Rosie O'Leary
 	
 	constructor(){
 		super();
