@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TicketType extends React.Component{
+export default class TicketType extends React.Component{//Rosie O'Leary
 	constructor(){
 		super();
 		this.state={
